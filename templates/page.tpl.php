@@ -128,8 +128,8 @@
         ),
       )); ?>
     </div>
-      
-    <div id="header-content" class="">
+
+    <div id="header-content" class="clearfix">
       <?php print render($page['header']); ?>
     </div>
   </div></div><!-- /.section, /#header -->

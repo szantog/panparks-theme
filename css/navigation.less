@@ -26,7 +26,25 @@ li a.active {
  * Primary and Secondary menu links
  */
 #main-menu {
+  float: left;
   padding: 0 0 0 190px;
+  .m-top(22px);
+  li {
+    background: url(../images/main-menu-li.png) no-repeat top left;
+    padding: 0 1em 0 5px;
+    display: inline-block;
+   a {
+      .fs(16px);
+      .bold;
+      .italic;
+      background: url(../images/main-menu-a.png) no-repeat top right;
+      padding: 0 2em;
+      color: #fff;
+      line-height: 31px;
+      display: inline-block;
+    }
+  }
+
 }
 
 #secondary-menu {
