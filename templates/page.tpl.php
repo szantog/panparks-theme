@@ -68,7 +68,11 @@
  * @see template_process()
  */
 ?>
-
+<?php if ($logged_in) : ?>
+  <div id="user-logged-in" class="clearfix">
+    <?php print render($user_logged_in); ?>
+  </div>
+<?php endif; ?>
 <div id="page-wrapper"><div id="page">
 
   <div id="header"><div class="section clearfix">

@@ -89,11 +89,31 @@ function panparks_preprocess_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
+
 function panparks_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  global $user;
+  if ($user->uid > 0) {
+    $attributes = array(
+      'class' => 'secondary-menu-style',
+    );
+    $items = array(
+      array(
+        'data' =>  '<small>' . t('!username signed in', array('!username' => theme('username', array('account' => $user)))) . '</small>',
+        'class' => array(''),
+      ),
+      array(
+        'data' =>  '<small>'. l(t('share photos'), DRUPAL_ROOT) . '</small>',
+        'class' => array(''),
+      ),
+      array(
+        'data' =>  '<small>' . l(t('sign out'), 'logout') . '</small>',
+        'class' => array(''),
+      ),
+    );
+    $variables['user_logged_in'] = theme('item_list', array('items' => $items, 'attributes' => $attributes)) ;
+  }
 }
-// */
+
 
 /**
  * Override or insert variables into the node templates.

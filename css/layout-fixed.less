@@ -23,8 +23,12 @@
 body {
 }
 
+#user-logged-in {
+}
+
 #page-wrapper,
-.region-page-closure {
+.region-page-closure,
+#user-logged-in {
   /*
    * If you want to make the page a fixed width and centered in the viewport,
    * this is the standards-compliant way to do that. See also the ie6.css file
@@ -33,7 +37,13 @@ body {
   .container;
 }
 
+.not-logged-in #page-wrapper {
+  margin-top: 34px;
+}
+
 #page {
+  border-left: 1px solid #e2e2e2;
+  border-right: 1px solid #e2e2e2;
 }
 
 /*
@@ -44,7 +54,7 @@ body {
 }
 
 #header .section {
-  .grid(16);
+  .grid(24);
 }
 
 #search-box {
