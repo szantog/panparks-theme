@@ -1,0 +1,593 @@
+/**
+ * @file
+ * Base declaration for .less files.
+ */
+
+/* less css variables*/
+
+/*
+ * Fonts
+ *
+ * Our font size and line height declarations are based on the following ALA
+ * article:
+ *   http://www.alistapart.com/articles/howtosizetextincss
+ *
+ * All modern browsrs use a 16px default font size. Specifying the font-size
+ * and line-height in ems (relative to the 16px default font) allows the user
+ * to resize the font in the browser and produces the most consistent results
+ * across different browsers.
+
+/* The em based font size. Use a 12px base font size with a 16px line height */
+@font-size-em: 0.75em; /* 16px x .75 = 12px */
+@line-height-em: 1.333em;  /* 12px x 1.333 = 16px */
+
+/* Use a 14px base font size with a 18px line height */
+//@font-size-em: 0.875em; /* 16px x .875 = 14px */
+//@line-height-em: 1.286em; /* 14px x 1.286 = 18px */
+
+/* The font-size in pixels is using in margins, paddings, etc. @todo is this ok??? */
+@font-size: 12px;
+@line-height: 16px;
+
+@h1-font: 2em;
+@h2-font: 1.75em;
+@h3-font: 1.5em;
+@h4-font: 1.312em;
+@h5-font: 1.125em;
+@h6-font: @h5-font;
+
+/* The following font family declarations are based on the Microsoft core web
+ * fonts which are common fonts available on most computer systems. The DejaVu
+ * fonts are commonly available on Linux systems where the MS fonts are less
+ * common. Tahoma and Helvetica are also widely available.
+ *
+ * A user's web browser will look at the comma-separated list and will
+ * attempt to use each font in turn until it finds one that is available
+ * on the user's computer. The final "generic" font (sans-serif or serif)
+ * hints at what type of font to use if the web browser doesn't find any
+ * of the fonts in the list.
+ */
+
+@font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
+//@font-family: "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
+//@font-family: Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
+//@font-family: Georgia, "Times New Roman", "DejaVu Serif", serif;
+//@font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
+//@font-family: Tahoma, Verdana, "DejaVu Sans", sans-serif;
+//@font-family: Helvetica, Arial, "Nimbus Sans L", sans-serif;
+//@font-family: Arial, Helvetica, "Nimbus Sans L", sans-serif;
+//@font-family: "Courier New", "DejaVu Sans Mono", monospace;
+
+/*
+ * Grid system variables
+ */
+@grid-count: 24; /* 12, 16, or 24 */
+@width: 960px;
+@grid-margin: 10px; /* 12 and 16 columns margin */
+//@grid-margin: 5px; /* 24 colums grid margin, uncomment it, and comment the previous, if you use this */
+@grid-step: @width / @grid-count ;
+@first-width: (@width - (2 * @grid-margin * @grid-count)) / @grid-count;;
+
+/*
+ * Zen layout methods variables. See http://drupal.org/node/201428
+ * The default value is 4 grid = 220px. To set it, use as last number 4 - 1 = 3.
+ *    If you want 6 grid with sidebar, set the last number 5.
+ */
+@left-sidebar: @first-width + (@grid-step * 3);; /* Left sidebar width */
+@right-sidebar: @first-width + (@grid-step * 3);; /* Right sidebar width */
+@navigation: 2.3em; /* Navigation height */
+@header: auto; /* Header height */
+@footer: auto; /* Footer height */
+
+
+/* Margin's defaults of the floated elements.*/
+@margin-left-default: 0 @grid-margin @grid-margin 0;
+@margin-right-default: 0 0 @grid-margin @grid-margin;
+
+/* If you use separator between nodes, or view rows, change this to the height of your separator element */
+@separator-height: @grid-margin;
+
+/* The default padding value for content-inner elements. Eg. view-content, .node .content, */
+@content-padding: @grid-margin;
+
+/* The default background for content-inner elements. Eg. view-content, .node .content, */
+//@content-background: @font-size;
+
+/* Colors & backgrounds */
+@body: #e7e7e7; /* The body background, can be changed to background picture */
+@page: #fff; /* The page wrapper background, can be changed to background picture */
+@text: #000; /* The default text color */
+@h1: #f04e2a; /* By default h1 inherits the text color */
+@h2: #78a648; /* By default h2 inherits the h1 color */
+@h3: #8f7b52; /* By default h3 inherits the h2 color */
+@h4: #606060; /* By default h4 inherits the h3 color */
+@h5: #000; /* By default h5 inherits the h4 color */
+@h6: @h5; /* By default h6 inherits the h5 color */
+
+@link: #006857;
+@link-visited: #006857;
+@link-hover: @link;
+@link-active: #006857;
+
+@content: @page; /* The content wrapper background, can be changed to background picture */
+
+/*
+ * Aliases
+ * Helper classes to simplify declarations
+ */
+
+/*
+ * Margins/paddings
+ * It makes margin @font-size, if parameter isn't added.
+ * Usage: .margin(16px) //It makes 16px margin.
+ *        .m-top // It makes a default size margin at the top
+ */
+
+.margin(@num: @grid-margin;){
+  margin: @num;
+}
+
+.m-top(@num: @grid-margin;){
+  margin-top: @num;
+}
+
+.m-bottom(@num: @grid-margin;) {
+  margin-bottom: @num;
+}
+
+.m-left(@num: @grid-margin;) {
+  margin-left: @num;
+}
+
+.m-right(@num: @grid-margin;) {
+  margin-right: @num;
+}
+
+.padding(@num: @grid-margin;) {
+  padding: @num;
+}
+
+.p-top(@num: @grid-margin;) {
+  padding-top: @num;
+}
+
+.p-bottom(@num: @grid-margin;) {
+  padding-bottom: @num;
+}
+
+.p-left(@num: @grid-margin;) {
+  padding-left: @num;
+}
+
+.p-right(@num: @grid-margin;) {
+  padding-right: @num;
+}
+
+/* Font size alias: .fs(8px) makes 8px font size. If parameter isn't added, the default font size is used */
+
+.fs(@num: @font-size;) {
+  font-size: @num;
+}
+
+/* Text alignment aliases. */
+.align-left{
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+/* Some text style alias */
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+/* Block aliases */
+
+.block {
+  display: block
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+/* Clearing aliases */
+
+.clear {
+  clear: both;
+  display: block;
+}
+
+.cl-left {
+  clear: left;
+}
+
+.cl-right {
+  clear: right;
+}
+
+/*
+ * 960gs Grid system
+ * With less you can user grid system, without overriding templates, and more flexible, than normal gs
+ * Just overwrite the grid system variables in variables section
+ */
+
+ .alpha {
+  margin-left: 0;
+}
+
+.omega {
+  margin-right: 0;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: @width;
+}
+
+.grid(@count: 1) {
+  display: inline;
+  float: left;
+  width: @first-width + ((@count - 1) * @grid-step);
+  margin-left: @grid-margin;
+  margin-right: @grid-margin;
+}
+
+/* `Prefix Extra Space */
+.prefix(@count: 1) {
+  padding-left: @grid-step * @count;
+}
+
+/* `Suffix Extra Space */
+.suffix(@count: 1) {
+  padding-right: @grid-step * @count;
+}
+
+/* `Push Space */
+.push(@count: 1) {
+  left: @grid-step * @count;
+  position: relative;
+}
+
+/* `Pull Space */
+.pull(@count: 1) {
+  left: -1 * (@grid-step * @count);
+}
+
+/*
+ * Useful classes
+/*
+
+/*
+ * Set the element's height to @count * line-height
+ */
+.height(@count: 1;) {
+  height: @count * @line-height;
+}
+
+ /*
+ * Markup free clearing (See: http://www.positioniseverything.net/easyclearing.html )
+ */
+
+.clearfix{
+  &:after {
+	  content: ".";
+	  display: block;
+	  height: 0;
+	  clear: both;
+	  visibility: hidden;
+	}
+}
+
+/**
+ * Hide elements from all users.
+ *
+ * Used for elements which should not be immediately displayed to any user. An
+ * example would be a collapsible fieldset that will be expanded with a click
+ * from a user. The effect of this class can be toggled with the jQuery show()
+ * and hide() functions.
+ */
+.element-hidden {
+  display: none;
+}
+
+/**
+ * Hide elements visually, but keep them available for screen-readers.
+ *
+ * Used for information required for screen-reader users to understand and use
+ * the site where visual display is undesirable. Information provided in this
+ * manner should be kept concise, to avoid unnecessary burden on the user. Must
+ * not be used for focusable elements (such as links and form elements) as this
+ * causes issues for keyboard only or voice recognition users. "!important" is
+ * used to prevent unintentional overrides.
+ */
+.element-invisible {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/*
+ * Create link block.
+ * It's used to make an overlay link above a content
+ * Set this class to a's parent div
+ * @todo Check it in most browser
+ */
+.link-block {
+	position: absolute;
+	height: 100%;
+  width: 100%;
+  z-index: 1;
+	a {
+		display: block;
+		text-indent: -10000px;
+		height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+
+	}
+}
+
+/*
+ * It makes a normal secondary menu style, separeted by link-color border
+ * @todo browser compatibility
+ */
+
+.secondary-menu-style {
+  .clear;
+  .grid(@grid-count);
+
+  ul {
+    .no-marding;
+
+    li {
+      list-style: none;
+      display: inline-block;
+      width: auto;
+      .m-right(@grid-margin);
+
+      a {
+        .p-right(@grid-margin);
+        border-right:1px solid #65644f !important;
+        //@todo implement height count. Normally doesn't need full heigth to show border.
+        display: inline-block;
+      }
+      &.last a {
+        .no-border;
+      }
+    }
+  }
+}
+ /*
+  * These to set margin and/or padding to 0;
+  * Use it just for "hard" reset and be careful, because of !important
+  */
+.no-marding {
+	margin:0 !important;
+	padding:0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+/* Delete border */
+.no-border{
+  border: none !important;
+}
+
+/*
+ * Align any element to center
+ * @todo is this ok???
+ */
+.center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+/*
+ * Float the element, and add a default margin to the right side
+ * The default margin could override: .left(0 12px 12px 0)
+ */
+.left(@margin: @margin-left-default;) {
+  float: left;
+	margin: @margin;
+}
+
+.right(@margin: @margin-right-default;) {
+  float: right ;
+  margin: @margin;
+}
+
+/*
+ * Separate elements
+ */
+
+.separeted(@margin: @font-size;) {
+  margin: @margin 0;
+}
+
+.top-separeted(@margin: @font-size;) {
+  margin: @margin 0 0;
+}
+
+.bottom-separeted(@margin: @font-size;) {
+  margin: 0 0 @margin 0;
+}
+
+/**
+ * The default element to separate nodes, view rows, etc.
+ * It can contains background image, or border
+ */
+.separator {
+  border: 1px solid #e7e7e7
+}
+
+/*
+ * Add this class to .node, .view-row
+ */
+.row-separator(@height: @font-size * 2 + @separator-height;) {
+  margin-top:@height / 2;
+  overflow:hidden;
+  padding-bottom:@height / 2;
+  .clear;
+  .separator;
+	&.first {
+		margin-top:0;
+	}
+	&.last {
+		background: none;
+		padding:0;
+	}
+}
+
+/**
+ * Reset the .content-default settings. Eg. you aplied the style .content-default
+ * in .block-inner, but in #header section you can skip .content-default settings
+ * if this is used.
+ */
+.content-reset {
+	padding:0;
+	background:none;
+}
+
+/*
+ * Use content default to define the "real" content styles. Eg. node-content,
+ * block-content, view-content. You can create here default padding, line-hight,
+ * word-wrap, text-align.
+ * @todo: review the resets
+ */
+.content-default(@padding: @content-padding) {
+  padding: @padding;
+	background: @content;
+	margin: 0;
+	position: relative;
+
+  /* The most doesn't need duplicate the .content .content declarations */
+	.content,
+	.view-content {
+    .content-default;
+	}
+
+	.section {
+		.content,
+		.view-content {
+			.content-default;
+		}
+	}
+
+  /* @todo: how is this?? */
+	p {
+		&:first-child {
+			//margin-top: 0;
+		}
+	}
+}
+
+/*
+ * The sprite section
+ * If you use sprite, after this you can define you own classes
+ */
+.sprite(@background-position) {
+  background: url(../images/backgrounds.png) no-repeat @background-position;
+  display: block;
+}
+
+/* A sprite example:
+  In this section define your sprite position and width/height:
+    .search-button {
+      .sprite(-530px 0);
+      height: 66px;
+      width: 70px;
+    }
+
+  Then go to the forms.less, and use this
+    #search-block-form {
+    // other styles to search block form
+    button {
+      .search-button;
+      }
+    }
+*/
+
+/*
+ * Headings
+ * All headings inherits the upper level headings declarations.
+ * You only need to define the different.
+ */
+.h1 {
+  color: @h1;
+  font-size: @h1-font;
+  line-height: 1.3em;
+  margin-top: 0;
+  margin-bottom: @font-size;
+}
+
+.h2 {
+  .h1;
+  color: @h2;
+  font-size: @h2-font;
+  margin-top: @font-size;
+}
+
+.h3 {
+  .h2;
+  color: @h3;
+  font-size: @h3-font;
+}
+
+.h4 {
+  .h3;
+  color: @h4;
+  font-size: @h4-font;
+}
+
+.h5 {
+  .h4;
+  color: @h5;
+  font-size: @h5-font;
+}
+
+.h6 {
+  .h4;
+  color: @h6;
+  font-size: @h6-font;
+}
