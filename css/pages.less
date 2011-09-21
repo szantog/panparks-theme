@@ -43,6 +43,7 @@ body {
       }
       a {
         color: #909090;
+        text-decoration: underline;
       }
       &.first a {
         color: @h1;
@@ -52,7 +53,7 @@ body {
 }
 
 #page-wrapper {
-  background: @page;
+
 }
 
 #page {
@@ -89,15 +90,21 @@ body {
  * Header
  */
 #header {
+  position: relative;
+  background: @page;
+  border-left: 1px solid #e2e2e2;
+  border-right: 1px solid #e2e2e2;
+  border-top: 1px solid #e2e2e2;
 }
 
 #header .section {
+  margin: 1em 0 0;
 }
 
 #logo /* Wrapping link for logo */ {
-  float: left; /* LTR */
-  margin: 0;
-  padding: 0;
+  position: absolute;
+  top: -1em;
+  left: -1em;
 }
 
 #logo img {
@@ -135,6 +142,10 @@ div#site-name /* The name of the website */ {
  * Main (container for everything else)
  */
 #main-wrapper {
+  background: @page;
+  border-left: 1px solid #e2e2e2;
+  border-right: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
 }
 
 #main {

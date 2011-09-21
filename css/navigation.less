@@ -4,7 +4,7 @@
  *
  * Default menu styling (ul.menu) is defined in system-menus.css.
  */
-
+ @import "base.less";
 
 /*
  * The active item in a Drupal menu
@@ -26,9 +26,19 @@ li a.active {
  * Primary and Secondary menu links
  */
 #main-menu {
+  padding: 0 0 0 190px;
 }
 
 #secondary-menu {
+  padding: 0 0 0 190px;
+
+  a {
+    color: #909090;
+    .bold;
+    .italic;
+    background: url(../images/secondary-menu-a.png) no-repeat top left;
+    .p-left(12px);
+  }
 }
 
 /*
