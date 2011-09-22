@@ -169,12 +169,20 @@ function panparks_preprocess_comment(&$vars, $hook) {
  * @param $hook
  *   The name of the template being rendered ("block" in this case.)
  */
-/* -- Delete this line if you want to use this function
+
 function panparks_preprocess_block(&$vars, $hook) {
+  $block = $vars['elements']['#block'];
+  if ($block->bid) {
+    switch($block->bid) {
+      case 'views-recent_blog_post-block':
+        $vars['classes_array'][] = 'block-grey';
+        break;
+    }
+  }
   // Add a count to all the blocks in the region.
   $vars['classes_array'][] = 'count-' . $vars['block_id'];
+  //dsm($block);
 }
-// */
 
 /*
  * Override theme_form_element() function

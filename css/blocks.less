@@ -2,10 +2,16 @@
  * @file
  * Block Styling
  */
-
+@import "base.less";
 
 .block /* Block wrapper */ {
   margin-bottom: 1em;
+  .separator {
+    border-color: #fff;
+  }
+  .block-inner {
+    padding: @grid-margin ;
+  }
 }
 
 .block.first /* The first block in the region */ {
@@ -32,7 +38,8 @@
 .count-1 /* Incremental count independent of each region */ {
 }
 
-.block h2.title /* Block title */ {
+h2.block-title /* Block title */ {
+  .sassoon-bold;
 }
 
 .block .content /* Block's content wrapper */ {
@@ -93,4 +100,12 @@
 }
 
 #block-user-3 /* "Who's online" block for a list of the online users */ {
+}
+
+.block-grey {
+  background-color: #ececec;
+
+  h2 {
+    color: #3f3f3f;
+  }
 }
