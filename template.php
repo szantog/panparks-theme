@@ -117,8 +117,8 @@ function panparks_preprocess_page(&$vars, $hook) {
   $vars['search_form']['basic']['#attributes']['class'] = array();
   $vars['donate'] = array(
     '#markup' => l(t('Donate'), 'donate', array('attributes' => array('class' => 'donate'))),
-    '#prefix' => '<span class="donate-pre">',
-    '#suffix' => '</span',
+    '#prefix' => '<div class="donate-pre">',
+    '#suffix' => '</div',
   );
   $vars['section_title'] = 'Section title';
   $vars['section_desc'] = 'Section description';
@@ -200,4 +200,18 @@ function panparks_form_element($vars) {
   }
   //kpr(get_defined_vars());
   return theme_form_element($vars);
+}
+
+function panparks_button($variables) {
+  $element = $variables['element'];
+  $element['#attributes']['type'] = 'submit';
+  $element['#attributes']['class'][] = 'button';
+  element_set_attributes($element, array('id', 'name', 'value'));
+
+  $element['#attributes']['class'][] = 'form-' . $element['#button_type'];
+  if (!empty($element['#attributes']['disabled'])) {
+    $element['#attributes']['class'][] = 'form-button-disabled';
+  }
+
+  return '<div class="button-pre"><input' . drupal_attributes($element['#attributes']) . ' /></div>';
 }

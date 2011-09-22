@@ -226,6 +226,10 @@
   .fs(11px);
 }
 
+.big {
+  .fs(14px);
+}
+
 .bold {
   font-weight: bold;
 }
@@ -601,7 +605,7 @@
   .no-border;
   .sprite(right -255px);
   height: 22px;
-  display: inline-block;
+  display: inline-block !important;
 }
 
 .input-pre {
@@ -610,17 +614,32 @@
   width: 6px;
   .left(0);
 }
+.button {
+  .no-border;
+  .sprite(right -355px);
+  height: 26px;
+  color: #fff;
+  .bold;
+  .italic;
+  .big;
+  line-height: 25px;
+  cursor: pointer;
+  padding: 0 1em 0 8px;
+  outline: none;
+}
 
-.search-button {
+.button-pre {
+  .sprite(-634px -384px);
+  height: 26px;
+  .p-left(6px);
+  .left(0);
+}
+
+.search-button-pre {
   .no-border;
   .sprite(-20px 0);
   width: 30px;
   height: 22px;
-  color: #fff;
-  .bold;
-  .italic;
-  .fs(8px);
-  cursor: pointer;
 }
 
 .donate {
@@ -634,6 +653,7 @@
   .bold;
   .italic;
   color: #fff !important;
+  outline: none;
 }
 
 .donate-pre {

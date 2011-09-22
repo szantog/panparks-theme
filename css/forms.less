@@ -175,18 +175,30 @@ form tbody th {
     width: 120px;
   }
 
+  .button-pre {
+    padding: 0;
+    .search-button-pre;
+  }
+
   .form-submit {
-    .search-button;
-    .m-left;
+    background: none;
+    height: 18px;
+    color: #fff;
+    .bold;
+    .italic;
+    .fs(8px);
+    cursor: pointer;
+    .no-border;
+    padding: 0 4px;
   }
 }
 
 /* Animated throbber */
 html.js input.form-autocomplete {
-  background-image: url(../../misc/throbber.gif);
+  background-image: url(/misc/throbber.gif);
   background-position: 100% 4px; /* LTR */
   background-repeat: no-repeat;
 }
 html.js input.throbbing {
-  background-position: 100% -20px; /* LTR */
+  background-position: 100% -16px; /* LTR */
 }
