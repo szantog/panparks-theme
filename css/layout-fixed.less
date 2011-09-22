@@ -71,6 +71,7 @@ body {
 }
 
 #main {
+  padding: 0 @grid-margin 0 @grid-margin;
 }
 
 /*
@@ -89,6 +90,10 @@ body {
   width: @width - @left-sidebar - 4 * @grid-margin;
   margin-left: @left-sidebar + 3 * @grid-margin; /* LTR */ /* The width of .region-sidebar-first. */
   margin-right: -1 * @width; /* LTR */ /* Negative value of #content's width + left margin. */
+
+  margin-left: 250px;
+  margin-right: -1030px;
+  width: 690px;
 }
 
 .sidebar-second #content {
@@ -146,9 +151,11 @@ body {
 .region-sidebar-first {
   float: left; /* LTR */
   width: @left-sidebar;
-  margin-left: @grid-margin; /* LTR */
   margin-right: -1 * (@left-sidebar + @grid-margin); /* LTR */ /* Negative value of .region-sidebar-first's width + left margin. */
   padding: 0; /* DO NOT CHANGE. Add padding or margin to .region-sidebar-first .section. */
+
+  margin-right: -250px;
+  width: 230px;
 }
 
 .region-sidebar-first .section {
