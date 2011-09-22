@@ -181,8 +181,9 @@ function panparks_form_element($vars) {
   $element = &$vars['element'];
   //Need special prefix before input tag to add background image
   if ($element['#type'] && $element['#type'] == 'textfield') {
-    $pre = '<span class="input-pre"></span>';
-    $element['#children'] = isset($element['#children']) ? $pre . $element['#children'] : NULL;
+    $pre = '<span class="input-pre"></span><div class="input">';
+    $post = '</div>';
+    $element['#children'] = isset($element['#children']) ? $pre . $element['#children'] .$post : NULL;
   }
   //kpr(get_defined_vars());
   return theme_form_element($vars);
