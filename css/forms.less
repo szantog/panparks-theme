@@ -2,7 +2,7 @@
  * @file
  * Form Styling
  */
-
+ @import "base.less";
 
 .form-item,
 .form-checkboxes,
@@ -131,4 +131,36 @@ form thead th {
 
 form tbody th {
   border-bottom: 1px solid #ccc;
+}
+
+.form-type-textfield {
+  input {
+    .no-border;
+    background: none;
+  }
+}
+
+#search-form {
+  .form-item {
+    .margin(0);
+    float: left;
+  }
+
+  .form-text {
+    width: 120px;
+  }
+
+  .form-submit {
+    .search-button;
+  }
+}
+
+/* Animated throbber */
+html.js input.form-autocomplete {
+  background-image: url(../../misc/throbber.gif);
+  background-position: 100% 4px; /* LTR */
+  background-repeat: no-repeat;
+}
+html.js input.throbbing {
+  background-position: 100% -20px; /* LTR */
 }
