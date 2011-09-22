@@ -156,7 +156,9 @@ form tbody th {
   border-bottom: 1px solid #ccc;
 }
 
-.form-type-textfield {
+.form-type-textfield,
+.form-type-password,
+.form-type-file {
   input {
     .no-border;
     background: none;
@@ -165,7 +167,7 @@ form tbody th {
 
 #search-form {
   .form-item {
-    .margin(0);
+    .margin(0 10px 0 0);
     float: left;
   }
 
@@ -175,6 +177,7 @@ form tbody th {
 
   .form-submit {
     .search-button;
+    .m-left;
   }
 }
 

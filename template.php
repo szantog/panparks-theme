@@ -116,8 +116,8 @@ function panparks_preprocess_page(&$vars, $hook) {
   $vars['search_form']['basic']['submit']['#value'] = t('OK');
   $vars['search_form']['basic']['#attributes']['class'] = array();
   $vars['donate'] = array(
-    '#markup' => l(t('donate'), 'donate'),
-    '#prefix' => '<span class="donate">',
+    '#markup' => l(t('Donate'), 'donate', array('attributes' => array('class' => 'donate'))),
+    '#prefix' => '<span class="donate-pre">',
     '#suffix' => '</span',
   );
   $vars['section_title'] = 'Section title';
@@ -193,8 +193,8 @@ function panparks_preprocess_block(&$vars, $hook) {
 function panparks_form_element($vars) {
   $element = &$vars['element'];
   //Need special prefix before input tag to add background image
-  if ($element['#type'] && $element['#type'] == 'textfield') {
-    $pre = '<span class="input-pre"></span><div class="input">';
+  if ($element['#type'] && ($element['#type'] == 'textfield' || $element['#type'] == 'password' || $element['#type'] == 'file')) {
+    $pre = '<span class="input-pre"></span><div class="input ' . $element['#type'] . '">';
     $post = '</div>';
     $element['#children'] = isset($element['#children']) ? $pre . $element['#children'] .$post : NULL;
   }

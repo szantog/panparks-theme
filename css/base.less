@@ -222,6 +222,10 @@
 }
 
 /* Some text style alias */
+.small {
+  .fs(11px);
+}
+
 .bold {
   font-weight: bold;
 }
@@ -619,7 +623,27 @@
   cursor: pointer;
 }
 
+.donate {
+  .fs(16px);
+  .no-border;
+  .sprite(right -75px);
+  height: 31px;
+  display: inline-block;
+  padding: 0 2em 0 26px;
+  line-height: 31px;
+  .bold;
+  .italic;
+  color: #fff !important;
+}
 
+.donate-pre {
+  .sprite(-634px -110px);
+  height: 31px;
+  width: 6px;
+  .left(0);
+  .p-left(6px);
+  .m-top;
+}
 
 /*
  * Headings
