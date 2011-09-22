@@ -91,7 +91,6 @@ body {
  */
 #header {
   position: relative;
-  background: @page;
   border-left: 1px solid #e2e2e2;
   border-right: 1px solid #e2e2e2;
   border-top: 1px solid #e2e2e2;
@@ -110,10 +109,30 @@ body {
       .element-invisible;
     }
   }
+  #header-content {
+    background: url(../images/header-tmp.jpg) no-repeat;
+    width: 100%;
+    .clear;
+    height: 200px;
+    overflow: hidden;
+    #section-description {
+      .m-top(80px);
+      h2 {
+        .fs(97px);
+        color: #fff;
+      }
+      h3 {
+        .fs(24px);
+        color: #fff;
+      }
+    }
+  }
 }
 
 #header .section {
   margin: 1em 0 0;
+  background: @page;
+  width: 100%;
 }
 
 
