@@ -114,12 +114,13 @@ function panparks_preprocess_page(&$variables, $hook) {
   }
   $variables['search_form'] = drupal_get_form('search_form');
   $variables['search_form']['basic']['submit']['#value'] = t('OK');
+  $variables['search_form']['basic']['#attributes']['class'] = array();
   $variables['donate'] = array(
     '#markup' => l(t('donate'), 'donate'),
     '#prefix' => '<span class="donate">',
     '#suffix' => '</span',
   );
-  dsm(get_defined_vars());
+  //dsm(get_defined_vars());
 }
 
 
@@ -172,3 +173,17 @@ function panparks_preprocess_block(&$variables, $hook) {
   $variables['classes_array'][] = 'count-' . $variables['block_id'];
 }
 // */
+
+/*
+ * Override theme_form_element() function
+ */
+function panparks_form_element($vars) {
+  $element = &$vars['element'];
+  //Need special prefix before input tag to add background image
+  if ($element['#type'] && $element['#type'] == 'textfield') {
+    $pre = '<span class="input-pre"></span>';
+    $element['#children'] = isset($element['#children']) ? $pre . $element['#children'] : NULL;
+  }
+  //kpr(get_defined_vars());
+  return theme_form_element($vars);
+}
