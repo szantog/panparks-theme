@@ -95,11 +95,27 @@ body {
   border-left: 1px solid #e2e2e2;
   border-right: 1px solid #e2e2e2;
   border-top: 1px solid #e2e2e2;
+
+  #header-menu {
+    float: left;
+    width: 500px;
+    .grid(18);
+    .alpha;
+  }
+  #header-donate-search {
+    width: 180px;
+    .grid(6);
+    .omega;
+    label {
+      .element-invisible;
+    }
+  }
 }
 
 #header .section {
   margin: 1em 0 0;
 }
+
 
 #logo /* Wrapping link for logo */ {
   position: absolute;
@@ -319,4 +335,10 @@ ul.links li {
 }
 
 .box .content /* Box's content wrapper */ {
+}
+
+div.krumo-root {
+    border: 1px solid black;
+    clear: both;
+    margin: 1em 0;
 }
