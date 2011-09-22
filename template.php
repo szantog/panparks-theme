@@ -116,7 +116,7 @@ function panparks_preprocess_page(&$vars, $hook) {
   $vars['search_form']['basic']['submit']['#value'] = t('OK');
   $vars['search_form']['basic']['#attributes']['class'] = array();
   $vars['donate'] = array(
-    '#markup' => l(t('Donate'), 'donate', array('attributes' => array('class' => 'donate'))),
+    '#markup' => l(t('Donate now'), 'support', array('attributes' => array('class' => 'donate'))),
     '#prefix' => '<div class="donate-pre">',
     '#suffix' => '</div',
   );
