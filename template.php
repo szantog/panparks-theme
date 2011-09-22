@@ -66,31 +66,31 @@ if (!module_exists('less')){
 /**
  * Override or insert variables into the html templates.
  *
- * @param $variables
+ * @param $vars
  *   An array of variables to pass to the theme template.
  * @param $hook
  *   The name of the template being rendered ("html" in this case.)
  */
 /* -- Delete this line if you want to use this function
-function panparks_preprocess_html(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+function panparks_preprocess_html(&$vars, $hook) {
+  $vars['sample_variable'] = t('Lorem ipsum.');
 
   // The body tag's classes are controlled by the $classes_array variable. To
   // remove a class from $classes_array, use array_diff().
-  //$variables['classes_array'] = array_diff($variables['classes_array'], array('class-to-remove'));
+  //$vars['classes_array'] = array_diff($vars['classes_array'], array('class-to-remove'));
 }
 // */
 
 /**
  * Override or insert variables into the page templates.
  *
- * @param $variables
+ * @param $vars
  *   An array of variables to pass to the theme template.
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
 
-function panparks_preprocess_page(&$variables, $hook) {
+function panparks_preprocess_page(&$vars, $hook) {
   global $user;
   if ($user->uid > 0) {
     $attributes = array(
@@ -110,16 +110,18 @@ function panparks_preprocess_page(&$variables, $hook) {
         'class' => array(''),
       ),
     );
-    $variables['user_logged_in'] = theme('item_list', array('items' => $items, 'attributes' => $attributes)) ;
+    $vars['user_logged_in'] = theme('item_list', array('items' => $items, 'attributes' => $attributes)) ;
   }
-  $variables['search_form'] = drupal_get_form('search_form');
-  $variables['search_form']['basic']['submit']['#value'] = t('OK');
-  $variables['search_form']['basic']['#attributes']['class'] = array();
-  $variables['donate'] = array(
+  $vars['search_form'] = drupal_get_form('search_form');
+  $vars['search_form']['basic']['submit']['#value'] = t('OK');
+  $vars['search_form']['basic']['#attributes']['class'] = array();
+  $vars['donate'] = array(
     '#markup' => l(t('donate'), 'donate'),
     '#prefix' => '<span class="donate">',
     '#suffix' => '</span',
   );
+  $vars['section_title'] = 'Section title';
+  $vars['section_desc'] = 'Section description';
   //dsm(get_defined_vars());
 }
 
@@ -127,20 +129,20 @@ function panparks_preprocess_page(&$variables, $hook) {
 /**
  * Override or insert variables into the node templates.
  *
- * @param $variables
+ * @param $vars
  *   An array of variables to pass to the theme template.
  * @param $hook
  *   The name of the template being rendered ("node" in this case.)
  */
 /* -- Delete this line if you want to use this function
-function panparks_preprocess_node(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+function panparks_preprocess_node(&$vars, $hook) {
+  $vars['sample_variable'] = t('Lorem ipsum.');
 
   // Optionally, run node-type-specific preprocess functions, like
   // panparks_preprocess_node_page() or panparks_preprocess_node_story().
-  $function = __FUNCTION__ . '_' . $variables['node']->type;
+  $function = __FUNCTION__ . '_' . $vars['node']->type;
   if (function_exists($function)) {
-    $function($variables, $hook);
+    $function($vars, $hook);
   }
 }
 // */
@@ -148,29 +150,29 @@ function panparks_preprocess_node(&$variables, $hook) {
 /**
  * Override or insert variables into the comment templates.
  *
- * @param $variables
+ * @param $vars
  *   An array of variables to pass to the theme template.
  * @param $hook
  *   The name of the template being rendered ("comment" in this case.)
  */
 /* -- Delete this line if you want to use this function
-function panparks_preprocess_comment(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+function panparks_preprocess_comment(&$vars, $hook) {
+  $vars['sample_variable'] = t('Lorem ipsum.');
 }
 // */
 
 /**
  * Override or insert variables into the block templates.
  *
- * @param $variables
+ * @param $vars
  *   An array of variables to pass to the theme template.
  * @param $hook
  *   The name of the template being rendered ("block" in this case.)
  */
 /* -- Delete this line if you want to use this function
-function panparks_preprocess_block(&$variables, $hook) {
+function panparks_preprocess_block(&$vars, $hook) {
   // Add a count to all the blocks in the region.
-  $variables['classes_array'][] = 'count-' . $variables['block_id'];
+  $vars['classes_array'][] = 'count-' . $vars['block_id'];
 }
 // */
 
