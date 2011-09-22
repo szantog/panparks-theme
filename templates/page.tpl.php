@@ -116,7 +116,7 @@
           ),
         )); ?>
 
-        <?php print theme('links__system_main_menu', array(
+        <?php print theme('links__menu_primary_menu', array(
           'links' => $main_menu,
           'attributes' => array(
             'id' => 'main-menu',
