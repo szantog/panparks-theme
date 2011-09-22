@@ -112,8 +112,14 @@ function panparks_preprocess_page(&$variables, $hook) {
     );
     $variables['user_logged_in'] = theme('item_list', array('items' => $items, 'attributes' => $attributes)) ;
   }
-  $variables['search_form'] = drupal_get_form('search-form');
-  $variables['donate'] = l(t('donate'), 'donate');
+  $variables['search_form'] = drupal_get_form('search_form');
+  $variables['search_form']['basic']['submit']['#value'] = t('OK');
+  $variables['donate'] = array(
+    '#markup' => l(t('donate'), 'donate'),
+    '#prefix' => '<span class="donate">',
+    '#suffix' => '</span',
+  );
+  dsm(get_defined_vars());
 }
 
 

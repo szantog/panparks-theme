@@ -101,34 +101,39 @@
       </div><!-- /#name-and-slogan -->
     <?php endif; ?>
 
-    <div id="header-menu "class="">
-      <?php print theme('links__system_secondary_menu', array(
-        'links' => $secondary_menu,
-        'attributes' => array(
-          'id' => 'secondary-menu',
-          'class' => array('links', 'inline'),
-        ),
-        'heading' => array(
-          'text' => $secondary_menu_heading,
-          'level' => 'h2',
-          'class' => array('element-invisible'),
-        ),
-      )); ?>
+    <div id="header-menu-search "class="">
+      <div id="header-menu "class="">
+        <?php print theme('links__system_secondary_menu', array(
+          'links' => $secondary_menu,
+          'attributes' => array(
+            'id' => 'secondary-menu',
+            'class' => array('links', 'inline'),
+          ),
+          'heading' => array(
+            'text' => $secondary_menu_heading,
+            'level' => 'h2',
+            'class' => array('element-invisible'),
+          ),
+        )); ?>
 
-      <?php print theme('links__system_main_menu', array(
-        'links' => $main_menu,
-        'attributes' => array(
-          'id' => 'main-menu',
-          'class' => array('links', 'inline', 'clearfix'),
-        ),
-        'heading' => array(
-          'text' => t('Main menu'),
-          'level' => 'h2',
-          'class' => array('element-invisible'),
-        ),
-      )); ?>
+        <?php print theme('links__system_main_menu', array(
+          'links' => $main_menu,
+          'attributes' => array(
+            'id' => 'main-menu',
+            'class' => array('links', 'inline', 'clearfix'),
+          ),
+          'heading' => array(
+            'text' => t('Main menu'),
+            'level' => 'h2',
+            'class' => array('element-invisible'),
+          ),
+        )); ?>
+      </div>
+      <div id="header-donate-search">
+        <?php if ($search_form) : print render($search_form); endif; ?>
+        <?php if ($donate) : print render($donate); endif; ?>
+      </div>
     </div>
-
     <div id="header-content" class="clearfix">
       <?php print render($page['header']); ?>
     </div>
