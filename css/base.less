@@ -527,17 +527,31 @@
  * If you use sprite, after this you can define you own classes
  */
 .sprite(@background-position) {
-  background: url(../images/backgrounds.png) no-repeat @background-position;
+  background: url(../images/sprite.png) no-repeat @background-position;
   display: block;
 }
 
-/* A sprite example:
-  In this section define your sprite position and width/height:
-    .search-button {
-      .sprite(-530px 0);
-      height: 66px;
-      width: 70px;
-    }
+.secondary-menu-a {
+  &:before {
+    content: '';
+    .sprite(0 1px);
+    width: 6px;
+    height: 15px;
+    display: inline-block
+  }
+}
+
+.main-menu-li {
+  .sprite(-635px -40px);
+//  height: 66px;
+//  width: 70px;
+}
+
+.main-menu-a {
+  .sprite(right 0);
+//  height: 66px;
+//  width: 70px;
+}
 
   Then go to the forms.less, and use this
     #search-block-form {
