@@ -16,6 +16,39 @@
  * and line-height in ems (relative to the 16px default font) allows the user
  * to resize the font in the browser and produces the most consistent results
  * across different browsers.
+*/
+
+@font-face {
+    font-family: 'SassoonSansSlopeStdBold';
+    src: url('../fonts/sassoonsansslopestd-bold-webfont.eot?') format('eot'),
+         url('../fonts/sassoonsansslopestd-bold-webfont.woff') format('woff'),
+         url('../fonts/sassoonsansslopestd-bold-webfont.ttf') format('truetype'),
+         url('../fonts/sassoonsansslopestd-bold-webfont.svg#') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SassoonSansSlopeStdRegular';
+    src: url('../fonts/sassoonsansslopestd-regular-webfont.eot?') format('eot'),
+         url('../fonts/sassoonsansslopestd-regular-webfont.woff') format('woff'),
+         url('../fonts/sassoonsansslopestd-regular-webfont.ttf') format('truetype'),
+         url('../fonts/sassoonsansslopestd-regular-webfont.svg#webfont8TXq9vVg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WorchesterEFOP-Regular';
+    src: url('../fonts/worchesterefop-regular-webfont.eot?') format('eot'),
+         url('../fonts/worchesterefop-regular-webfont.woff') format('woff'),
+         url('../fonts/worchesterefop-regular-webfont.ttf') format('truetype'),
+         url('../fonts/worchesterefop-regular-webfont.svg#webfontg98liuxg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /* The em based font size. Use a 12px base font size with a 16px line height */
 @font-size-em: 0.75em; /* 16px x .75 = 12px */
@@ -58,6 +91,8 @@
 //@font-family: Arial, Helvetica, "Nimbus Sans L", sans-serif;
 //@font-family: "Courier New", "DejaVu Sans Mono", monospace;
 
+@sassoon-bold: SassoonSansSlopeStdBold;
+@sassoon: SassoonSansSlopeStdRegular;
 /*
  * Grid system variables
  */
@@ -236,6 +271,13 @@
   clear: right;
 }
 
+.sassoon {
+  font-family: @sassoon;
+}
+
+.sassoon-bold {
+  font-family: @sassoon-bold;
+}
 /*
  * 960gs Grid system
  * With less you can user grid system, without overriding templates, and more flexible, than normal gs

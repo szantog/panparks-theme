@@ -137,8 +137,8 @@
     <div id="header-content" class="clearfix">
       <?php print render($page['header']); ?>
       <div id="section-description">
-          <h2 id="section-title" class="section-description left"><?php if ($section_title) : print render($section_title); endif; ?></h2>
-          <h3 id="section-desc" class="section-description left"><?php if ($section_desc) : print render($section_desc); endif; ?></h3>
+        <h2 id="section-title" class="section-description left"><?php if ($section_title) : print render($section_title); endif; ?></h2>
+        <h3 id="section-desc" class="section-description left"><?php if ($section_desc) : print render($section_desc); endif; ?></h3>
       </div>
     </div>
   </div></div><!-- /.section, /#header -->
