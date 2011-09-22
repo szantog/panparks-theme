@@ -7,73 +7,70 @@
  * Compare this with default CSS found in the system module's stylesheet (a copy
  * of which is in drupal6-reference.css, line 510.)
  */
-
+ @import 'base.less';
 
 div.tabs {
-  margin: 0 0 5px 0;
+  margin: 0;
+  border-bottom: 1px solid #e4efed;
 }
 
+
 ul.primary {
-  margin: 0;
-  padding: 0 0 0 10px; /* LTR */
-  border-width: 0;
-  list-style: none;
   white-space: nowrap;
   line-height: normal;
-  background: url(../images/tab-bar.png) repeat-x left bottom;
+  height: 21px;
+  .no-border;
 }
 
 ul.primary li {
   float: left; /* LTR */
-  margin: 0;
+  margin: 4px 0.5 * @grid-margin 0;
   padding: 0;
+
+  a {
+    .no-border;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    text-decoration: none;
+    .uppercase;
+    color: #fff;
+    .bold;
+    .italic;
+    background-color: transparent;
+    .tab-pre;
+
+  }
+
+  .tab {
+    .tab;
+    padding: 4px 20px 0 14px;
+  }
+
+  &.active,
+  &:hover {
+    margin: 0 0.5 * @grid-margin 0;
+
+    a {
+
+      .tab-active-pre;
+    }
+
+    .tab {
+      .p-top(6px);
+      .tab-active;
+    }
+  }
+}
+ul.primary li a
+
+.primary-active {
+
+
+
 }
 
-ul.primary li a {
-  display: block;
-  height: 24px;
-  margin: 0;
-  padding: 0 0 0 5px; /* width of tab-left.png */
-  border-width: 0;
-  font-weight: bold;
-  text-decoration: none;
-  color: #777;
-  background-color: transparent;
-  background: url(../images/tab-left.png) no-repeat left -38px;
-}
-
-ul.primary li a .tab {
-  display: block;
-  height: 20px; /* 24px (parent) - 4px (padding) */
-  margin: 0;
-  padding: 4px 13px 0 6px;
-  border-width: 0;
-  line-height: 20px;
-  background: url(../images/tab-right.png) no-repeat right -38px;
-}
-
-ul.primary li a:hover {
-  border-width: 0;
-  background-color: transparent;
-  background: url(../images/tab-left.png) no-repeat left -76px;
-}
-
-ul.primary li a:hover .tab {
-  background: url(../images/tab-right.png) no-repeat right -76px;
-}
-
-ul.primary li.active a,
-ul.primary li.active a:hover {
-  border-width: 0;
-  color: #000;
-  background-color: transparent;
-  background: url(../images/tab-left.png) no-repeat left 0;
-}
-
-ul.primary li.active a .tab,
-ul.primary li.active a:hover .tab {
-  background: url(../images/tab-right.png) no-repeat right 0;
-}
 
 ul.secondary {
   margin: 0;
@@ -81,7 +78,7 @@ ul.secondary {
   border-bottom: 1px solid #c0c0c0;
   list-style: none;
   white-space: nowrap;
-  background: url(../images/tab-secondary-bg.png) repeat-x left bottom;
+  //background: url(../images/tab-secondary-bg.png) repeat-x left bottom;
 }
 
 ul.secondary li {
@@ -99,7 +96,7 @@ ul.secondary a {
   border: 1px solid #c0c0c0;
   text-decoration: none;
   color: #777;
-  background: url(../images/tab-secondary.png) repeat-x left -56px;
+  //background: url(../images/tab-secondary.png) repeat-x left -56px;
 }
 
 ul.secondary a .tab {
@@ -111,12 +108,12 @@ ul.secondary a .tab {
 }
 
 ul.secondary a:hover {
-  background: url(../images/tab-secondary.png) repeat-x left bottom;
+  //background: url(../images/tab-secondary.png) repeat-x left bottom;
 }
 
 ul.secondary a.active,
 ul.secondary a.active:hover {
   border: 1px solid #c0c0c0;
   color: #000;
-  background: url(../images/tab-secondary.png) repeat-x left top;
+  //background: url(../images/tab-secondary.png) repeat-x left top;
 }
