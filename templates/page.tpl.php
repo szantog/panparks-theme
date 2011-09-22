@@ -101,8 +101,8 @@
       </div><!-- /#name-and-slogan -->
     <?php endif; ?>
 
-    <div id="header-menu-search "class="">
-      <div id="header-menu "class="">
+    <div id="header-menu-search" class="">
+      <div id="header-menu" class="">
         <?php print theme('links__system_secondary_menu', array(
           'links' => $secondary_menu,
           'attributes' => array(
