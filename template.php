@@ -175,7 +175,10 @@ function panparks_preprocess_block(&$vars, $hook) {
   if ($block->bid) {
     switch($block->bid) {
       case 'views-recent_blog_post-block':
-        $vars['classes_array'][] = 'block-grey';
+        $vars['classes_array'][] = 'block-red';
+        break;
+      case 'content-navigation':
+        $vars['classes_array'][] = 'block-red';
         break;
     }
   }
