@@ -202,7 +202,7 @@ function panparks_password($variables) {
   _form_set_class($element, array('form-text'));
   $pre = '<span class="input-pre"></span><div class="input ' . $element['#type'] . '">';
   $post = '</div>';
-  dsm(get_defined_vars());
+
   return $pre . '<input' . drupal_attributes($element['#attributes']) . ' />' . $post;
 }
 
