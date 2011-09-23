@@ -22,7 +22,10 @@ ul.primary {
   .no-border;
 }
 
-ul.primary li {
+/*
+ * Old style with sprite
+ */
+ul-old.primary li {
   float: left; /* LTR */
   margin: 4px 0.5 * @grid-margin 0;
   padding: 0;
@@ -40,12 +43,14 @@ ul.primary li {
     .italic;
     background-color: transparent;
     .tab-pre;
+    .transition;
 
   }
 
   .tab {
     .tab;
     padding: 4px 20px 0 14px;
+
   }
 
   &.active,
@@ -63,14 +68,48 @@ ul.primary li {
     }
   }
 }
-ul.primary li a
 
-.primary-active {
+ul.primary li {
+  float: left; /* LTR */
+  margin: 4px 0.5 * @grid-margin 0;
+  padding: 0;
 
+  a {
+    .no-border;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    text-decoration: none;
+    .uppercase;
+    color: #fff;
+    .bold;
+    .italic;
+  }
 
+  .tab {
+    .border-radius(10px 10px 0 0);
+    background-color: @d-green;
+    padding: 6px 20px 5px 20px;
+    .transition;
 
+  }
+
+  &.active,
+  &:hover {
+    .transition;
+    margin: 0 0.5 * @grid-margin 0;
+
+    a {
+    }
+
+    .tab {
+      background-color: #cfe3df;
+      .p-top(8px);
+      .p-bottom(10px);
+    }
+  }
 }
-
 
 ul.secondary {
   margin: 0;
