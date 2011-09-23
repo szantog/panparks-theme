@@ -376,7 +376,12 @@
     rgb(255,255,255) 92%
   );
 }
-
+.transition (@time: 0.3s) {
+  -moz-transition:all @time linear;
+  -o-transition:all @time linear;
+  -webkit-transition:all @time linear;
+  transition:all @time linear;
+}
 /*
  * 960gs Grid system
  * With less you can user grid system, without overriding templates, and more flexible, than normal gs
@@ -837,7 +842,7 @@
   .bold;
   .italic;
   cursor: pointer;
-
+  .transition(0.2s);
   &:hover {
     background-color: @l-green;
     .d-green;
