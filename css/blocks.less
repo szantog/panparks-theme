@@ -125,3 +125,48 @@ h2.block-title /* Block title */ {
     color: #994b2e;
   }
 }
+
+#block-views-slideshow-block {
+  height: 300px;
+  margin: 0;
+  overflow: hidden;
+
+  .block-inner {
+    padding: 0;
+  }
+
+  #views_slideshow_cycle_main_slideshow-block {
+    float: left;
+    width: 660px;
+  }
+
+  .views-slideshow-controls-bottom {
+    float: right;
+    width: 308px;
+
+    .views-slideshow-pager-field-item {
+      .clear;
+      .clearfix;
+      //padding: 0 @grid-margin;
+      background-color: #ddebcf;
+      border-bottom: 1px solid #fff;
+      border-left: 1px solid #fff;
+
+    }
+
+    .views-field-slideshow-picture {
+      .left;
+      margin: @grid-margin;
+
+      img {
+        border: 1px solid #fff;
+      }
+    }
+
+    .views-field-slideshow-body {
+      .p-right(@grid-margin);
+      .p-top;
+    }
+  }
+
+}
