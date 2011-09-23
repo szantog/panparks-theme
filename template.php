@@ -196,18 +196,11 @@ function panparks_preprocess_block(&$vars, $hook) {
  * Override theme_form_element() function
  */
 function panparks_form_element($vars) {
-  $element = &$vars['element'];
-  //Need special prefix before input tag to add background image
-  if ($element['#type'] && ($element['#type'] == 'textfield' || $element['#type'] == 'password' || $element['#type'] == 'file')) {
-    $pre = '<span class="input-pre"></span><div class="input ' . $element['#type'] . '">';
-    $post = '</div>';
-    $element['#children'] = isset($element['#children']) ? $pre . $element['#children'] .$post : NULL;
-  }
-  //kpr(get_defined_vars());
   return theme_form_element($vars);
 }
 
 function panparks_button($variables) {
+  return theme_button($variables);
   $element = $variables['element'];
   $element['#attributes']['type'] = 'submit';
   $element['#attributes']['class'][] = 'button';
@@ -219,4 +212,42 @@ function panparks_button($variables) {
   }
 
   return '<div class="button-pre"><input' . drupal_attributes($element['#attributes']) . ' /></div>';
+}
+
+function panparks_password($variables) {
+  $element = $variables['element'];
+  $element['#attributes']['type'] = 'password';
+  element_set_attributes($element, array('id', 'name', 'size', 'maxlength'));
+  _form_set_class($element, array('form-text'));
+  $pre = '<span class="input-pre"></span><div class="input ' . $element['#type'] . '">';
+  $post = '</div>';
+  dsm(get_defined_vars());
+  return $pre . '<input' . drupal_attributes($element['#attributes']) . ' />' . $post;
+}
+
+function panparks_textfield($variables) {
+  $element = $variables['element'];
+  $element['#attributes']['type'] = 'text';
+  element_set_attributes($element, array('id', 'name', 'value', 'size', 'maxlength'));
+  _form_set_class($element, array('form-text'));
+
+  $extra = '';
+  if ($element['#autocomplete_path'] && drupal_valid_path($element['#autocomplete_path'])) {
+    drupal_add_library('system', 'drupal.autocomplete');
+    $element['#attributes']['class'][] = 'form-autocomplete';
+
+    $attributes = array();
+    $attributes['type'] = 'hidden';
+    $attributes['id'] = $element['#attributes']['id'] . '-autocomplete';
+    $attributes['value'] = url($element['#autocomplete_path'], array('absolute' => TRUE));
+    $attributes['disabled'] = 'disabled';
+    $attributes['class'][] = 'autocomplete';
+    $extra = '<input' . drupal_attributes($attributes) . ' />';
+  }
+
+  $pre = '<span class="input-pre"></span><div class="input ' . $element['#type'] . '">';
+  $post = '</div>';
+
+  $output = $pre . '<input' . drupal_attributes($element['#attributes']) . ' />' . $post;
+  return $output . $extra;
 }
