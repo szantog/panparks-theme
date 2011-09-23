@@ -129,11 +129,23 @@
 //@content-background: @font-size;
 
 /* Colors & backgrounds */
+
+@l-brown #c2a365;
+@brown: #a38c5d;
+@l-green: #ddebcf;
+@green: #78a648;
+@d-green:#004d22;
+@l-red: #f04e2a
+@red: #be3d21;
+@l-grey: #e3e3e3;
+@grey: #a1a1a1;
+@d-grey: #464646;
+
 @body: #e7e7e7; /* The body background, can be changed to background picture */
 @page: #fff; /* The page wrapper background, can be changed to background picture */
 @text: #000; /* The default text color */
-@h1: #f04e2a; /* By default h1 inherits the text color */
-@h2: #78a648; /* By default h2 inherits the h1 color */
+@h1: @l-red; /* By default h1 inherits the text color */
+@h2: @green; /* By default h2 inherits the h1 color */
 @h3: #8f7b52; /* By default h3 inherits the h2 color */
 @h4: #606060; /* By default h4 inherits the h3 color */
 @h5: #000; /* By default h5 inherits the h4 color */
@@ -146,6 +158,7 @@
 
 @content: @page; /* The content wrapper background, can be changed to background picture */
 
+
 /*
  * Aliases
  * Helper classes to simplify declarations
@@ -157,6 +170,54 @@
  * Usage: .margin(16px) //It makes 16px margin.
  *        .m-top // It makes a default size margin at the top
  */
+
+.l-brown {
+  color: @l-brown;
+}
+
+.brown {
+  color: @brown;
+}
+
+.l-green {
+  color: @l-green;
+}
+
+.green {
+  color: @green;
+}
+
+.d-green {
+  color: @d-green;
+}
+
+.l-red {
+  color: @l-red;
+}
+
+.red {
+  color: @red;
+}
+
+.l-grey {
+  color: @l-grey;
+}
+
+.grey {
+  color: @grey;
+}
+
+.d-grey {
+  color: @d-grey;
+}
+
+.white {
+  color: #fff;
+}
+
+.black {
+  color: #000;
+}
 
 .margin(@num: @grid-margin;){
   margin: @num;
