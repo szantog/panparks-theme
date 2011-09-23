@@ -347,6 +347,36 @@
 .sassoon-bold {
   font-family: @sassoon-bold;
 }
+
+/*
+ * CSS3 section
+ */
+
+ .border-radius(@params: 10px) {
+  -moz-border-radius: @params;
+  -webkit-border-radius: @params;
+  border-radius: @params;
+}
+
+.box-shadow(@params: 10px) {
+  -moz-box-shadow: @params;
+  -webkit-box-shadow: @params;
+  box-shadow: @params;
+}
+
+.block-gradient {
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.92, rgb(255,255,255))
+  );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(255,255,255) 92%
+  );
+}
+
 /*
  * 960gs Grid system
  * With less you can user grid system, without overriding templates, and more flexible, than normal gs
