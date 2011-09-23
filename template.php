@@ -193,27 +193,8 @@ function panparks_preprocess_block(&$vars, $hook) {
 }
 
 /*
- * Override theme_form_element() function
+ * Override theme_password() function to set image wrapper around
  */
-function panparks_form_element($vars) {
-  return theme_form_element($vars);
-}
-
-function panparks_button($variables) {
-  return theme_button($variables);
-  $element = $variables['element'];
-  $element['#attributes']['type'] = 'submit';
-  $element['#attributes']['class'][] = 'button';
-  element_set_attributes($element, array('id', 'name', 'value'));
-
-  $element['#attributes']['class'][] = 'form-' . $element['#button_type'];
-  if (!empty($element['#attributes']['disabled'])) {
-    $element['#attributes']['class'][] = 'form-button-disabled';
-  }
-
-  return '<div class="button-pre"><input' . drupal_attributes($element['#attributes']) . ' /></div>';
-}
-
 function panparks_password($variables) {
   $element = $variables['element'];
   $element['#attributes']['type'] = 'password';
@@ -225,6 +206,9 @@ function panparks_password($variables) {
   return $pre . '<input' . drupal_attributes($element['#attributes']) . ' />' . $post;
 }
 
+/*
+ * Override theme_textfield() function to set image wrapper around.
+ */
 function panparks_textfield($variables) {
   $element = $variables['element'];
   $element['#attributes']['type'] = 'text';
