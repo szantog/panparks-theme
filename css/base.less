@@ -706,7 +706,7 @@
   width: 6px;
   .left(0);
 }
-.button {
+.b-utton {
   .no-border;
   .sprite(right -355px);
   height: 26px;
@@ -720,7 +720,7 @@
   outline: none;
 }
 
-.button-pre {
+.b-utton-pre {
   .sprite(-634px -384px);
   height: 26px;
   .p-left(6px);
@@ -824,4 +824,26 @@
   .h4;
   color: @h6;
   font-size: @h6-font;
+}
+
+.button {
+  .no-border;
+  .white;
+  .big;
+  .border-radius;
+  line-height: 25px;
+  background-color: @d-green;
+  padding: 2px 15px 4px;
+  .bold;
+  .italic;
+  cursor: pointer;
+
+  &:hover {
+    background-color: @l-green;
+    .d-green;
+  }
+}
+
+.d-green-button {
+  .button;
 }
