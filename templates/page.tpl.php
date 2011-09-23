@@ -103,18 +103,22 @@
 
     <div id="header-menu-search" class="">
       <div id="header-menu" class="">
-        <?php print theme('links__system_secondary_menu', array(
-          'links' => $secondary_menu,
-          'attributes' => array(
-            'id' => 'secondary-menu',
-            'class' => array('links', 'inline'),
-          ),
-          'heading' => array(
-            'text' => $secondary_menu_heading,
-            'level' => 'h2',
-            'class' => array('element-invisible'),
-          ),
-        )); ?>
+        <div class="upper">
+          <?php print theme('links__system_secondary_menu', array(
+            'links' => $secondary_menu,
+            'attributes' => array(
+              'id' => 'secondary-menu',
+              'class' => array('links', 'inline'),
+            ),
+            'heading' => array(
+              'text' => $secondary_menu_heading,
+              'level' => 'h2',
+              'class' => array('element-invisible'),
+            ),
+          )); ?>
+
+          <?php if ($search_form) : print render($search_form); endif; ?>
+        </div>
 
         <?php print theme('links__menu_primary_menu', array(
           'links' => $main_menu,
@@ -128,10 +132,6 @@
             'class' => array('element-invisible'),
           ),
         )); ?>
-      </div></div>
-      <div id="header-donate-search">
-        <?php if ($search_form) : print render($search_form); endif; ?>
-        <?php if ($donate) : print render($donate); endif; ?>
       </div>
     </div>
     <div id="header-content" class="clearfix">

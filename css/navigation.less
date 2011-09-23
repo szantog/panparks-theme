@@ -27,12 +27,16 @@ li a.active {
  */
 #main-menu {
   float: left;
-  padding: 0 0 0 190px;
+  width: 100%;
   .m-top(22px);
   li {
     .main-menu-li;
     padding: 0 1em 0 5px;
     display: inline-block;
+
+  &.first {
+    margin: 0 0 0 190px;
+  }
    a {
       .fs(16px);
       .bold;
@@ -44,7 +48,15 @@ li a.active {
       display: inline-block;
     }
   }
+  //donate
+  .menu-517 {
+    .donate-pre;
+    .right(0);
 
+    a {
+      .donate;
+    }
+  }
 }
 
 #secondary-menu {
@@ -54,8 +66,7 @@ li a.active {
     color: #909090;
     .bold;
     .italic;
-    .secondary-menu-a
-    //.p-left(12px);
+    .secondary-menu-a;
   }
 }
 
