@@ -120,8 +120,10 @@ function panparks_preprocess_page(&$vars, $hook) {
     '#prefix' => '<div class="donate-pre">',
     '#suffix' => '</div',
   );
-  $vars['section_title'] = 'Section title';
-  $vars['section_desc'] = 'Section description';
+  if (!$vars['is_front']) {
+    $vars['section_title'] = 'Section title';
+    $vars['section_desc'] = 'Section description';
+  }
 
   //We use the primary menu as main menu
   $vars['main_menu'] = menu_navigation_links('menu-primary-menu');
