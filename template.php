@@ -93,42 +93,24 @@ function panparks_preprocess_html(&$vars, $hook) {
 function panparks_preprocess_page(&$vars, $hook) {
   global $user;
   if ($user->uid > 0) {
-    $attributes = array(
-      'class' => 'secondary-menu-style',
-    );
-    $items = array(
-      array(
-        'data' =>  '<small>' . t('!username signed in', array('!username' => theme('username', array('account' => $user)))) . '</small>',
-        'class' => array(''),
-      ),
-      array(
-        'data' =>  '<small>'. l(t('share photos'), DRUPAL_ROOT) . '</small>',
-        'class' => array(''),
-      ),
-      array(
-        'data' =>  '<small>' . l(t('sign out'), 'logout') . '</small>',
-        'class' => array(''),
-      ),
-    );
-    $vars['user_logged_in'] = theme('item_list', array('items' => $items, 'attributes' => $attributes)) ;
+    $user_menu = menu_navigation_links('user-menu');
+    foreach ($user_menu as $key => &$menu_item) {
+      if ($key == 'menu-2') {
+        $menu_item['title'] = check_plain($user->name);
+        $menu_item['suffix'] = ' signed in';
+      }
+    }
+    $vars['user_menu'] = $user_menu;
   }
   $vars['search_form'] = drupal_get_form('search_form');
   $vars['search_form']['basic']['submit']['#value'] = t('OK');
   $vars['search_form']['basic']['#attributes']['class'] = array();
-  $vars['donate'] = array(
-    '#markup' => l(t('Donate now'), 'support', array('attributes' => array('class' => 'donate'))),
-    '#prefix' => '<div class="donate-pre">',
-    '#suffix' => '</div',
-  );
-  if (!$vars['is_front']) {
-    $vars['section_title'] = 'Section title';
-    $vars['section_desc'] = 'Section description';
-  }
+
+  global $base_url;
   $vars['small_logo_path'] = $base_url . '/' . drupal_get_path('theme', 'panparks') . '/images/small-logo.png';
   //We use the primary menu as main menu
   $vars['main_menu'] = menu_navigation_links('menu-primary-menu');
-  
-  //kpr(get_defined_vars());
+  kpr(get_defined_vars());
 }
 
 
@@ -235,4 +217,91 @@ function panparks_textfield($variables) {
 
   $output = $pre . '<input' . drupal_attributes($element['#attributes']) . ' />' . $post;
   return $output . $extra;
+}
+
+/*
+ * Overridden theme_links function to support prefix and suffix.
+ */
+function panparks_links($variables) {
+  $links = $variables['links'];
+  $attributes = $variables['attributes'];
+  $heading = $variables['heading'];
+  global $language_url;
+  $output = '';
+
+  if (count($links) > 0) {
+    $output = '';
+
+    // Treat the heading first if it is present to prepend it to the
+    // list of links.
+    if (!empty($heading)) {
+      if (is_string($heading)) {
+        // Prepare the array that will be used when the passed heading
+        // is a string.
+        $heading = array(
+          'text' => $heading,
+          // Set the default level of the heading.
+          'level' => 'h2',
+        );
+      }
+      $output .= '<' . $heading['level'];
+      if (!empty($heading['class'])) {
+        $output .= drupal_attributes(array('class' => $heading['class']));
+      }
+      $output .= '>' . check_plain($heading['text']) . '</' . $heading['level'] . '>';
+    }
+
+    $output .= '<ul' . drupal_attributes($attributes) . '>';
+
+    $num_links = count($links);
+    $i = 1;
+
+    foreach ($links as $key => $link) {
+      $class = array($key);
+
+      // Add first, last and active classes to the list of links to help out themers.
+      if ($i == 1) {
+        $class[] = 'first';
+      }
+      if ($i == $num_links) {
+        $class[] = 'last';
+      }
+      if (isset($link['href']) && ($link['href'] == $_GET['q'] || ($link['href'] == '<front>' && drupal_is_front_page()))
+           && (empty($link['language']) || $link['language']->language == $language_url->language)) {
+        $class[] = 'active';
+      }
+      $output .= '<li' . drupal_attributes(array('class' => $class)) . '>';
+
+      if (isset($link['prefix'])) {
+        $output .= check_plain($link['prefix']);
+      }
+
+      if (isset($link['href'])) {
+        // Pass in $link as $options, they share the same keys.
+        $output .= l($link['title'], $link['href'], $link);
+      }
+      elseif (!empty($link['title'])) {
+        // Some links are actually not links, but we wrap these in <span> for adding title and class attributes.
+        if (empty($link['html'])) {
+          $link['title'] = check_plain($link['title']);
+        }
+        $span_attributes = '';
+        if (isset($link['attributes'])) {
+          $span_attributes = drupal_attributes($link['attributes']);
+        }
+        $output .= '<span' . $span_attributes . '>' . $link['title'] . '</span>';
+      }
+
+      if (isset($link['suffix'])) {
+        $output .= check_plain($link['suffix']);
+      }
+
+      $i++;
+      $output .= "</li>\n";
+    }
+
+    $output .= '</ul>';
+  }
+
+  return $output;
 }

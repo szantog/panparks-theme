@@ -69,11 +69,21 @@
  */
 ?>
 <div id="page-wrapper"><div id="page">
-  <?php if ($logged_in) : ?>
     <div id="user-logged-in" class="clearfix">
+      <?php print theme('links__user_menu', array(
+        'links' => $user_menu,
+        'attributes' => array(
+          'id' => 'user-menu',
+          'class' => array('links'),
+        ),
+        'heading' => array(
+          'text' => t('User menu'),
+          'level' => 'h2',
+          'class' => array('element-invisible'),
+        ),
+      ));?>
       <?php print render($page['user_menu']); ?>
     </div>
-  <?php endif; ?>
 
   <div id="header"><div class="section clearfix">
 

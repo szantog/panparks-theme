@@ -20,7 +20,7 @@ body {
 
 
 #user-logged-in {
-  .clear;
+  overflow: hidden;
   ul {
     .no-padding;
     .margin(1em 0 0.5em 0);
@@ -30,15 +30,14 @@ body {
       display: inline-block;
       width: auto;
       .m-right(@grid-margin);
-
-      small {
-        color: #909090;
-        .p-right(@grid-margin);
-        border-right:1px solid #909090 !important;
+      .small;
+      color: #909090;
+      .p-right(@grid-margin);
+      border-right:1px solid #909090 !important;
         //@todo implement height count. Normally doesn't need full heigth to show border.
-        display: inline-block;
-      }
-      &.last small {
+      display: inline-block;
+
+      &.last {
         .no-border;
       }
       a {
