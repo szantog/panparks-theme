@@ -182,8 +182,12 @@
 
   </div></div><!-- /#main, /#main-wrapper -->
 
-  <?php print render($page['footer']); ?>
-
+  <?php if ($page['footer']): ?>
+    <div id="footer"><div class="section clearfix">
+      <?php print render($page['footer']); ?>
+    </div>
+  <?php endif; ?>
+      
   <?php if ($page['site_closure']): ?>
     <div id="site-closure"><div class="section clearfix">
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="small-logo"><img src="<?php print $smalllogo; ?>" alt="<?php print t('Home'); ?>" /></a>
