@@ -124,9 +124,10 @@ function panparks_preprocess_page(&$vars, $hook) {
     $vars['section_title'] = 'Section title';
     $vars['section_desc'] = 'Section description';
   }
-
+  $vars['small_logo_path'] = $base_url . '/' . drupal_get_path('theme', 'panparks') . '/images/small-logo.png';
   //We use the primary menu as main menu
   $vars['main_menu'] = menu_navigation_links('menu-primary-menu');
+  
   //kpr(get_defined_vars());
 }
 
