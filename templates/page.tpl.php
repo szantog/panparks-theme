@@ -185,9 +185,9 @@
   <?php if ($page['footer']): ?>
     <div id="footer"><div class="section clearfix">
       <?php print render($page['footer']); ?>
-    </div>
+    </div></div>
   <?php endif; ?>
-      
+
   <?php if ($page['site_closure']): ?>
     <div id="site-closure"><div class="section clearfix">
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="small-logo"><img src="<?php print $smalllogo; ?>" alt="<?php print t('Home'); ?>" /></a>
@@ -197,7 +197,7 @@
       </p>
       <?php print render($page['site_closure']); ?>
       <div id ="macroweb"><small>designed by <a href="http://macroweb.hu">Macroweb</a>, powered by <a href="http://drupal.org">Drupal</a>.</small></div>
-    </div><!-- /#site-closure -->
+    </div></div><!-- /#site-closure -->
   <?php endif; ?>
 
 </div></div><!-- /#page, /#page-wrapper -->
