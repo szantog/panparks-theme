@@ -127,7 +127,7 @@
             ),
           )); ?>
 
-          <?php if ($search_form) : print render($search_form); endif; ?>
+          <?php if ($search_form) : print drupal_render($search_form); endif; ?>
         </div>
 
         <?php print theme('links__menu_primary_menu', array(

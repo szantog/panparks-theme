@@ -104,13 +104,15 @@ function panparks_preprocess_page(&$vars, $hook) {
   }
   $vars['search_form'] = drupal_get_form('search_form');
   $vars['search_form']['basic']['submit']['#value'] = t('OK');
+  $vars['search_form']['basic']['submit']['#prefix'] = '<div class="button-pre">';
+  $vars['search_form']['basic']['submit']['#suffix'] = '</div>';
   $vars['search_form']['basic']['#attributes']['class'] = array();
 
   global $base_url;
   $vars['small_logo_path'] = $base_url . '/' . drupal_get_path('theme', 'panparks') . '/images/small-logo.png';
   //We use the primary menu as main menu
   $vars['main_menu'] = menu_navigation_links('menu-primary-menu');
-  kpr(get_defined_vars());
+  //kpr(get_defined_vars());
 }
 
 
