@@ -84,10 +84,13 @@ regions[sidebar_first]  = First sidebar
 regions[sidebar_second] = Second sidebar
 regions[navigation]     = Navigation bar
 regions[highlighted]    = Highlighted
+regions[user_menu]      = User menu
 regions[content]        = Content
 regions[header]         = Header
 regions[footer]         = Footer
+regions[site_closure]   = Site closure
 regions[bottom]         = Page bottom
+regions[development]    = Development
 regions[page_top]       = Page top
 regions[page_bottom]    = Page bottom
 

@@ -68,12 +68,12 @@
  * @see template_process()
  */
 ?>
-<?php if ($logged_in) : ?>
-  <div id="user-logged-in" class="clearfix">
-    <?php print render($user_logged_in); ?>
-  </div>
-<?php endif; ?>
 <div id="page-wrapper"><div id="page">
+  <?php if ($logged_in) : ?>
+    <div id="user-logged-in" class="clearfix">
+      <?php print render($page['user_menu']); ?>
+    </div>
+  <?php endif; ?>
 
   <div id="header"><div class="section clearfix">
 
@@ -184,6 +184,12 @@
 
   <?php print render($page['footer']); ?>
 
+  <?php print render($page['site_closure']); ?>
+
 </div></div><!-- /#page, /#page-wrapper -->
 
 <?php print render($page['bottom']); ?>
+
+<?php if ($is_admin && $page['development']): ?>
+  <?php print render($page['development']); ?>
+<?php endif; ?>
