@@ -64,11 +64,19 @@ li a.active {
   padding: 0 0 0 190px;
 
   a {
-    color: #909090;
+    .grey;
     .bold;
     .italic;
     .uppercase;
-    .secondary-menu-a;
+    .triangle-right(@grey; 4px; 4px);
+    &:hover {
+      .l-red;
+      border-right-color: @l-red;
+    }
+    &:hover:before {
+      .l-red;
+      border-left-color: @l-red;
+    }
   }
 }
 
