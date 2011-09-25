@@ -177,6 +177,23 @@ function panparks_preprocess_block(&$vars, $hook) {
   //dsm($block);
 }
 
+/**
+ * Override or insert variables into theme_menu_local_task().
+ */
+function panparks_preprocess_menu_local_task(&$variables) {
+  $link =& $variables['element']['#link'];
+
+  // If the link does not contain HTML already, check_plain() it now.
+  // After we set 'html'=TRUE the link will not be sanitized by l().
+  if (empty($link['localized_options']['html'])) {
+    $link['title'] = check_plain($link['title']);
+  }
+  $link['localized_options']['html'] = TRUE;
+  //$link['title'] = '<span class="tab">' . $link['title'] . '</span>';
+  dsm(get_defined_vars());
+}
+
+
 /*
  * Override theme_password() function to set image wrapper around
  */

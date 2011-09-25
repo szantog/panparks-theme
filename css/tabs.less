@@ -14,11 +14,11 @@ div.tabs {
   border-bottom: 1px solid #e4efed;
 }
 
-
 ul.primary {
   white-space: nowrap;
   line-height: normal;
-  height: 21px;
+  margin: 5px 5px 0;
+  .no-padding;
   .no-border;
 }
 
@@ -70,45 +70,7 @@ ul-old.primary li {
 }
 
 ul.primary li {
-  float: left; /* LTR */
-  margin: 4px 0.5 * @grid-margin 0;
-  padding: 0;
-
-  a {
-    .no-border;
-    display: block;
-    margin: 0;
-    padding: 0;
-    border-width: 0;
-    text-decoration: none;
-    .uppercase;
-    color: #fff;
-    .bold;
-    .italic;
-  }
-
-  .tab {
-    .border-radius(10px 10px 0 0);
-    background-color: @d-green;
-    padding: 6px 20px 5px 20px;
-    .transition;
-
-  }
-
-  &.active,
-  &:hover {
-    .transition;
-    margin: 0 0.5 * @grid-margin 0;
-
-    a {
-    }
-
-    .tab {
-      background-color: #cfe3df;
-      .p-top(8px);
-      .p-bottom(10px);
-    }
-  }
+  .tab-style;
 }
 
 ul.secondary {
