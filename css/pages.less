@@ -557,8 +557,53 @@ div.krumo-root {
 
   #block-quicktabs-social {
     height: 415px;
+
+    .block-inner {
+      padding: 0;
+    }
+
     h2 {
       .element-invisible;
+    }
+
+
+    .quicktabs-style-nostyle {
+      ul.quicktabs-tabs {
+        margin: 0;
+      }
+
+      .quicktabs-tabs li {
+        .tab-style;
+        margin: 0;
+
+        a {
+          .align-center;
+          width: 100px;
+          .border-radius(6px 6px 0 0);
+          font-style: normal;
+          .small;
+          padding: 5px 0;
+          margin: 4px 5px 0 0;
+
+          &:hover {
+            padding: 7px 0;
+            margin: 0 5px 0 0;
+          }
+        }
+
+        &.active {
+
+          a {
+            background-color: @grey;
+            padding: 7px 0;
+            margin: 0 5px 0 0;
+          }
+        }
+        //the last tab
+        #quicktabs-tab-social-2 {
+          .m-right(0);
+        }
+      }
     }
   }
 }
