@@ -32,7 +32,7 @@ body {
       .m-right(@grid-margin);
       .small;
       color: #909090;
-      .p-right(@grid-margin);
+      padding: 0 10px 0 0;
       border-right:1px solid #909090 !important;
         //@todo implement height count. Normally doesn't need full heigth to show border.
       display: inline-block;
@@ -110,7 +110,7 @@ body {
     with: 100%;
 
     .upper {
-      padding: 18px 10px 0 0;
+      padding: 25px 10px 0 0;
     }
   }
 
@@ -132,8 +132,8 @@ body {
 
 #logo /* Wrapping link for logo */ {
   position: absolute;
-  top: -10px;
-  left: -10px;
+  top: -8px;
+  left: -9px;
   z-index:10;
 }
 
@@ -186,6 +186,7 @@ div#site-name /* The name of the website */ {
  * Content
  */
 #content {
+  .m-top;
 }
 
 #content .section {
@@ -557,7 +558,7 @@ div.krumo-root {
 
   #block-quicktabs-social {
     height: 415px;
-
+    .border-radius(6px 6px 12px 12px);
     .block-inner {
       padding: 0;
     }

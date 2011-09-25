@@ -31,22 +31,24 @@ li a.active {
   .m-top(10px);
   li {
     .tab-style;
-    //padding: 0 1em 0 5px;
+    margin: 0 0 0 10px;
     display: inline-block;
 
     a {
+      .border-radius(8px 8px 0 0);
       .fs(16px);
       line-height: 31px;
-      padding: 0 20px;
-
+      padding: 0;
+      .align-center;
+      width: 200px;
       &:hover {
-        padding: 0 20px;
+        padding: 0;
         line-height: 36px;
       }
     }
 
     &.active a {
-      padding: 0 20px;
+      padding: 0px;
       line-height: 36px;
     }
 
@@ -59,15 +61,16 @@ li a.active {
       .m-right;
 
       a {
+        width: 160px;
         background-color: #ff2038;
-
+        .m-right(0);
         &:hover {
           background-color: #ff2038;
         }
       }
 
       &.active a {
-        padding: 0 20px;
+        padding: 0;
         background-color: #ff2038;
       }
     }
@@ -78,12 +81,19 @@ li a.active {
 #secondary-menu {
   padding: 0 0 0 190px;
 
+  li {
+    .no-padding;
+  }
   a {
     .grey;
     .bold;
     .italic;
     .uppercase;
     .triangle-right(@grey; 4px; 4px);
+    .m-left(10px);
+    .m-right(30px);
+    .small;
+
     &:hover {
       .l-red;
       border-right-color: @l-red;

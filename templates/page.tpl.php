@@ -155,9 +155,11 @@
   </div></div><!-- /.section, /#header -->
 
   <div id="main-wrapper"><div id="main" class="clearfix<?php if ($main_menu || $page['navigation']) { print ' with-navigation'; } ?>">
-     <div id="site-messages" class="m-top">
-      <?php print $messages ; ?>
-    </div>
+     <?php if ($page['messages']): ?>
+      <div id="site-messages" class="m-top">
+        <?php print $messages ; ?>
+      </div>
+    <?php endif; ?>
     <div id="content" class="column"><div class="section">
       <?php print render($page['highlighted']); ?>
       <?php print $breadcrumb; ?>
