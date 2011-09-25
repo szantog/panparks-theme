@@ -28,36 +28,51 @@ li a.active {
 #main-menu {
   float: left;
   width: 100%;
-  .m-top(22px);
+  .m-top(10px);
   li {
-    .main-menu-li;
-    padding: 0 1em 0 5px;
+    .tab-style;
+    //padding: 0 1em 0 5px;
     display: inline-block;
 
-  &.first {
-    margin: 0 0 0 190px;
-  }
-   a {
+    a {
       .fs(16px);
-      .bold;
-      .italic;
-      .uppercase;
-      .main-menu-a;
-      padding: 0 2em;
-      color: #fff;
       line-height: 31px;
-      display: inline-block;
+      padding: 0 20px;
+
+      &:hover {
+        padding: 0 20px;
+        line-height: 36px;
+      }
+    }
+
+    &.active a {
+      padding: 0 20px;
+      line-height: 36px;
+    }
+
+    &.first {
+      margin: 0 0 0 190px;
+    }
+
+    &.menu-517 {
+      .right(0);
+      .m-right;
+
+      a {
+        background-color: #ff2038;
+
+        &:hover {
+          background-color: #ff2038;
+        }
+      }
+
+      &.active a {
+        padding: 0 20px;
+        background-color: #ff2038;
+      }
     }
   }
   //donate
-  .menu-517 {
-    .donate-pre;
-    .right(0);
-
-    a {
-      .donate;
-    }
-  }
 }
 
 #secondary-menu {
@@ -106,7 +121,6 @@ li a.active {
         .grey;
         .block;
 
-        &.active-trail,
         &:hover {
           background-color: @l-red;
           .white;
@@ -117,7 +131,18 @@ li a.active {
           .no-border;
         }
       }
+      &.active-trail a,
+      &.expanded a {
+        background-color: @l-red;
+        .white;
+        border-color: transparent;
+      }
 
+      &.active-trail li a,
+      &.expanded li a {
+        background-color: transparent;
+        .grey;
+      }
       //second level menu
       .menu {
         padding: 0 10px;

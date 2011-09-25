@@ -188,9 +188,10 @@ function panparks_preprocess_menu_local_task(&$variables) {
   if (empty($link['localized_options']['html'])) {
     $link['title'] = check_plain($link['title']);
   }
-  $link['localized_options']['html'] = TRUE;
-  //$link['title'] = '<span class="tab">' . $link['title'] . '</span>';
-  dsm(get_defined_vars());
+  $link['localized_options']['html'] = FALSE;
+  //Remove spans original placed by zen.
+  $link['title'] = strip_tags($link['title']);
+  //kpr(get_defined_vars());
 }
 
 

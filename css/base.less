@@ -559,41 +559,6 @@
   }
 }
 
-.tab-style {
-  float: left; /* LTR */
-  margin: 0 0.5 * @grid-margin ;
-  padding: 0;
-
-  a {
-    .no-border;
-    display: block;
-    margin: 10px 0 0;
-    padding: 0;
-    border-width: 0;
-    text-decoration: none;
-    .uppercase;
-    color: #fff;
-    .bold;
-    .italic;
-    .border-radius(10px 10px 0 0);
-    background-color: @d-green;
-    padding: 6px 20px 5px 20px;
-
-    &:hover {
-      background-color: @d-green;
-      .no-broder;
-      margin: 5px 0 0;
-      padding: 7px 20px 9px;
-    }
-  }
-
-  &.active a {
-    background-color: #cfe3df;
-    margin: 5px 0 0;
-    padding: 7px 20px 9px;
-    cursor: normal;
-  }
-}
  /*
   * These to set margin and/or padding to 0;
   * Use it just for "hard" reset and be careful, because of !important
@@ -724,6 +689,43 @@
 			//margin-top: 0;
 		}
 	}
+}
+
+.tab-style {
+  float: left; /* LTR */
+  margin: 0 0.5 * @grid-margin ;
+  padding: 0;
+
+  a {
+    .no-border;
+    display: block;
+    margin: 10px 0 0;
+    padding: 0;
+    .no-border;
+    text-decoration: none;
+    .uppercase;
+    color: #fff;
+    .bold;
+    .italic;
+    .border-radius(10px 10px 0 0);
+    background-color: @d-green;
+    padding: 6px 20px 5px 20px;
+
+    &:hover {
+      background-color: @d-green;
+      .no-border;
+      margin: 5px 0 0;
+      padding: 7px 20px 9px;
+    }
+  }
+
+  &.active a {
+    .no-border;
+    background-color: #cfe3df;
+    margin: 5px 0 0;
+    padding: 7px 20px 9px;
+    cursor: default;
+  }
 }
 
 /*
