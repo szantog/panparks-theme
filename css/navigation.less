@@ -10,7 +10,7 @@
  * The active item in a Drupal menu
  */
 li a.active {
-  color: #000;
+  .l-red;
 }
 
 /*
@@ -81,5 +81,62 @@ li a.active {
 /*
  * "Menu block" blocks. See http://drupal.org/project/menu_block
  */
-.block-menu_block {
+.block-menu-block {
+
+  .menu {
+    .no-margin;
+    //top level menu
+    li {
+      .big;
+      .uppercase;
+      .bold;
+      list-style: none;
+
+      a {
+        border-bottom: 1px solid @grey;
+        padding: 5px 10px;
+        .grey;
+        .block;
+
+        &.active-trail,
+        &:hover {
+          background-color: @l-red;
+          .white;
+          border-color: transparent;
+        }
+
+        &.last a {
+          .no-border;
+        }
+      }
+
+      //second level menu
+      .menu {
+        padding: 0 10px;
+      }
+
+      li {
+        font-weight: normal;
+        text-transform: none;
+        .fs(@font-size);
+
+        a {
+          .no-border;
+          padding: 5px;
+
+          &.active-trail,
+          &:hover {
+            background-color: transparent;
+            .l-red;
+          }
+        }
+
+        //third level menu
+        .menu {
+          padding: 0 5px;
+        }
+      }
+    }
+  }
 }
+
