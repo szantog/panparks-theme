@@ -376,11 +376,11 @@
     rgb(255,255,255) 92%
   );
 }
-.transition (@time: 0.2s) {
-  -moz-transition:all @time linear;
-  -o-transition:all @time linear;
-  -webkit-transition:all @time linear;
-  transition:all @time linear;
+.transition (@what: all; @time: 0.2s;@how: linear) {
+  -moz-transition: @what @time @how;
+  -o-transition: @what @time @how;
+  -webkit-transition: @what @time @how;
+  transition: @what @time @how;
 }
 
 .triangle {
@@ -711,6 +711,7 @@
   padding: 0;
 
   a {
+    .transition(margin; 0.2s);
     .no-border;
     display: block;
     margin: 10px 0 0;
@@ -916,7 +917,7 @@
   .bold;
   .italic;
   cursor: pointer;
-  .transition(0.2s);
+  .transition(all; 0.2s);
   &:hover {
     background-color: @l-green;
     .d-green;

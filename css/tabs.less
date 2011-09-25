@@ -22,53 +22,6 @@ ul.primary {
   .no-border;
 }
 
-/*
- * Old style with sprite
- */
-ul-old.primary li {
-  float: left; /* LTR */
-  margin: 4px 0.5 * @grid-margin 0;
-  padding: 0;
-
-  a {
-    .no-border;
-    display: block;
-    margin: 0;
-    padding: 0;
-    border-width: 0;
-    text-decoration: none;
-    .uppercase;
-    color: #fff;
-    .bold;
-    .italic;
-    background-color: transparent;
-    .tab-pre;
-    .transition;
-
-  }
-
-  .tab {
-    .tab;
-    padding: 4px 20px 0 14px;
-
-  }
-
-  &.active,
-  &:hover {
-    margin: 0 0.5 * @grid-margin 0;
-
-    a {
-
-      .tab-active-pre;
-    }
-
-    .tab {
-      .p-top(6px);
-      .tab-active;
-    }
-  }
-}
-
 ul.primary li {
   .tab-style;
 }
