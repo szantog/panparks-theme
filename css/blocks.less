@@ -141,6 +141,15 @@ h2.block-title /* Block title */ {
   margin: 0;
   overflow: hidden;
 
+  .arrow {
+    background-color: #b7cda1;
+    .triangle-left(#fff; 52px 20px; -2px; -40px;);
+    .m-left(0);
+    .views-field-slideshow-picture {
+      .triangle-left(#b7cda1; 51px 20px; -11px; -49px;);
+      margin-left: 10px;
+    }
+  }
   .block-inner {
     padding: 0;
   }
@@ -162,8 +171,15 @@ h2.block-title /* Block title */ {
       border-bottom: 1px solid #fff;
       border-left: 1px solid #fff;
 
+      &.active,
+      &:hover {
+        .arrow;
+      }
     }
 
+    .views_slideshow_active_pager_field_item {
+
+    }
     .views-field-slideshow-picture {
       .left;
       margin: @grid-margin;
@@ -176,6 +192,14 @@ h2.block-title /* Block title */ {
     .views-field-slideshow-body {
       .p-right(@grid-margin);
       .p-top;
+    }
+    //nee to set height because of left arrow
+    .views-content-slideshow-body {
+      height: 65px;
+    }
+
+    .views-field-nothing {
+      height: 16px;
     }
   }
 
