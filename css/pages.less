@@ -515,7 +515,7 @@ div.krumo-root {
 
   #block-views-all-panparks-map-block {
     width: 630px;
-    height: 385px;
+    height: 415px;
     background-color: #d2c7af;
     h2 {
       .white;
@@ -526,13 +526,30 @@ div.krumo-root {
       width: 350px;
     }
 
-    .view-attachment {
+    .attachment {
       .left(0);
+      .m-left;
+      width: 200px;
+
+      .view-content {
+        width: auto;
+      }
+
+      li {
+        .triangle-right;
+        .m-bottom;
+        a {
+          font-weight: normal;
+          max-width: 235px;
+          .block;
+          .fs(@font-size);
+        }
+      }
     }
   }
 
   #block-quicktabs-social {
-    height: 385px;
+    height: 415px;
     h2 {
       .element-invisible;
     }
