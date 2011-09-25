@@ -382,6 +382,28 @@
   -webkit-transition:all @time linear;
   transition:all @time linear;
 }
+
+.triangle {
+  border-color: transparent transparent transparent transparent;
+  border-style: solid;
+  border-width: @font-size;
+  display: inline-block;
+  content: "";
+}
+
+.triangle-right (@color: #fff; @size: @font-size / 2; @top: @font-size / 6; @left: -1 * @grid-margin) {
+  position: relative;
+  margin-left: -1 * @left;
+  &:before {
+    .triangle;
+    border-left-color: @color;
+    border-width: @size;
+    position: absolute;
+    top: @top;
+    left: @left;
+  }
+}
+
 /*
  * 960gs Grid system
  * With less you can user grid system, without overriding templates, and more flexible, than normal gs
