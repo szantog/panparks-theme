@@ -111,6 +111,10 @@ body {
   width: @width - @right-sidebar - @left-sidebar - (6 * @grid-margin);
   margin-left: @left-sidebar + 3 * @grid-margin; /* LTR */ /* The width of .region-sidebar-first */
   margin-right: -1 * @width; /* LTR */ /* Negative value of #content's width + left margin. */
+
+  margin-left: 250px;
+  margin-right: -730px;
+  width: 480px;
 }
 
 #content .section {
@@ -177,6 +181,13 @@ body {
   margin-left: @width - @left-sidebar - (1 * @grid-margin); /* LTR */ /* Width of content + sidebar-first. @todo: is this ok?*/
   margin-right: -1 * @width + 2 * @grid-margin; /* LTR */ /* Negative value of .region-sidebar-second's width + left margin. */
   padding: 0; /* DO NOT CHANGE. Add padding or margin to .region-sidebar-second .section. */
+
+  float: left;
+  margin-left: 750px;
+  margin-right: -950px;
+  overflow: visible;
+  padding: 0;
+  width: 200px;
 }
 
 .region-sidebar-second .section {
