@@ -130,8 +130,9 @@
 
 /* Colors & backgrounds */
 
-@l-brown: #c2a365;
-@brown: #a38c5d;
+@l-brown: #d1c6ae;
+@brown: #c2a365;
+@d-brown: #a38c5d;
 @l-green: #ddebcf;
 @green: #78a648;
 @d-green: #004d22;
@@ -177,6 +178,10 @@
 
 .brown {
   color: @brown;
+}
+
+.d-brown {
+  color: @d-brown;
 }
 
 .l-green {
@@ -916,7 +921,7 @@
 
 .button {
   .no-border;
-  .white;
+  color: #fff !important;
   .big;
   .border-radius;
   line-height: 25px;
@@ -928,7 +933,7 @@
   .transition(all; 0.2s);
   &:hover {
     background-color: @l-green;
-    .d-green;
+    color: @d-green !important;
   }
 }
 
@@ -940,28 +945,26 @@
   .button;
   .uppercase;
   background-color: @green;
-  color: #fff !important;
   .block;
   width: 100%;
   padding: 0;
 
   &:hover {
-    .green-button;
     background-color: @l-green;
   }
 }
 
-.l-brown-button {
+.brown-button {
   .button;
   .uppercase;
-  background-color: @l-brown;
+  background-color: @brown;
   color: #fff !important;
   .block;
   width: 100%;
   padding: 0;
 
   &:hover {
-    .l-brown-button;
-    background-color: #d1c6ae;
+    background-color: @l-brown;
+    color: @d-brown !important;
   }
 }
