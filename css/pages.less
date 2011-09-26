@@ -327,6 +327,43 @@ ul.links li {
   }
   background-color: #a1a1a1;
   .white;
+
+  .social-links {
+    margin: 0;
+    .clearfix;
+    a {
+      .left(5px);
+      .fs(10px);
+      .red;
+    }
+  }
+  .block {
+    .left(0);
+    width: 230px;
+    .m-right;
+    .white;
+    .block-inner {
+      padding: @grid-margin 0 ;
+    }
+
+    .block-title {
+      padding: 0 @grid-margin;
+      .white;
+    }
+
+    .content {
+      padding: 0 @grid-margin;
+      border-left: 1px solid #fff;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    &.last {
+      .m-right(0);
+    }
+  }
 }
 
 #footer-message /* Wrapper for the footer message from Drupal's "Site information"
@@ -383,12 +420,13 @@ ul.links li {
         .small;
         .italic;
         .bold;
+        .triangle-right(@l-red;);
         &:before {
-          content: "";
-          border-width: 5px 7px 5px 8px;
-          border-color: transparent transparent transparent @l-red;
-          border-style: solid;
-          display: inline-block;
+//          content: "";
+//          border-width: 5px 7px 5px 8px;
+//          border-color: transparent transparent transparent @l-red;
+//          border-style: solid;
+//          display: inline-block;
         }
 
         &:hover {

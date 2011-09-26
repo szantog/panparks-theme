@@ -102,6 +102,15 @@ function panparks_preprocess_page(&$vars, $hook) {
     }
     $vars['user_menu'] = $user_menu;
   }
+  $social_links = array();
+  $social_links[] = l('', variable_get('site_email'), array('external' => TRUE, 'attributes' => array('class' => 'mail')));
+  $social_links[] = l('', 'http://www.facebook.com/panparks', array('external' => TRUE, 'attributes' => array('class' => 'facebook')));
+  $social_links[] = l('', 'http://twitter.com/panparks', array('external' => TRUE, 'attributes' => array('class' => 'twitter')));
+  $social_links[] = l('need', 'http://google.com', array('external' => TRUE, 'attributes' => array('class' => 'google')));
+  $social_links[] = l('need', 'http://twitter.com/panparks', array('external' => TRUE, 'attributes' => array('class' => 'digg')));
+  $social_links[] = l('need', 'http://delicious.com/panparks', array('external' => TRUE, 'attributes' => array('class' => 'delicious')));
+
+  $vars['social'] = theme('item_list', array('items' => $social_links, 'attributes' => array('class' => 'social-links')));
   $vars['search_form'] = drupal_get_form('search_form');
   $vars['search_form']['basic']['submit']['#value'] = t('OK');
   $vars['search_form']['basic']['submit']['#prefix'] = '<div class="button-pre">';

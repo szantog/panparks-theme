@@ -199,6 +199,7 @@
 
     <?php if ($page['footer']): ?>
       <div id="footer-wrapper"><div id="footer"><div class="section clearfix">
+        <?php print render($social); ?>
         <?php print render($page['footer']); ?>
       </div></div></div>
     <?php endif; ?>
