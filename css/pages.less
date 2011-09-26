@@ -386,9 +386,13 @@ ul.links li {
         &:before {
           content: "";
           border-width: 5px 7px 5px 8px;
-          border-color: transparent transparent transparent @red;
+          border-color: transparent transparent transparent @l-red;
           border-style: solid;
           display: inline-block;
+        }
+
+        &:hover {
+          .l-red;
         }
       }
 
@@ -543,12 +547,14 @@ div.krumo-root {
     .attachment {
       .left(0);
       .m-left;
-      width: 200px;
+      width: 250px;
 
       .view-content {
         width: auto;
       }
-
+      ul {
+        .no-margin;
+      }
       li {
         .triangle-right;
         .m-bottom;
