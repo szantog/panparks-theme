@@ -124,9 +124,14 @@ li a.active {
       .uppercase;
       .bold;
       list-style: none;
+      border-bottom: 1px solid @grey;
+
+      &.last {
+        .no-border;
+      }
 
       a {
-        border-bottom: 1px solid @grey;
+
         padding: 5px 10px;
         .grey;
         .block;
@@ -134,18 +139,17 @@ li a.active {
         &:hover {
           background-color: @l-red;
           .white;
-          border-color: transparent;
         }
 
         &.last a {
           .no-border;
         }
       }
+
       &.active-trail a,
       &.expanded a {
         background-color: @l-red;
         .white;
-        border-color: transparent;
       }
 
       &.active-trail li a,
@@ -159,6 +163,7 @@ li a.active {
       }
 
       li {
+        .no-border;
         font-weight: normal;
         text-transform: none;
         .fs(@font-size);
