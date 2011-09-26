@@ -525,6 +525,7 @@ div.krumo-root {
     width: 630px;
     height: 415px;
     background-color: #d2c7af;
+    .m-bottom(0);
     h2 {
       .white;
     }
@@ -559,6 +560,7 @@ div.krumo-root {
   #block-quicktabs-social {
     height: 415px;
     .border-radius(6px 6px 12px 12px);
+    .m-bottom(0);
     .block-inner {
       padding: 0;
     }
@@ -574,8 +576,7 @@ div.krumo-root {
       }
 
       .quicktabs-tabs li {
-        .tab-style;
-        margin: 0;
+        .tab-style(20px; 3px;);
 
         a {
           .align-center;
@@ -583,12 +584,10 @@ div.krumo-root {
           .border-radius(6px 6px 0 0);
           font-style: normal;
           .small;
-          padding: 5px 0;
-          margin: 4px 5px 0 0;
+          .no-padding;
 
           &:hover {
-            padding: 7px 0;
-            margin: 0 5px 0 0;
+
           }
         }
 
@@ -596,8 +595,7 @@ div.krumo-root {
 
           a {
             background-color: @grey;
-            padding: 7px 0;
-            margin: 0 5px 0 0;
+
           }
         }
         //the last tab

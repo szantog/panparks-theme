@@ -29,27 +29,25 @@ li a.active {
   float: left;
   width: 100%;
   .m-top(10px);
+
   li {
-    .tab-style;
-    margin: 0 0 0 10px;
-    display: inline-block;
+    .tab-style(30px);
+    margin: 0 0 0 5px;
 
     a {
       .border-radius(8px 8px 0 0);
       .fs(16px);
-      line-height: 31px;
       padding: 0;
-      .align-center;
       width: 200px;
+
       &:hover {
         padding: 0;
-        line-height: 36px;
+        height: 35px;
       }
     }
 
     &.active a {
       padding: 0px;
-      line-height: 36px;
     }
 
     &.first {
@@ -62,16 +60,16 @@ li a.active {
 
       a {
         width: 160px;
-        background-color: #ff2038;
+        background-color: @l-red;
         .m-right(0);
         &:hover {
-          background-color: #ff2038;
+          background-color: @l-red;
         }
       }
 
       &.active a {
         padding: 0;
-        background-color: #ff2038;
+        background-color: @l-red;
       }
     }
   }
