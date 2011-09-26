@@ -155,7 +155,7 @@
   </div></div><!-- /.section, /#header -->
 
   <div id="main-wrapper"><div id="main" class="clearfix<?php if ($main_menu || $page['navigation']) { print ' with-navigation'; } ?>">
-     <?php if ($page['messages']): ?>
+     <?php if ($messages): ?>
       <div id="site-messages" class="m-top">
         <?php print $messages ; ?>
       </div>
