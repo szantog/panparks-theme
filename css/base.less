@@ -717,52 +717,6 @@
 	}
 }
 
-.tab-style(@height: 25px; @move: 5px;) {
-  float: left; /* LTR */
-
-  padding: 0;
-
-  a {
-    //.transition(margin; 0.2s);
-    .no-border;
-    display: block;
-    margin: @move 0.5 * @grid-margin 0 0;
-    padding: 0;
-    .no-border;
-    text-decoration: none;
-    .uppercase;
-    color: #fff;
-    .bold;
-    .italic;
-    .align-center;
-    .border-radius(10px 10px 0 0);
-    background-color: @d-green;
-    padding: 0 20px;
-    height: @height + @move;
-    line-height: @height;
-
-    &:hover {
-      background-color: @d-green;
-      .no-border;
-      margin-top: 0;
-      padding: 0 20px;
-    }
-  }
-
-  &.active a {
-    .no-border;
-    background-color: #cfe3df;
-    margin-top: 0;
-    cursor: default;
-    height: @height + @move;
-    .d-green;
-  }
-
-  &.last a{
-    .m-right(0);
-  }
-}
-
 /*
  * The sprite section
  * If you use sprite, after this you can define you own classes
@@ -791,6 +745,10 @@
   .sprite(right 0);
 //  height: 66px;
 //  width: 70px;
+}
+
+.tabshadow {
+  .sprite(right -15px);
 }
 
 .input {
@@ -892,6 +850,57 @@
   .h4;
   color: @h6;
   font-size: @h6-font;
+}
+
+.tab-style(@height: 25px; @move: 5px;) {
+  float: left; /* LTR */
+
+  padding: 0;
+
+
+  a {
+    //.transition(margin; 0.2s);
+    .tabshadow;
+    .no-border;
+    display: block;
+    margin: @move 0.5 * @grid-margin 0 0;
+    padding: 0;
+    .no-border;
+    text-decoration: none;
+    .uppercase;
+    color: #fff;
+    .bold;
+    .italic;
+    .align-center;
+    .border-radius(10px 10px 0 0);
+    background-color: @d-green;
+    padding: 0 20px;
+    height: @height + @move;
+    line-height: @height;
+
+
+    &:hover {
+      background-color: @d-green;
+      .no-border;
+      margin-top: 0;
+      padding: 0 20px;
+      background-position: right -10px;
+    }
+  }
+
+  &.active a {
+    .no-border;
+    background-color: #cfe3df;
+    margin-top: 0;
+    cursor: default;
+    //height: @height + @move;
+    background-position: right -10px;
+    .d-green;
+  }
+
+  &.last a{
+    .m-right(0);
+  }
 }
 
 .button {

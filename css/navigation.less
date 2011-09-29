@@ -40,16 +40,19 @@ li a.active {
       .fs(16px);
       padding: 0;
       width: 200px;
+      background-position: right -10px;
 
       &:hover {
         padding: 0;
         height: 35px;
+        background-position: right -5px;
       }
     }
 
     &.active a {
       padding: 0px;
       .white;
+      background-position: right -5px;
     }
 
     &.first {
@@ -66,12 +69,14 @@ li a.active {
         .m-right(0);
         &:hover {
           background-color: @l-red;
+          //background-position: right -5px;
         }
       }
 
       &.active a {
         padding: 0;
         background-color: @l-red;
+        //background-position: right -5px;
         .white;
       }
     }
