@@ -115,7 +115,8 @@ li a.active {
 /*
  * "Menu block" blocks. See http://drupal.org/project/menu_block
  */
-.block-menu-block {
+.block-menu-block,
+#block-fieldgroup-menu-fieldgroup-menu {
 
   .menu {
     .no-margin;
@@ -140,7 +141,9 @@ li a.active {
         &.active {
           .l-red;
         }
-        &:hover {
+
+        &:hover,
+        &.expanded a {
           background-color: @l-red;
           .white;
         }
@@ -150,16 +153,6 @@ li a.active {
         }
       }
 
-      &.expanded a {
-        background-color: @l-red;
-        .white;
-      }
-
-      &.active-trail li a,
-      &.expanded li a {
-        background-color: transparent;
-        .grey;
-      }
       //second level menu
       .menu {
         padding: 0 10px;
@@ -181,13 +174,10 @@ li a.active {
           }
         }
 
-        &.active-trail a {
-          .grey;
-
-          &:hover {
-            .l-red;
-          }
+        &:hover {
+          .l-red;
         }
+
         //third level menu
         .menu {
           padding: 0 5px;
