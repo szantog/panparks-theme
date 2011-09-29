@@ -71,13 +71,14 @@ if (!module_exists('less')){
  * @param $hook
  *   The name of the template being rendered ("html" in this case.)
  */
-/* -- Delete this line if you want to use this function
-function panparks_preprocess_html(&$vars, $hook) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
 
-  // The body tag's classes are controlled by the $classes_array variable. To
-  // remove a class from $classes_array, use array_diff().
-  //$vars['classes_array'] = array_diff($vars['classes_array'], array('class-to-remove'));
+function panparks_preprocess_html(&$vars, $hook) {
+
+  //Remove extraa classes, when we are on colorbox page.
+  $args = arg();
+  if (arg(1) && end($args) == 'colorbox') {
+    $vars['classes_array'] = array_diff($vars['classes_array'], array('one-sidebar sidebar-first'));
+  }
 }
 // */
 
@@ -101,6 +102,12 @@ function panparks_preprocess_page(&$vars, $hook) {
       }
     }
     $vars['user_menu'] = $user_menu;
+  }
+  //Add only content tpl.php if we are on colorbox page
+  $args = arg();
+  if (arg(1) && end($args) == 'colorbox') {
+    $vars['theme_hook_suggestions'][] = 'page__null' ;
+
   }
   $social_links = array();
   $social_links[] = l('', variable_get('site_email'), array('external' => TRUE, 'attributes' => array('class' => 'mail')));
