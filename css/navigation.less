@@ -137,6 +137,11 @@ li a.active {
         .no-border;
       }
 
+      &.expanded:first-child > a {
+        background-color: @l-red;
+        .white;
+      }
+
       a {
 
         padding: 5px 10px;
@@ -147,8 +152,7 @@ li a.active {
           .l-red;
         }
 
-        &:hover,
-        &.expanded a {
+        &:hover {
           background-color: @l-red;
           .white;
         }
