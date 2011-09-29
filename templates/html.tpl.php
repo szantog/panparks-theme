@@ -58,6 +58,8 @@
  * @see template_preprocess_html()
  * @see zen_preprocess_html()
  * @see template_process()
+ *
+ * @todo remove sharethis widget inline script
  */
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
   "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
@@ -68,6 +70,7 @@
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
   <?php print $scripts; ?>
+  <script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'b1bde3d4-fd07-4d06-9caa-78ab7e5b012b'});</script>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <div id="skip-link">

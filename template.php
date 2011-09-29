@@ -110,7 +110,9 @@ function panparks_preprocess_page(&$vars, $hook) {
   $social_links[] = l('need', 'http://twitter.com/panparks', array('external' => TRUE, 'attributes' => array('class' => 'digg')));
   $social_links[] = l('need', 'http://delicious.com/panparks', array('external' => TRUE, 'attributes' => array('class' => 'delicious')));
 
-  $vars['social'] = theme('item_list', array('items' => $social_links, 'attributes' => array('class' => 'social-links')));
+  //$vars['social'] = theme('item_list', array('items' => $social_links, 'attributes' => array('class' => 'social-links')));
+
+  $vars['social'] = "<span  class='st_email_large' ></span><span  class='st_facebook_large' ></span><span  class='st_twitter_large' ></span><span  class='st_google_large' ></span><span  class='st_digg_large' ></span><span  class='st_delicious_large' ></span>";
   $vars['search_form'] = drupal_get_form('search_form');
   $vars['search_form']['basic']['submit']['#value'] = t('OK');
   $vars['search_form']['basic']['submit']['#prefix'] = '<div class="button-pre">';
