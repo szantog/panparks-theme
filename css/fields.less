@@ -2,7 +2,7 @@
  * @file
  * Field Styling
  */
-
+ @import "base.less";
 
 /*
  * Field types
@@ -41,4 +41,23 @@
  */
 
 .field-field-FIELDNAME /* Underscores in field name are replaced with dashes. */ {
+}
+
+
+.file-image {
+
+  .field-name-media-description {
+    padding: 10px 10px 5px;
+    background-color: @l-grey;
+
+    p {
+      margin:0;
+    }
+  }
+
+  .field-name-field-photographer {
+    padding: 0 10px 10px 10px;
+    background-color: @l-grey;
+  }
+
 }
