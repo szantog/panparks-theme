@@ -4,7 +4,7 @@
  *
  * Style anything that isn't in the $content variable.
  */
-
+ @import "base.less";
 
 .node /* Node wrapper */ {
 }
@@ -78,4 +78,12 @@
 
 .preview .node /* Preview of the content before submitting new or updated content */ {
   /* background-color: #ffffea; */ /* Drupal core uses a #ffffea background */
+}
+
+.node-park {
+  .field-name-field-teaser {
+    .bold;
+    .d-green;
+    .m-top;
+  }
 }
