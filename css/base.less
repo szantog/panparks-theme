@@ -62,7 +62,7 @@
 @font-size: 12px;
 @line-height: 16px;
 
-@h1-font: 2em;
+@h1-font: 2.2em;
 @h2-font: 1.75em;
 @h3-font: 1.5em;
 @h4-font: 1.312em;
@@ -817,8 +817,9 @@
   color: @h1;
   font-size: @h1-font;
   line-height: 1.3em;
-  margin-top: 0;
+  margin-top: @font-size;
   margin-bottom: @font-size;
+  .sassoon-bold;
 }
 
 .h2 {
@@ -826,6 +827,7 @@
   color: @h2;
   font-size: @h2-font;
   margin-top: @font-size;
+  font-family: @font-family;
 }
 
 .h3 {
