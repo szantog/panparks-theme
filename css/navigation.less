@@ -137,9 +137,23 @@ li a.active {
         .no-border;
       }
 
-      &.expanded:first-child > a {
-        background-color: @l-red;
-        .white;
+      &.active-trail {
+
+        a,
+        a.active {
+          background-color: @l-red;
+          .white;
+        }
+
+        li a {
+          background-color: transparent;
+          .grey;
+        }
+
+        li a.active {
+          background-color: transparent;
+          .l-red;
+        }
       }
 
       a {
@@ -182,6 +196,7 @@ li a.active {
             .l-red;
           }
         }
+
 
         &:hover {
           .l-red;
