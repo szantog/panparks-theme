@@ -1,0 +1,38 @@
+/**
+ * @file
+ * Wysiwyg Styling
+ *
+ * Style wysiwyg defaults.
+ */
+
+ .l-brown {
+  color: #d1c6ae;
+}
+
+.brown {
+  color: #c2a365;
+}
+
+.d-brown {
+  color: #a38c5d;
+}
+
+.l-green {
+  color: #ddebcf;
+}
+
+.green {
+  color: #78a648;
+}
+
+.d-green {
+  color: #004d22;
+}
+
+.l-red {
+  color: #f04e2a;
+}
+
+.red {
+  color: #be3d21;
+}
