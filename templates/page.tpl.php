@@ -69,6 +69,7 @@
  */
 ?>
 <div id="page-wrapper"><div id="page">
+    <?php if ($logged_in): ?>
     <div id="user-logged-in" class="clearfix">
       <?php print theme('links__user_menu', array(
         'links' => $user_menu,
@@ -84,7 +85,7 @@
       ));?>
       <?php print render($page['user_menu']); ?>
     </div>
-
+    <?php endif; ?>
   <div id="header"><div class="section clearfix">
 
     <?php if ($logo): ?>
@@ -199,7 +200,6 @@
 
     <?php if ($page['footer']): ?>
       <div id="footer-wrapper"><div id="footer"><div class="section clearfix">
-        <?php print render($social); ?>
         <?php print render($page['footer']); ?>
       </div></div></div>
     <?php endif; ?>
