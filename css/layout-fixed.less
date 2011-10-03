@@ -118,10 +118,11 @@ body {
 }
 
 #content .section {
-  padding: @grid-margin;
+  padding: @grid-margin @grid-margin @grid-margin 2 * @grid-margin;
 }
 
-.front #content .section {
+.front #content .section,
+#content .section .block-inner {
   padding: 0;
 }
 
