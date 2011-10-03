@@ -5,6 +5,64 @@
  * Style wysiwyg defaults.
  */
 
+
+body {
+  color: #000000;
+  font-family: Verdana,Tahoma,"DejaVu Sans",sans-serif;
+  font-size: 12px;
+  line-height:16px;
+}
+
+a:link {
+    color: #006857;
+    text-decoration: none;
+}
+
+a {
+    -moz-transition: all 0.2s linear 0s;
+    outline: medium none;
+}
+
+p, dl {
+    margin: 12px 0;
+}
+
+h1 {
+    color: #F04E2A;
+    font-family: SassoonSansSlopeStdBold;
+    font-size: 2.2em;
+    line-height: 1.3em;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+h2 {
+    color: #78A648;
+    font-family: Verdana,Tahoma,"DejaVu Sans",sans-serif;
+    font-size: 1.75em;
+    line-height: 1.3em;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+h3 {
+    color: #8F7B52;
+    font-family: Verdana,Tahoma,"DejaVu Sans",sans-serif;
+    font-size: 1.5em;
+    line-height: 1.3em;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+h4, h5, h6 {
+    color: #606060;
+    font-family: Verdana,Tahoma,"DejaVu Sans",sans-serif;
+    font-size: 1.312em;
+    line-height: 1.3em;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
  .l-brown {
   color: #d1c6ae;
 }
