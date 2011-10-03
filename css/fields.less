@@ -35,7 +35,15 @@
 .field-type-userreference {
 }
 
+//By default imagefields always floated to left, only the exceptions should override
+.field-type-image {
+  .left;
+}
 
+//By default the h2 in teasers is the same size as the content
+.node-teaser .field-name-title h2{
+  .fs(@font-size);
+}
 /*
  * Named fields
  */
