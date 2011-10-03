@@ -86,6 +86,7 @@ regions[navigation]     = Navigation bar
 regions[highlighted]    = Highlighted
 regions[user_menu]      = User menu
 regions[content]        = Content
+regions[content_bottom] = Content bottom
 regions[header]         = Header
 regions[footer]         = Footer
 regions[site_closure]   = Site closure

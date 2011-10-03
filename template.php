@@ -130,6 +130,11 @@ function panparks_preprocess_page(&$vars, $hook) {
   $vars['small_logo_path'] = $base_url . '/' . drupal_get_path('theme', 'panparks') . '/images/small-logo.png';
   //We use the primary menu as main menu
   $vars['main_menu'] = menu_navigation_links('menu-primary-menu');
+
+    //This is an alternative solution, to pick ip an entity_view up from node preprocess and render it in here
+//  if (isset($vars['node']) && $vars['node']->type == 'park') {
+//    $vars['page']['content_bottom'] =panparks_trespass_hook();
+//  }
   //kpr(get_defined_vars());
 }
 
@@ -142,9 +147,8 @@ function panparks_preprocess_page(&$vars, $hook) {
  * @param $hook
  *   The name of the template being rendered ("node" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function panparks_preprocess_node(&$vars, $hook) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
+
 
   // Optionally, run node-type-specific preprocess functions, like
   // panparks_preprocess_node_page() or panparks_preprocess_node_story().
@@ -155,6 +159,23 @@ function panparks_preprocess_node(&$vars, $hook) {
 }
 // */
 
+//Tmp depricated
+
+//function panparks_preprocess_node_park(&$vars, $hook) {
+//  if (isset($vars['content']['group_tours_and_holidays'])) {
+//    panparks_trespass_hook($vars['content']['group_tours_and_holidays']);
+//  }
+//  kpr($vars);
+//}
+//
+//function panparks_trespass_hook($var = NULL) {
+//  $cache = &drupal_static('tresspass');
+//  if (is_null($cache)) {
+//    $cache = $var;
+//  }
+//  dsm(get_defined_vars());
+//  return $cache;
+//}
 /**
  * Override or insert variables into the comment templates.
  *
