@@ -4,6 +4,30 @@
  */
  @import "base.less";
 
+.date-from-fieldset {
+  fieldset {
+    .no-border;
+    .no-marding;
+    background: none;
+  }
+
+  .fieldset-legend {
+    .fs(@font-size);
+    .bold;
+  }
+
+  .container-inline-date > .form-item {
+    .no-border;
+    .no-margin;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .container-inline-date .date-padding {
+    padding: 0;
+  }
+}
+
 /*
  * Field types
  */
@@ -68,4 +92,8 @@
     background-color: @l-grey;
   }
 
+}
+
+#edit-field-ps-date {
+  .date-from-fieldset;
 }

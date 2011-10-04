@@ -233,7 +233,6 @@ function panparks_preprocess_menu_local_task(&$variables) {
   //kpr(get_defined_vars());
 }
 
-
 /*
  * Override theme_password() function to set image wrapper around
  */
