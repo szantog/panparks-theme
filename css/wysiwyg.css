@@ -94,3 +94,18 @@ h4, h5, h6 {
 .red {
   color: #be3d21;
 }
+
+.right {
+  float: right;
+  margin: 0 0 10px 10px;
+}
+
+.left {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+.align-center {
+  text-align: center;
+  margin: 0 auto;
+}
