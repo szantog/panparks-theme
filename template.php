@@ -135,6 +135,12 @@ function panparks_preprocess_page(&$vars, $hook) {
 //  if (isset($vars['node']) && $vars['node']->type == 'park') {
 //    $vars['page']['content_bottom'] =panparks_trespass_hook();
 //  }
+
+  //Force ovveride the default page title on share photo add page
+  //http://atrium.macroweb.hu/panparks-private/node/3860
+  if (arg(0) == 'node' && arg(1) == 'add' && arg(2) == 'photo-shared') {
+    drupal_set_title(t('Share a photo'));
+  }
   //kpr(get_defined_vars());
 }
 
