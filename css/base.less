@@ -402,9 +402,11 @@
   display: inline-block;
   content: "";
   z-index: 1000;
+
 }
 
 .triangle-right (@color: #fff; @size: @font-size / 2; @top: @font-size / 6; @left: -1 * @grid-margin) {
+  list-style: none;
   position: relative;
   margin-left: -1 * @left;
   &:before {
@@ -418,11 +420,27 @@
 }
 
 .triangle-left (@color: #fff; @size: @font-size / 2; @top: @font-size / 6; @left: -1 * @grid-margin) {
+  list-style: none;
   position: relative;
   margin-left: -1 * @left;
   &:before {
     .triangle;
     border-right-color: @color;
+    border-width: @size;
+    position: absolute;
+    top: @top;
+    left: @left;
+  }
+}
+
+.rectangle (@color: #fff; @size: @font-size / 2; @top: @font-size / 6; @left: -1 * @grid-margin)  {
+  position: relative;
+  margin-left: -1 * @left;
+  list-style: none;
+
+  &:before {
+    .triangle;
+    border-color: @color;
     border-width: @size;
     position: absolute;
     top: @top;
