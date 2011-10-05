@@ -166,6 +166,32 @@ h2.block-title /* Block title */ {
     width: 660px;
   }
 
+  .views-slideshow-cycle-main-frame-row-item {
+    position: relative;
+
+    .views-field-slideshow-title {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+
+      .field-content {
+        .uppercase;
+        .white;
+        .sassoon-bold;
+        .fs(30px);
+        margin: 0;
+        //By design 45px;
+        padding: 45px;
+        padding: 40px;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+
   .views-slideshow-controls-bottom {
     float: right;
     width: 308px;
@@ -184,9 +210,6 @@ h2.block-title /* Block title */ {
       }
     }
 
-    .views_slideshow_active_pager_field_item {
-
-    }
     .views-field-slideshow-picture {
       .left;
       margin: @grid-margin;
