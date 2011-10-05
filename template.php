@@ -93,6 +93,9 @@ function panparks_preprocess_html(&$vars, $hook) {
 
 function panparks_preprocess_page(&$vars, $hook) {
   global $user;
+  global $base_url;
+
+  //Set variable to print upper user menu for logged in users.
   if ($user->uid > 0) {
     $user_menu = menu_navigation_links('user-menu');
     foreach ($user_menu as $key => &$menu_item) {
@@ -103,38 +106,26 @@ function panparks_preprocess_page(&$vars, $hook) {
     }
     $vars['user_menu'] = $user_menu;
   }
+
   //Add only content tpl.php if we are on colorbox page
   $args = arg();
   if (arg(1) && end($args) == 'colorbox') {
     $vars['theme_hook_suggestions'][] = 'page__null' ;
 
   }
-  $social_links = array();
-  $social_links[] = l('', variable_get('site_email'), array('external' => TRUE, 'attributes' => array('class' => 'mail')));
-  $social_links[] = l('', 'http://www.facebook.com/panparks', array('external' => TRUE, 'attributes' => array('class' => 'facebook')));
-  $social_links[] = l('', 'http://twitter.com/panparks', array('external' => TRUE, 'attributes' => array('class' => 'twitter')));
-  $social_links[] = l('need', 'http://google.com', array('external' => TRUE, 'attributes' => array('class' => 'google')));
-  $social_links[] = l('need', 'http://twitter.com/panparks', array('external' => TRUE, 'attributes' => array('class' => 'digg')));
-  $social_links[] = l('need', 'http://delicious.com/panparks', array('external' => TRUE, 'attributes' => array('class' => 'delicious')));
 
-  //$vars['social'] = theme('item_list', array('items' => $social_links, 'attributes' => array('class' => 'social-links')));
-
-  $vars['social'] = "<span  class='st_email_large' ></span><span  class='st_facebook_large' ></span><span  class='st_twitter_large' ></span><span  class='st_google_large' ></span><span  class='st_digg_large' ></span><span  class='st_delicious_large' ></span>";
+  // Set variable to search form, no need to use block
   $vars['search_form'] = drupal_get_form('search_form');
   $vars['search_form']['basic']['submit']['#value'] = t('OK');
   $vars['search_form']['basic']['submit']['#prefix'] = '<div class="button-pre">';
   $vars['search_form']['basic']['submit']['#suffix'] = '</div>';
   $vars['search_form']['basic']['#attributes']['class'] = array();
 
-  global $base_url;
+  // This is the smal logo in page bottom
   $vars['small_logo_path'] = $base_url . '/' . drupal_get_path('theme', 'panparks') . '/images/small-logo.png';
-  //We use the primary menu as main menu
-  $vars['main_menu'] = menu_navigation_links('menu-primary-menu');
 
-    //This is an alternative solution, to pick ip an entity_view up from node preprocess and render it in here
-//  if (isset($vars['node']) && $vars['node']->type == 'park') {
-//    $vars['page']['content_bottom'] =panparks_trespass_hook();
-//  }
+// We use the primary menu as main menu
+  $vars['main_menu'] = menu_navigation_links('menu-primary-menu');
 
   //Force ovveride the default page title on share photo add page
   //http://atrium.macroweb.hu/panparks-private/node/3860
@@ -142,6 +133,26 @@ function panparks_preprocess_page(&$vars, $hook) {
     drupal_set_title(t('Share a photo'));
   }
   //kpr(get_defined_vars());
+
+/*
+ * Tmp unused section
+ * @todo: delete before go to live
+ */
+
+//This is an alternative solution, to pick ip an entity_view up from node preprocess and render it in here
+//  if (isset($vars['node']) && $vars['node']->type == 'park') {
+//    $vars['page']['content_bottom'] =panparks_trespass_hook();
+//  }
+
+//  Old social links. Not yet delete
+//  $social_links = array();
+//  $social_links[] = l('', variable_get('site_email'), array('external' => TRUE, 'attributes' => array('class' => 'mail')));
+//  $social_links[] = l('', 'http://www.facebook.com/panparks', array('external' => TRUE, 'attributes' => array('class' => 'facebook')));
+//  $social_links[] = l('', 'http://twitter.com/panparks', array('external' => TRUE, 'attributes' => array('class' => 'twitter')));
+//  $social_links[] = l('need', 'http://google.com', array('external' => TRUE, 'attributes' => array('class' => 'google')));
+//  $social_links[] = l('need', 'http://twitter.com/panparks', array('external' => TRUE, 'attributes' => array('class' => 'digg')));
+//  $social_links[] = l('need', 'http://delicious.com/panparks', array('external' => TRUE, 'attributes' => array('class' => 'delicious')));
+//  $vars['social'] = theme('item_list', array('items' => $social_links, 'attributes' => array('class' => 'social-links')));
 }
 
 
