@@ -126,6 +126,8 @@ li a.active {
   .menu {
     .no-margin;
     //top level menu
+    .sassoon-bold;
+
     li {
       .big;
       .uppercase;
@@ -157,8 +159,9 @@ li a.active {
       }
 
       a {
-
-        padding: 5px 10px;
+        .fs(12px);
+        line-height: 20px;
+        padding: 4px 10px 0;
         .grey;
         .block;
 
@@ -189,19 +192,21 @@ li a.active {
 
         a {
           .no-border;
-          padding: 5px;
-
+          line-height: 18px;
+          padding: 2px 5px 0;
           &:hover {
             background-color: transparent;
             .l-red;
           }
         }
 
+       &.first a{
+          .p-top(6px);
+       }
 
-        &:hover {
-          .l-red;
+       &.last a{
+          .p-bottom(4px);
         }
-
         //third level menu
         .menu {
           padding: 0 5px;
