@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * An empty page for pages in colorbox.
+ * A special page template for donate now page
  *
  * Available variables:
  *
@@ -69,18 +69,84 @@
  */
 ?>
 <div id="page-wrapper"><div id="page">
+    <?php if ($logged_in): ?>
+    <div id="user-logged-in" class="clearfix">
+      <?php print theme('links__user_menu', array(
+        'links' => $user_menu,
+        'attributes' => array(
+          'id' => 'user-menu',
+          'class' => array('links'),
+        ),
+        'heading' => array(
+          'text' => t('User menu'),
+          'level' => 'h2',
+          'class' => array('element-invisible'),
+        ),
+      ));?>
+      <?php print render($page['user_menu']); ?>
+    </div>
+    <?php endif; ?>
+  <div id="header"><div class="section clearfix">
+
+    <?php if ($logo): ?>
+      <div class="grey-fix"></div>
+      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
+    <?php endif; ?>
+
+    <div id="header-menu-search" class="">
+      <div id="header-menu" class="">
+        <div class="upper">
+          <?php if ($search_form) : print drupal_render($search_form); endif; ?>
+        </div>
+      </div>
+    </div>
+  </div></div><!-- /.section, /#header -->
+
   <div id="main-wrapper"><div id="main" class="clearfix<?php if ($main_menu || $page['navigation']) { print ' with-navigation'; } ?>">
+     <?php if ($messages): ?>
+      <div id="site-messages" class="m-top">
+        <?php print $messages ; ?>
+      </div>
+    <?php endif; ?>
     <div id="content" class="column"><div class="section">
+      <?php print render($page['highlighted']); ?>
+      <?php print $breadcrumb; ?>
+      <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
         <h1 class="title" id="page-title"><?php print $title; ?></h1>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
 
+      <?php if ($tabs = render($tabs)): ?>
+        <div class="tabs"><?php print $tabs; ?></div>
+      <?php endif; ?>
+      <?php print render($page['help']); ?>
       <?php if ($action_links): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <?php print render($page['content']); ?>
+
+      <?php print render($page['content_bottom']); ?>
+      <?php print $feed_icons; ?>
     </div></div><!-- /.section, /#content -->
+
+    <?php if ($page['navigation']): ?>
+      <div id="navigation"><div class="section clearfix">
+
+        <?php print render($page['navigation']); ?>
+
+      </div></div><!-- /.section, /#navigation -->
+    <?php endif; ?>
+
+    <?php print render($page['sidebar_first']); ?>
+
+    <?php print render($page['sidebar_second']); ?>
+
   </div></div><!-- /#main, /#main-wrapper -->
+
 </div></div><!-- /#page, /#page-wrapper -->
+
+<?php if ($is_admin && $page['development']): ?>
+  <?php print render($page['development']); ?>
+<?php endif; ?>
