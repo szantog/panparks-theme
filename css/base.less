@@ -770,17 +770,20 @@
 }
 
 .input {
-  .no-border;
-  .sprite(right -255px);
-  height: 22px;
-  display: inline-block !important;
+  input {
+    .no-border;
+    .sprite(right -255px);
+    height: 22px;
+    display: inline-block !important;
+    .m-left(6px);
+  }
 }
 
 .input-pre {
   .sprite(-634px -280px);
   height: 22px;
   width: 6px;
-  .left(0);
+  position: absolute;
 }
 
 .search-button-pre {

@@ -173,7 +173,7 @@ form tbody th {
   }
 
   .form-text {
-    width: 120px;
+    width: 114px;
   }
 
   label {
@@ -224,10 +224,14 @@ html.js input.throbbing {
 /* Fix link fields broken */
 .link-field-column .textfield{
   float: left;
-  width: 90%;
+  width: 90% !important;
 }
 
 /* Fix media widget broken http://panparks.loc/node/208/edit */
 .mediaBrowserLaunch-processed .form-type-textfield {
   display: none;
+}
+
+.vertical-tabs .form-type-textfield input {
+  width: auto;
 }

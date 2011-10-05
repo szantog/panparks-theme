@@ -276,7 +276,7 @@ function panparks_textfield($variables) {
     $extra = '<input' . drupal_attributes($attributes) . ' />';
   }
 
-  $pre = '<span class="input-pre"></span><div class="input ' . $element['#type'] . '">';
+  $pre = '<div class="input ' . $element['#type'] . '"><span class="input-pre"></span>';
   $post = '</div>';
 
   $output = $pre . '<input' . drupal_attributes($element['#attributes']) . ' />' . $post;
