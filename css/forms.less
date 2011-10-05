@@ -177,7 +177,8 @@ form tbody th {
   }
 
   label {
-    .element-invisible;
+    .grey;
+    font-weight: normal;
   }
 
   .button-pre {
@@ -186,7 +187,7 @@ form tbody th {
     float: left;
   }
 
-  .form-submit {
+  input.form-submit {
     background: none;
     height: 18px;
     color: #fff;
@@ -199,6 +200,10 @@ form tbody th {
     .align-center;
     width: 26px;
     line-height: 18px;
+
+    &:hover {
+      color: #fff !important;
+    }
   }
 }
 
