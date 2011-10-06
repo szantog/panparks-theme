@@ -119,14 +119,6 @@
     <?php endif; ?>
     <div id="content" class="column"><div class="section">
 
-      <div id="header-menu-search" class="">
-        <div id="header-menu" class="">
-          <div class="upper">
-            <?php if ($search_form) : print drupal_render($search_form); endif; ?>
-          </div>
-        </div>
-      </div>
-
       <div class="content-top clearfix">
         <?php print $breadcrumb; ?>
         <a id="main-content"></a>
