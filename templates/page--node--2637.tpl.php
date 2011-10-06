@@ -67,6 +67,18 @@
  * @see zen_preprocess_page()
  * @see template_process()
  */
+
+/*
+ * Hide som element in $page, print it manually
+ */
+  kpr($page);
+  hide($page['content']['bean_13']);
+  hide($page['content']['bean_14']);
+  hide($page['content']['bean_15']);
+  hide($page['content']['bean_16']);
+  hide($page['content']['bean_17']);
+  hide($page['content']['bean_18']);
+  hide($page['content']['bean_19']);
 ?>
 <div id="page-wrapper"><div id="page">
     <?php if ($logged_in): ?>
@@ -110,39 +122,45 @@
           </div>
         </div>
       </div>
-      <?php print render($page['highlighted']); ?>
-      <?php print $breadcrumb; ?>
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="title" id="page-title"><?php print $title; ?></h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
 
-      <?php if ($tabs = render($tabs)): ?>
-        <div class="tabs"><?php print $tabs; ?></div>
-      <?php endif; ?>
-      <?php print render($page['help']); ?>
-      <?php if ($action_links): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-      <?php print render($page['content']); ?>
+      <div class="content-top clearfix">
+        <?php print $breadcrumb; ?>
+        <a id="main-content"></a>
+        <?php print render($title_prefix); ?>
+        <?php if ($title): ?>
+          <h1 class="title" id="page-title"><?php print $title; ?></h1>
+        <?php endif; ?>
+        <?php print render($title_suffix); ?>
 
-      <?php print render($page['content_bottom']); ?>
-      <?php print $feed_icons; ?>
+        <?php if ($tabs = render($tabs)): ?>
+          <div class="tabs"><?php print $tabs; ?></div>
+        <?php endif; ?>
+
+        <?php if ($action_links): ?>
+          <ul class="action-links"><?php print render($action_links); ?></ul>
+        <?php endif; ?>
+        <?php print render($page['content']); ?>
+      </div>
+
+      <div class="content-middle clearfix">
+
+        <div class="content-mid-left">
+          <?php
+            print render($page['content']['bean_13']);
+            print render($page['content']['bean_14']);
+          ?>
+        </div>
+
+        <div class="content-mid-right">
+          <h2 class="section-title"><?php print t('Other ways you can give'); ?></h2>
+          <?php
+            print render($page['content']['bean_16']);
+            print render($page['content']['bean_17']);
+            print render($page['content']['bean_18']);
+          ?>
+        </div>
+      </div>
     </div></div><!-- /.section, /#content -->
-
-    <?php if ($page['navigation']): ?>
-      <div id="navigation"><div class="section clearfix">
-
-        <?php print render($page['navigation']); ?>
-
-      </div></div><!-- /.section, /#navigation -->
-    <?php endif; ?>
-
-    <?php print render($page['sidebar_first']); ?>
-
-    <?php print render($page['sidebar_second']); ?>
 
     <?php print $social; ?>
   </div></div><!-- /#main, /#main-wrapper -->
