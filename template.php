@@ -133,7 +133,7 @@ function panparks_preprocess_page(&$vars, $hook) {
 
   //Some pages (eg. Donate now never render the social beam block, need to insert code manually
   if (arg(0) == 'node' && arg(1) == 2637) {
-   // $vars['social'] = isset($page['footer']['bean_31']) ? drupal_render($page['footer']['bean_31']) : t('Social block was deleted.');
+    $vars['social'] = isset($page['footer']['bean_31']) ? drupal_render($page['footer']['bean_31']) : t('Social block was deleted.');
   }
 
   //Force ovveride the default page title on share photo add page

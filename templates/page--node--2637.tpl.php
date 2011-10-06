@@ -181,10 +181,12 @@
             print render($page['content']['bean_41']);
           ?>
         </div>
+
+        <?php print $social; ?>
       </div>
+
     </div></div><!-- /.section, /#content -->
 
-    <?php print $social; ?>
   </div></div><!-- /#main, /#main-wrapper -->
 
 </div></div><!-- /#page, /#page-wrapper -->
