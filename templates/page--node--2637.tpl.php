@@ -93,13 +93,6 @@
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
     <?php endif; ?>
 
-    <div id="header-menu-search" class="">
-      <div id="header-menu" class="">
-        <div class="upper">
-          <?php if ($search_form) : print drupal_render($search_form); endif; ?>
-        </div>
-      </div>
-    </div>
   </div></div><!-- /.section, /#header -->
 
   <div id="main-wrapper"><div id="main" class="clearfix<?php if ($main_menu || $page['navigation']) { print ' with-navigation'; } ?>">
@@ -109,6 +102,14 @@
       </div>
     <?php endif; ?>
     <div id="content" class="column"><div class="section">
+
+      <div id="header-menu-search" class="">
+        <div id="header-menu" class="">
+          <div class="upper">
+            <?php if ($search_form) : print drupal_render($search_form); endif; ?>
+          </div>
+        </div>
+      </div>
       <?php print render($page['highlighted']); ?>
       <?php print $breadcrumb; ?>
       <a id="main-content"></a>
@@ -143,6 +144,7 @@
 
     <?php print render($page['sidebar_second']); ?>
 
+    <?php print $social; ?>
   </div></div><!-- /#main, /#main-wrapper -->
 
 </div></div><!-- /#page, /#page-wrapper -->

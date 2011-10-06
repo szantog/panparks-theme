@@ -94,6 +94,10 @@ function panparks_preprocess_html(&$vars, $hook) {
 function panparks_preprocess_page(&$vars, $hook) {
   global $user;
   global $base_url;
+  $page = &$vars['page'];
+  // $args is never used, just set it to checking
+  //@todo remove
+  $args = arg();
 
   //Set variable to print upper user menu for logged in users.
   if ($user->uid > 0) {
@@ -108,7 +112,7 @@ function panparks_preprocess_page(&$vars, $hook) {
   }
 
   //Add only content tpl.php if we are on colorbox page
-  $args = arg();
+
   if (arg(1) && end($args) == 'colorbox') {
     $vars['theme_hook_suggestions'][] = 'page__null' ;
 
@@ -126,6 +130,11 @@ function panparks_preprocess_page(&$vars, $hook) {
 
 // We use the primary menu as main menu
   $vars['main_menu'] = menu_navigation_links('menu-primary-menu');
+
+  //Some pages (eg. Donate now never render the social beam block, need to insert code manually
+  if (arg(0) == 'node' && arg(1) == 2637) {
+   // $vars['social'] = isset($page['footer']['bean_31']) ? drupal_render($page['footer']['bean_31']) : t('Social block was deleted.');
+  }
 
   //Force ovveride the default page title on share photo add page
   //http://atrium.macroweb.hu/panparks-private/node/3860
