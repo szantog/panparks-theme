@@ -829,6 +829,34 @@
   width: 30px;
 }
 
+.blockquote {
+  position: relative;
+  line-height: 16px;
+  margin: 0;
+  padding: 5px 24px;
+  text-align: justify;
+  font-style: italic;
+
+  &:before {
+    position: absolute;
+    .sprite(0px -110px);
+    width: 20px;
+    height: 20px;
+    content: "";
+    top: 0;
+    left: 0;
+  }
+
+  &:after {
+    .sprite(-20px -110px);
+    width: 20px;
+    height: 20px;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
 /*
  * Headings
  * All headings inherits the upper level headings declarations.
