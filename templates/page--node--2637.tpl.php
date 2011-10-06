@@ -71,7 +71,7 @@
 /*
  * Hide som element in $page, print it manually
  */
-  kpr($page);
+  //kpr($page);
   hide($page['content']['bean_13']);
   hide($page['content']['bean_14']);
   hide($page['content']['bean_15']);
@@ -79,6 +79,10 @@
   hide($page['content']['bean_17']);
   hide($page['content']['bean_18']);
   hide($page['content']['bean_19']);
+  hide($page['content']['bean_40']);
+  hide($page['content']['bean_41']);
+  hide($page['content']['bean_42']);
+  hide($page['content']['bean_43']);
 ?>
 <div id="page-wrapper"><div id="page">
     <?php if ($logged_in): ?>
@@ -157,6 +161,24 @@
             print render($page['content']['bean_16']);
             print render($page['content']['bean_17']);
             print render($page['content']['bean_18']);
+          ?>
+        </div>
+      </div>
+
+      <div class="content-bottom clearfix">
+
+        <div class="content-bottom-top">
+          <?php
+            print render($page['content']['bean_19']);
+            print render($page['content']['bean_40']);
+          ?>
+          <div class="clear"><?php print render($page['content']['bean_43']); ?></div>
+        </div>
+
+        <div class="content-bottom-bottom">
+          <?php
+            print render($page['content']['bean_42']);
+            print render($page['content']['bean_41']);
           ?>
         </div>
       </div>
