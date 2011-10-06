@@ -48,7 +48,7 @@
  */
 ?>
 <div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <div class="block-inner">
+  <div class="block-inner"><div class="block-inner-bg">
 
     <?php print render($title_prefix); ?>
     <?php if ($title): ?>
@@ -59,5 +59,5 @@
     <div class="content"<?php print $content_attributes; ?>>
       <?php print $content; ?>
     </div>
-  </div><!-- /.block-inner -->
+  </div></div><!-- /.block-inner-bg /.block-inner -->
 </div><!-- /.block -->
