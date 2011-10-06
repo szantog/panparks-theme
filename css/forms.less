@@ -4,10 +4,14 @@
  */
  @import "base.less";
 
+input {
+  outline: none;
+}
+
 .form-item,
 .form-checkboxes,
 .form-radios /* Wrapper for a form element (or group of form elements) and its label */ {
-  margin: 1em 0;
+  margin: 10px 0;
 }
 
 .form-item input.error,
@@ -36,7 +40,7 @@
 
 .form-checkboxes .form-item,
 .form-radios .form-item /* Pack groups of checkboxes and radio buttons closer together */ {
-  margin: 0.4em 0;
+  margin: 0;
 }
 
 .form-submit /* The submit button */ {

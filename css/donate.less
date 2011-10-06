@@ -5,7 +5,7 @@
  @import "base.less";
 
 .page-node-2637 #content {
-  line-height: 1.65em;
+  line-height: 20px;
 
   .breadcrumb {
      margin-left: 140px;
@@ -29,12 +29,14 @@
     .block-inner {
       padding: @grid-margin;
 
-      .field-name-field-website a {
-        .red-button;
-        width: 120px;
-        margin: 0 auto;
-      }
+      .field-name-field-website {
+        .align-center;
 
+        a {
+          .red-button;
+          margin: 0 auto;
+        }
+      }
       h2 {
         .align-center;
         .sassoon;
@@ -75,7 +77,7 @@
   }
   //Became a wilderness supporter
   #block-bean-11 {
-
+    height: 470px;
     width: 630px;
 
     background: @green;
@@ -89,6 +91,7 @@
       .white;
       .fs(35px);
       margin-bottom: 20px;
+      height: 46px;
     }
 
     .field-name-field-image {
@@ -98,6 +101,7 @@
     #panparks-donate-form-wilderness-supporter {
       position: relative;
       .clearfix;
+      height: 245px;
 
       label[for=edit-amountselector] {
         .fs(18px);
@@ -132,6 +136,7 @@
     margin-right: 0;
     width: 280px;
     background-color: #E49E15;
+    height: 470px;
 
     .block-inner {
       padding-bottom: 20px;
@@ -139,15 +144,16 @@
 
     h2 {
       .d-green;
+      height: 92px;
     }
 
     .form-item {
       .value {
-        width: 70px;
+        width: 50px;
         margin-right: 0;
       }
       .suffix {
-        width: 150px;
+        width: 180px;
       }
 
       .form-item-amountSelector {
@@ -221,12 +227,15 @@
 
     .block{
       width: 200px;
+      height: 290px;
 
       .block-inner {
         .no-padding;
 
-        .field-name-field-body {
-          height: 240px
+        .field-name-field-website {
+          bottom: 0;
+          position: absolute;
+          width: 100%;
         }
       }
     }
