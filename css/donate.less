@@ -205,39 +205,60 @@
   .content-bottom {
     .m-top;
     .content-bottom-top {
+      padding: 10px;
       background-color: @brown;
-
+      .clearfix;
       .block {
         width: 455px;
+
+        .block-inner {
+          .no-padding
+        }
+
+        blockquote,
+        p {
+          margin: 0;
+        }
       }
 
+      //quote1 block
       #block-bean-19 {
         .m-right(0);
-
-        .block-inner {
-          .p-right(0);
-        }
+        .m-bottom(0);
       }
 
+      //quote2 block
       #block-bean-40 {
         .m-right(0);
-
-        .block-inner {
-          .p-left(0);
-        }
-      }
-
-      #block-bean-43 {
         .m-bottom(0);
+      }
+      //small text under quotes
+      #block-bean-43 {
+        .no-margin;
+        width: 100%;
+
+        p {
+          .white;
+        }
       }
     }
 
     .content-bottom-bottom {
       .small;
+      margin-top: 10px;
+
+      .block {
+        .no-margin;
+      }
 
       .block-inner {
         padding: 0;
       }
+
+      p {
+        margin: 0;
+      }
+
       a {
         .fs(12px);
       }
