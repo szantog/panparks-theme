@@ -521,8 +521,7 @@ div.krumo-root {
         .bold;
 
         &.button {
-          width: 100%;
-          .align-center;
+          .uppercase;
         }
       }
     }
@@ -551,6 +550,12 @@ div.krumo-root {
     }
     a {
       .l-red;
+
+      &.button {
+        .green-button;
+        padding: 0;
+        width: 100%;
+      }
     }
   }
 
@@ -562,11 +567,64 @@ div.krumo-root {
       .white;
     }
 
+    h3 {
+      .white;
+      .sassoon;
+    }
     ul {
 
     }
     li {
       .rectangle(@brown; 2px; 6px;);
+    }
+
+    label {
+      color: @text;
+      font-weight: normal;
+      top: 4px;
+    }
+
+    a {
+      &.button {
+        .brown-button;
+        padding: 0;
+        width: 100%;
+      }
+    }
+
+    .form-actions {
+      .right(0);
+    }
+
+    .form-submit {
+      .brown-button;
+      padding: 0 0 5px 0;
+      width: 90px;
+    }
+
+    #panparks-blocks-register-form {
+      .clearfix;
+
+      .form-item {
+        .left(0);
+        margin: 1px 0 0;
+
+        input {
+          width: 175px;
+        }
+      }
+    }
+
+    #user-login-form {
+      .form-item {
+        .left(0);
+        margin: 1px 0 0;
+
+        input {
+          margin-right: 10px;
+          width: 80px;
+        }
+      }
     }
   }
   //making difference
@@ -586,6 +644,10 @@ div.krumo-root {
 
     h2 a {
       .white;
+    }
+
+    .form-submit {
+      .red-button;
     }
   }
 
