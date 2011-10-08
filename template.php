@@ -141,6 +141,10 @@ function panparks_preprocess_page(&$vars, $hook) {
   if (arg(0) == 'node' && arg(1) == 'add' && arg(2) == 'photo-shared') {
     drupal_set_title(t('Share a photo'));
   }
+
+  if (arg(0) == 'node' && arg(1) == 55) {
+    drupal_add_css(drupal_get_path('theme', 'panparks') . '/css/what-you-can-do.less');
+  }
   //kpr(get_defined_vars());
 
 /*
