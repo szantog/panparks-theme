@@ -448,6 +448,17 @@
   }
 }
 
+.content-box {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.border-box {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 /*
  * 960gs Grid system
  * With less you can user grid system, without overriding templates, and more flexible, than normal gs
@@ -834,6 +845,23 @@
   height: 15px;
 }
 
+.onemillion {
+  .sprite(-55px top);
+  height: 30px;
+}
+
+.hashtag-count-number {
+  .sprite(-250px -75px);
+  height: 50px;
+}
+
+.hashtag-count-text {
+  .sprite(-85px -40px);
+  height: 20px;
+  background-color: #c7b591;
+  width: 208px;
+}
+
 .blockquote {
   position: relative;
   line-height: 16px;
@@ -959,14 +987,12 @@
   }
 }
 
-.button {
+.button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) {
   .no-border;
-  color: #fff;
   .big;
   .border-radius;
   line-height: 23px;
   height: 25px;
-  background-color: @d-green;
   padding: 0 15px;
   .bold;
   .italic;
@@ -974,10 +1000,14 @@
   .transition(all; 0.2s);
   .align-center;
   display: inline-block;
+  .uppercase;
+
+  color: @cl;
+  background-color: @bg;
 
   &:hover {
-    background-color: @l-green;
-    color: @d-green;
+    background-color: @bg-hover;
+    color: @cl-hover;
   }
 }
 
