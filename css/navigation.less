@@ -131,11 +131,11 @@ li a.active {
     .no-margin;
     //top level menu
     .sassoon-bold;
-
+    letter-spacing: normal;
     li {
       .big;
       .uppercase;
-      .bold;
+      //.bold;
       list-style: none;
       border-bottom: 1px solid @grey;
 
@@ -163,9 +163,7 @@ li a.active {
       }
 
       a {
-        .fs(12px);
-        line-height: 20px;
-        padding: 4px 10px 0;
+        padding: 2px 10px 0;
         .grey;
         .block;
 
@@ -195,9 +193,11 @@ li a.active {
         .fs(@font-size);
 
         a {
+          .fs(12px);
           .no-border;
           line-height: 18px;
           padding: 2px 5px 0;
+          .font-family;
           &:hover {
             background-color: transparent;
             .l-red;
