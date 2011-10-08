@@ -142,8 +142,19 @@ function panparks_preprocess_page(&$vars, $hook) {
     drupal_set_title(t('Share a photo'));
   }
 
+  if (arg(0) == 'node' && arg(1) == 2637) {
+    drupal_add_css(drupal_get_path('theme', 'panparks') . '/css/donate.less');
+    $vars['theme_hook_suggestions'][] = 'page__donate_now';
+  }
+
   if (arg(0) == 'node' && arg(1) == 55) {
     drupal_add_css(drupal_get_path('theme', 'panparks') . '/css/what-you-can-do.less');
+    $vars['theme_hook_suggestions'][] = 'page__what_you_can_do';
+  }
+
+  if (arg(0) == 'node' && arg(1) == 2597) {
+    drupal_add_css(drupal_get_path('theme', 'panparks') . '/css/onemilliontweets.less');
+    $vars['theme_hook_suggestions'][] = 'page__onemilliontweets';
   }
   //kpr(get_defined_vars());
 
