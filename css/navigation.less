@@ -49,10 +49,13 @@ li a.active {
       }
     }
 
-    &.active a {
-      padding: 0px;
-      .white;
-      background-position: right -5px;
+    &.active {
+      a {
+        .border-radius(8px 8px 0 0);
+        margin-top: 5px;
+        background-color: @d-green;
+        .white;
+      }
     }
 
     &.first {
@@ -74,9 +77,10 @@ li a.active {
       }
 
       &.active a {
-        padding: 0;
+        //padding: 0;
         background-color: @l-red;
         //background-position: right -5px;
+        margin-top: 5px;
         .white;
       }
     }
