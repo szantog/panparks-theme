@@ -554,7 +554,8 @@ div.krumo-root {
 
       &.button {
         .green-button;
-        padding: 4px 0;
+        .p-left(0);
+        .p-right(0);
         width: 100%;
       }
     }
@@ -743,16 +744,7 @@ div.krumo-root {
 
     .field-name-field-website {
       a {
-        width: 100%;
-        .uppercase;
-        .no-padding;
-        .button;
-        background-color: #b8aa90;
-
-        &:hover {
-          background-color: #c2bba9;
-          .white;
-        }
+        .wide-button(#b8aa90; #fff; #c2bba9 #fff);
       }
     }
   }
@@ -810,12 +802,6 @@ div.krumo-root {
 
       .field-name-field-website {
         position: relative;
-
-        a {
-          width: 100%;
-          .uppercase;
-          .no-padding;
-        }
       }
     }
     //red
@@ -828,12 +814,7 @@ div.krumo-root {
         }
       }
       .field-name-field-website a {
-        .red-button;
-
-        &:hover {
-          background-color: #fb7e50;
-          .white;
-        }
+        .wide-button(@red; #fff; #fb7e50; #fff);
       }
     }
     //brown
@@ -847,13 +828,7 @@ div.krumo-root {
       }
 
       .field-name-field-website a {
-        .brown-button;
-        background-color: #826c43;
-
-        &:hover {
-          background-color: #af9767;
-          .white;
-        }
+        .wide-button(#826c43; #fff; #af9767; #fff);
       }
     }
     //green
@@ -867,13 +842,7 @@ div.krumo-root {
       }
 
       .field-name-field-website a {
-        .green-button;
-        background-color: #628e35;
-
-        &:hover {
-          background-color: #87b751;
-          .white;
-        }
+        .wide-button(#628e35; #fff; #87b751; #fff);
       }
     }
     //orange
@@ -887,13 +856,7 @@ div.krumo-root {
       }
 
       .field-name-field-website a {
-        .brown-button;
-        background-color: #bf8106;
-
-        &:hover {
-          background-color: #ebac2b;
-          .white;
-        }
+        .wide-button(#bf8106; #fff; #ebac2b; #fff);
       }
     }
   }

@@ -996,7 +996,7 @@
   .fs(12px);
   line-height: 14px;
   //height: 25px;
-  padding: 4px 15px;
+  padding: 6px 15px;
   .bold;
   cursor: pointer;
   .transition(all; 0.2s);
@@ -1045,5 +1045,20 @@
   &:hover {
     background-color: @l-red;
     color: #fff;
+  }
+}
+
+.wide-button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) {
+  .button;
+  .p-left(0);
+  .p-right(0);
+  width: 100%;
+
+  color: @cl;
+  background-color: @bg;
+
+  &:hover {
+    background-color: @bg-hover;
+    color: @cl-hover;
   }
 }
