@@ -193,10 +193,10 @@
 
         <div class="content-mid clearfix">
           <a class="button"><?php print t('Other ways to get involved'); ?></a>
-        </div>        
+        </div>
 
         <div class="content-bottom clearfix">
-          <div class="content-bottom-left left">
+          <div class="content-bottom-left content-section left">
             <h2 class="section-title"><?php print t('Visit'); ?></h2>
             <?php
               print render($page['content']['bean_33']);
@@ -204,7 +204,7 @@
             ?>
           </div>
 
-          <div class="content-bottom-right right">
+          <div class="content-bottom-right content-section right">
             <h2 class="section-title"><?php print t('Support'); ?></h2>
             <?php
               print render($page['content']['bean_35']);
