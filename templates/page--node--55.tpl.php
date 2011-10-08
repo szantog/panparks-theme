@@ -183,7 +183,7 @@
 
 
         <div class="content-top clearfix">
-          <h2 class="section-title"><?php print t('Get involved'); ?></h2>
+          <h2 class="section-title"><?php print l(t('Get involved'), 'node/56'); ?></h2>
           <?php
             print render($page['content']['bean_46']);
             print render($page['content']['bean_45']);
@@ -192,12 +192,12 @@
         </div>
 
         <div class="content-mid clearfix">
-          <a class="button"><?php print t('Other ways to get involved'); ?></a>
+          <?php print l(t('Other ways to get involved'), 'node/56', array('attributes' => array('class' => 'button'))); ?>
         </div>
 
         <div class="content-bottom clearfix">
           <div class="content-bottom-left content-section left">
-            <h2 class="section-title"><?php print t('Visit'); ?></h2>
+            <h2 class="section-title"><?php print l(t('Visit'), 'node/60'); ?></h2>
             <?php
               print render($page['content']['bean_33']);
               print render($page['content']['bean_34']);
@@ -205,7 +205,7 @@
           </div>
 
           <div class="content-bottom-right content-section right">
-            <h2 class="section-title"><?php print t('Support'); ?></h2>
+            <h2 class="section-title"><?php print l(t('Support'), 'node/2637'); ?></h2>
             <?php
               print render($page['content']['bean_35']);
               print render($page['content']['bean_36']);
