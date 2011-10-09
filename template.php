@@ -100,6 +100,7 @@ function panparks_preprocess_page(&$vars, $hook) {
   $args = arg();
 
   //Set variable to print upper user menu for logged in users.
+  //Logged in users settings
   if ($user->uid > 0) {
     $user_menu = menu_navigation_links('user-menu');
     foreach ($user_menu as $key => &$menu_item) {
@@ -109,6 +110,21 @@ function panparks_preprocess_page(&$vars, $hook) {
       }
     }
     $vars['user_menu'] = $user_menu;
+
+    //Hide join now block from logged in users
+    if (isset($page['content']['bean_50'])) {
+      hide($page['content']['bean_50']);
+    }
+    if (isset($page['content']['bean_48'])) {
+      hide($page['content']['bean_48']);
+    }
+  }
+  //Not logged in users settings.
+  else {
+    //Hide pictures of month block from logged in users
+    if (isset($page['content']['bean_49'])) {
+      hide($page['content']['bean_49']);
+    }
   }
 
   //Add only content tpl.php if we are on colorbox page

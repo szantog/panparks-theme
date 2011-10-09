@@ -67,13 +67,6 @@
  * @see zen_preprocess_page()
  * @see template_process()
  */
-  hide($page['content']['bean_46']);
-  hide($page['content']['bean_45']);
-  hide($page['content']['bean_44']);
-  hide($page['content']['bean_33']);
-  hide($page['content']['bean_34']);
-  hide($page['content']['bean_35']);
-  hide($page['content']['bean_36']);
 ?>
 <div id="page-wrapper"><div id="page">
     <?php if ($logged_in): ?>
@@ -187,7 +180,12 @@
           <?php
             print render($page['content']['bean_46']);
             print render($page['content']['bean_45']);
-            print render($page['content']['bean_44']);
+            if (!$logged_in) {
+              print render($page['content']['bean_50']);
+            }
+            else {
+              print render($page['content']['bean_49']);
+            }
           ?>
         </div>
 

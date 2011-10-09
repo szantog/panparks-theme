@@ -1001,18 +1001,6 @@
   }
 }
 
-.brown-button {
-  .button;
-  background-color: @brown;
-  color: #fff;
-
-
-  &:hover {
-    background-color: @l-brown;
-    color: @d-brown;
-  }
-}
-
 .red-button {
   .button;
   background-color: @red;
@@ -1044,4 +1032,12 @@
 
 .wide-red-button {
   .wide-button(@l-red; #fff; @red; #fff);
+}
+
+.brown-button {
+  .button(@brown; #fff; @l-brown; #fff);
+}
+
+.wide-brown-button {
+  .wide-button(@brown; #fff; @l-brown; #fff);
 }
