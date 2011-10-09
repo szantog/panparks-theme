@@ -156,15 +156,25 @@ function panparks_preprocess_page(&$vars, $hook) {
     drupal_add_css(drupal_get_path('theme', 'panparks') . '/css/onemilliontweets.less');
     $vars['theme_hook_suggestions'][] = 'page__onemilliontweets';
     //Change the one of the closure links href and title to panparks.org, and move it to first;
-    $vars['page']['site_closure']['menu_menu-site-closure']['content'][1280]['#href'] = 'http://panparks.org';
-    $vars['page']['site_closure']['menu_menu-site-closure']['content'][1280]['#title'] = 'panparks.org';
-    $vars['page']['site_closure']['menu_menu-site-closure']['content'][1280]['#localized_options']['attributes']['title'] = 'http://panparks.org';
-    $tmp = $vars['page']['site_closure']['menu_menu-site-closure']['content'][1280];
-    unset($vars['page']['site_closure']['menu_menu-site-closure']['content'][1280]);
-    array_unshift($vars['page']['site_closure']['menu_menu-site-closure']['content'], $tmp);
+    //@todo this is a little bit hacky, need to find better solution for this transformation.
+    if (isset($vars['page']['site_closure']['menu_menu-site-closure']['content'][1280])) {
+      $vars['page']['site_closure']['menu_menu-site-closure']['content'][1280]['#href'] = 'http://panparks.org';
+      $vars['page']['site_closure']['menu_menu-site-closure']['content'][1280]['#title'] = 'panparks.org';
+      $vars['page']['site_closure']['menu_menu-site-closure']['content'][1280]['#localized_options']['attributes']['title'] = 'http://panparks.org';
+      $tmp = $vars['page']['site_closure']['menu_menu-site-closure']['content'][1280];
+      unset($vars['page']['site_closure']['menu_menu-site-closure']['content'][1280]);
+      array_unshift($vars['page']['site_closure']['menu_menu-site-closure']['content'], $tmp);
+    }
+    else {
+      $vars['page']['site_closure']['menu_menu-site-closure'][1280]['#href'] = 'http://panparks.org';
+      $vars['page']['site_closure']['menu_menu-site-closure'][1280]['#title'] = 'panparks.org';
+      $vars['page']['site_closure']['menu_menu-site-closure'][1280]['#localized_options']['attributes']['title'] = 'http://panparks.org';
+      $tmp = $vars['page']['site_closure']['menu_menu-site-closure'][1280];
+      unset($vars['page']['site_closure']['menu_menu-site-closure'][1280]);
+      array_unshift($vars['page']['site_closure']['menu_menu-site-closure'], $tmp);
+    }
   }
-
-  //kpr(get_defined_vars());
+  kpr(get_defined_vars());
 
 /*
  * Tmp unused section
