@@ -109,6 +109,10 @@
 @l-grey: #e3e3e3;
 @grey: #a1a1a1;
 @d-grey: #464646;
+@l-sand: #e9e2d2;
+@sand:#c2bba9;
+@d-sand: #b8aa90;
+
 
 @body: #e7e7e7; /* The body background, can be changed to background picture */
 @page: #fff; /* The page wrapper background, can be changed to background picture */
@@ -182,6 +186,18 @@
 
 .d-grey {
   color: @d-grey;
+}
+
+.l-sand {
+  color: @l-sand;
+}
+
+.sand {
+  color: @sand;
+}
+
+.d-sand {
+  color: @d-sand;
 }
 
 .white {
@@ -1040,4 +1056,20 @@
 
 .wide-brown-button {
   .wide-button(@brown; #fff; @l-brown; #fff);
+}
+
+.sand-button {
+  .button(@d-sand; #fff; @sand; #fff);
+}
+
+.wide-sand-button {
+  .wide-button(@d-sand; #fff; @sand; #fff);
+}
+
+a,
+p,
+li {
+  &.wide-sand-button {
+    .wide-sand-button;
+  }
 }
