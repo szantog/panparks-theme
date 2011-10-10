@@ -287,10 +287,6 @@ ul.links li {
   padding: 0.5em;
 }
 
-.feed-icons /* The links to the RSS or Atom feeds for the current list of content */ {
-  margin: 1em 0;
-}
-
 .more-link /* Aggregator, blog, and forum more link */ {
   text-align: right; /* LTR */
 }
@@ -539,6 +535,22 @@ div.krumo-root {
   #block-views-news-block-1 {
      h2 {
       .d-brown;
+      .clearfix;
+
+      a {
+        .d-brown;
+        display: block;
+        float: left;
+      }
+
+      .feed-icon {
+        margin-left: 10px;
+        margin-top: 2px;
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
     }
   }
   //getting indolved
@@ -567,6 +579,10 @@ div.krumo-root {
 
     h2 {
       .white;
+
+      a {
+        .white;
+      }
     }
 
     .field-name-field-website a {

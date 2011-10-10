@@ -275,7 +275,7 @@ function panparks_preprocess_comment(&$vars, $hook) {
  */
 
 function panparks_preprocess_block(&$vars, $hook) {
-  $block = $vars['elements']['#block'];
+  $block = &$vars['elements']['#block'];
   if ($block->bid) {
     switch($block->bid) {
       case 'views-recent_blog_post-block':
@@ -283,6 +283,10 @@ function panparks_preprocess_block(&$vars, $hook) {
         break;
       case 'content-navigation':
         $vars['classes_array'][] = 'block-red';
+        break;
+      case 'views-news-block_1':
+        $block->subject .= theme('feed_icon', array('url' => 'rss.xml', 'title' => t('News rss')));
+        kpr($vars);
         break;
     }
   }
@@ -437,4 +441,9 @@ function panparks_links($variables) {
   }
 
   return $output;
+}
+
+function panparks_feed_icon($variables) {
+  $text = t('Subscribe to @feed-title', array('@feed-title' => $variables['title']));
+  return l('', $variables['url'], array('html' => TRUE, 'attributes' => array('class' => array('feed-icon'), 'title' => $text)));
 }
