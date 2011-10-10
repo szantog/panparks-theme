@@ -113,7 +113,27 @@ ol {
 .block ul,
 .item-list ul /* Drupal overrides */ {
   margin: 1em 0;
-  padding: 0 0 0 0; /* LTR */
+  padding: 0 0 0 20px; /* LTR */
+
+  &.menu {
+    .ul-reset;
+  }
+}
+
+#header,
+#footer,
+#site-closure {
+  .block ul,
+  .item-list ul,
+  ul {
+    .ul-reset;
+  }
+}
+
+ul {
+  &.quicktabs-tabs {
+    .ul-reset;
+  }
 }
 
 ul ul, ul ol,
@@ -129,7 +149,7 @@ ol ol, ol ul,
 li {
   margin: 0 0 0 15px;
   padding: 0;
-  //.d-brown;
+  .triangle-right(@red; 5px; 7px; -15px);
 }
 
 .item-list ul li /* Drupal override */ {
@@ -146,7 +166,6 @@ li.leaf /* Drupal override */ {
   padding: 0;
 }
 
-ul          { list-style-type: square;; }
 ul ul       { list-style-type: none; }
 ul ul ul    { list-style-type: none; }
 ul ul ul ul { list-style-type: none; }
