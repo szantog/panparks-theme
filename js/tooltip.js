@@ -24,13 +24,13 @@
         contentSelector: "$(this).attr('title')",
         cssStyles: {color: 'white', lineHeight: '14px', fontWeight: 'bold'},
         padding: '10px 20px',
-        cornerRadius: 8,
-        spikeLength: 15,
+        cornerRadius: 6,
+        spikeLength: 12,
         spikeGirth: 8,
         strokeWidth: 1,
         strokeStyle: 'rgba(161, 161, 161, .6)',
         fill: 'rgba(240, 78, 42, .9)',
-        positions: ['bottom'],
+        positions: ['top'],
         trigger: 'none'
       });
 
