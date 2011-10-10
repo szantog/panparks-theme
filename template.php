@@ -286,7 +286,6 @@ function panparks_preprocess_block(&$vars, $hook) {
         break;
       case 'views-news-block_1':
         $block->subject .= theme('feed_icon', array('url' => 'rss.xml', 'title' => t('News rss')));
-        kpr($vars);
         break;
     }
   }
