@@ -19,8 +19,8 @@
 */
 
 /* The em based font size. Use a 12px base font size with a 16px line height */
-@font-size-em: 0.75em; /* 16px x .75 = 12px */
-@line-height-em: 1.33em;  /* 12px x 1.333 = 16px */
+@font-size-em: 13px; /* 16px x .75 = 12px */
+@line-height-em: 20px;  /* 12px x 1.333 = 16px */
 
 /* Use a 14px base font size with a 18px line height */
 //@font-size-em: 0.875em; /* 16px x .875 = 14px */
@@ -30,11 +30,11 @@
 @font-size: 13px;
 @line-height: 20px;
 
-@h1-font: 2.2em;
-@h2-font: 1.75em;
-@h3-font: 1.5em;
-@h4-font: 1.312em;
-@h5-font: 1.125em;
+@h1-font: 26px;
+@h2-font: 24px;
+@h3-font: 22px;
+@h4-font: 20px;
+@h5-font: 18px;
 @h6-font: @h5-font;
 
 /* The following font family declarations are based on the Microsoft core web
@@ -250,8 +250,9 @@
 
 /* Font size alias: .fs(8px) makes 8px font size. If parameter isn't added, the default font size is used */
 
-.fs(@num: @font-size;) {
+.fs(@num: @font-size; @lh-offset: 4px) {
   font-size: @num;
+  line-height: @num + @lh-offset;
 }
 
 /* Text alignment aliases. */
@@ -273,7 +274,11 @@
 
 /* Some text style alias */
 .small {
-  .fs(11px);
+  .fs(12px; 4px);
+}
+
+.smaller {
+  .fs(11px; 4px;);
 }
 
 .big {
@@ -658,7 +663,7 @@
  * Separate elements
  */
 
-.separeted(@margin: @font-size;) {
+.separeted(@margin: 10px) {
   margin: @margin 0;
 }
 
@@ -889,18 +894,17 @@
  */
 .h1 {
   color: @h1;
-  font-size: @h1-font;
-  line-height: 1.3em;
-  margin-top: @font-size;
-  margin-bottom: @font-size;
+  .fs(@h1-font; 4px);
+  margin-top: 10px;
+  margin-bottom: 10px;
   .sassoon-bold;
 }
 
 .h2 {
   .h1;
   color: @h2;
-  font-size: @h2-font;
-  margin-top: @font-size;
+  .fs(@h2-font);
+
   //@todo: why was font-family reset??
   //font-family: @font-family;
 }
@@ -908,7 +912,7 @@
 .h3 {
   .h2;
   color: @h3;
-  font-size: @h3-font;
+  .fs(@h2-font; 4px;);
 }
 
 .h4 {
@@ -927,6 +931,14 @@
   .h4;
   color: @h6;
   font-size: @h6-font;
+}
+
+block-title-small {
+  .fs(20px; 0);
+}
+
+.block-title-small {
+  .fs(20px; 0);
 }
 
 .tab-style(@height: 25px; @move: 5px;) {
@@ -980,7 +992,7 @@
   }
 }
 
-.button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) {
+button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) {
   .no-border;
   .border-radius;
   .small;
@@ -993,7 +1005,7 @@
   .align-center;
   display: inline-block;
   .uppercase;
-
+  outline: none;
   color: @cl;
   background-color: @bg;
 
@@ -1004,7 +1016,7 @@
 }
 
 .d-green-button {
-  .button;
+  button;
 }
 
 .green-button {
@@ -1016,18 +1028,8 @@
   }
 }
 
-.red-button {
-  .button;
-  background-color: @red;
-
-  &:hover {
-    background-color: @l-red;
-    color: #fff;
-  }
-}
-
-.wide-button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) {
-  .button;
+wide-button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) {
+  button;
   .p-left(0);
   .p-right(0);
   width: 100%;
@@ -1042,27 +1044,35 @@
 }
 
 .red-button {
-  .button(@l-red; #fff; @red; #fff);
+  button(@l-red; #fff; @red; #fff);
 }
 
 .wide-red-button {
-  .wide-button(@l-red; #fff; @red; #fff);
+  wide-button(@l-red; #fff; @red; #fff);
+}
+
+.l-red-button {
+  button(@red; #fff; #fb7e50; #fff);
+}
+
+.wide-l-red-button {
+  button(@red; #fff; @l-red; @fff);
 }
 
 .brown-button {
-  .button(@brown; #fff; @l-brown; #fff);
+  button(@brown; #fff; @l-brown; #fff);
 }
 
 .wide-brown-button {
-  .wide-button(@brown; #fff; @l-brown; #fff);
+  wide-button(@brown; #fff; @l-brown; #fff);
 }
 
 .sand-button {
-  .button(@d-sand; #fff; @sand; #fff);
+  button(@d-sand; #fff; @sand; #fff);
 }
 
 .wide-sand-button {
-  .wide-button(@d-sand; #fff; @sand; #fff);
+  wide-button(@d-sand; #fff; @sand; #fff);
 }
 
 a,
@@ -1081,6 +1091,16 @@ li {
     &:before {
       content: none;
       .no-border;
+    }
+  }
+}
+
+.triangle-ul {
+  ul {
+    padding-left: 20px;
+
+    li {
+      .triangle-right(@red; 5px; 7px; -15px);
     }
   }
 }
