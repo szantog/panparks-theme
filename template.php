@@ -276,7 +276,7 @@ function panparks_preprocess_comment(&$vars, $hook) {
 
 function panparks_preprocess_block(&$vars, $hook) {
   $block = &$vars['elements']['#block'];
-  if ($block->bid) {
+  if (isset($block->bid)) {
     switch($block->bid) {
       case 'views-recent_blog_post-block':
         $vars['classes_array'][] = 'block-red';

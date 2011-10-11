@@ -86,6 +86,7 @@ regions[sidebar_second] = Second sidebar
 regions[navigation]     = Navigation bar
 regions[highlighted]    = Highlighted
 regions[user_menu]      = User menu
+regions[content_top]    = Content top
 regions[content]        = Content
 regions[content_bottom] = Content bottom
 regions[header]         = Header
