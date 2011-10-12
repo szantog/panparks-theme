@@ -473,6 +473,9 @@ function panparks_media_gallery_media_item_lightbox($variables) {
   $gallery_node = new FieldsRSIPreventor($element['#media_gallery_entity']);
   $file = $element['#file'];
 
+  $panparks_file = file_view($file, 'media_gallery_lightbox', LANGUAGE_NONE);
+  $panparks_file['media_title'][0]['#markup'] = '<h2>' . check_plain($gallery_node->title) . '</h2>';
+
   // The lightbox JavaScript requires width and height attributes to be set on
   // the displayed image, but if we're displaying an image derivative, we need
   // to create it in order to know its width and height.
@@ -489,15 +492,8 @@ function panparks_media_gallery_media_item_lightbox($variables) {
     $element['file']['#attributes'] += array('width' => $info['width'], 'height' => $info['height']);
   }
 
-  $image = drupal_render($element['file']);
 
-  $matches = NULL;
-  if (preg_match('@<img .*?/>@', $image, $matches)) {
-    $image = $matches[0];
-  }
-  else {
-
-  }
+  $image = drupal_render($panparks_file);
 
   $gallery_id = $element['#media_gallery_entity']->nid;
   $media_id = $element['#file']->fid;
@@ -547,6 +543,6 @@ function panparks_media_gallery_media_item_lightbox($variables) {
   } else {
     $output = $media_gallery_detail;
   }
-
+  //dsm(get_defined_vars());
   return $output;
 }
