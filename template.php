@@ -446,3 +446,107 @@ function panparks_feed_icon($variables) {
   $text = t('Subscribe to @feed-title', array('@feed-title' => $variables['title']));
   return l('', $variables['url'], array('html' => TRUE, 'attributes' => array('class' => array('feed-icon'), 'title' => $text)));
 }
+
+/**
+ * Displays a media item (entity) within a lightbox.
+ *
+ * Clicking a thumbnail within the gallery page opens a lightbox if all these
+ * conditions are met:
+ * - The gallery node's media_gallery_format field indicates to open a lightbox.
+ * - The colorbox jQuery plugin is available.
+ * - The user has JavaScript enabled.
+ *
+ * The lightbox contains some navigation functionality (including a "slideshow"
+ * link) and a <div> containing the actual content. This function themes the
+ * contents of that <div>.
+ *
+ * When any of the conditions for opening a lightbox aren't met, the user is
+ * taken to a separate detail page instead, the contents of which are themed by
+ * theme_media_gallery_media_item_detail().
+ *
+ * Overrides of original function
+ *  - Remove copyright
+ *  - Remove link to details
+ */
+function panparks_media_gallery_media_item_lightbox($variables) {
+  $element = $variables['element'];
+  $gallery_node = new FieldsRSIPreventor($element['#media_gallery_entity']);
+  $file = $element['#file'];
+
+  // The lightbox JavaScript requires width and height attributes to be set on
+  // the displayed image, but if we're displaying an image derivative, we need
+  // to create it in order to know its width and height.
+  // @todo Improve the JavaScript to not require this.
+  if ($element['file']['#theme'] == 'image_style') {
+    $style_name = $element['file']['#style_name'];
+    $style_path = image_style_path($style_name, $file->uri);
+    if (!file_exists($style_path)) {
+      $style = image_style_load($style_name);
+      image_style_create_derivative($style, $file->uri, $style_path);
+    }
+    $info = image_get_info($style_path);
+    $element['file'] += array('#attributes' => array());
+    $element['file']['#attributes'] += array('width' => $info['width'], 'height' => $info['height']);
+  }
+
+  $image = drupal_render($element['file']);
+
+  $matches = NULL;
+  if (preg_match('@<img .*?/>@', $image, $matches)) {
+    $image = $matches[0];
+  }
+  else {
+
+  }
+
+  $gallery_id = $element['#media_gallery_entity']->nid;
+  $media_id = $element['#file']->fid;
+
+  // Create an array of variables to be added to the main image link.
+  $link_vars = array();
+  $link_vars['image'] = $image;
+  $link_vars['link_path'] = "media-gallery/detail/$gallery_id/$media_id";
+  //$link_vars['no_link'] = $element['#bundle'] == 'video' ? TRUE : FALSE;
+
+  // Panparks override, never need to link to detail page
+  $link_vars['no_link'] = TRUE;
+  if ($gallery_node->getValue('media_gallery_allow_download') == TRUE) {
+    $download_link = $element['#bundle'] == 'video' ? l(t('View detail page'), $link_vars['link_path']) : theme('media_gallery_download_link', array('file' => $file));
+  }
+
+  else {
+    // Very ugly fix: This prevents the license info from being either hidden
+    // or causing scrollbars (depending on the browser) in cases where a
+    // download link is not being shown. There may be a CSS-only fix for this,
+    // but we haven't found one yet.
+    $download_link = '&nbsp;';
+  }
+
+  $media_gallery_detail =
+      '<div class="lightbox-stack">' .
+      theme('media_gallery_item', $link_vars) .
+      '<div class="media-gallery-detail-info">' .
+      $download_link .
+
+      '</div></div>';
+  // The license info has been themed already, keep it from being rendered as a child
+  $element['field_license']['#access'] = FALSE;
+
+  $output = 'Error';
+  // If the format is to have the description as well, we add it here
+  if (!empty($gallery_node->media_gallery_lightbox_extras[LANGUAGE_NONE][0]['value'])) {
+    $output =
+    '<div class="mg-lightbox-wrapper clearfix">' .
+      '<div class="lightbox-title">' . drupal_render($element['media_title']) . '</div>' .
+      '<div class="mg-lightbox-detail">' .
+      $media_gallery_detail .
+      '</div><div class="mg-lightbox-description">' .
+        drupal_render_children($element) .
+      '</div>' .
+    '</div>';
+  } else {
+    $output = $media_gallery_detail;
+  }
+
+  return $output;
+}
