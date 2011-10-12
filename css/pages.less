@@ -691,13 +691,63 @@ div.krumo-root {
  * Parks node type
  * Parks contains inline right menu in content;
  */
-.context-park {
+.context-park #content{
 
+
+  .region-content-top,
+  .region-content {
+    .clearfix;
+
+    .block {
+      .right(0);
+      width: 230px;
+
+      .block-inner {
+        padding: 10px 0 10px 10px;
+      }
+
+      &.first {
+        .left(0);
+        width:440px;
+
+        .block-inner {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .region-content-top {
     .field-type-image {
       margin-right: 0;
     }
-    #block-fieldgroup-menu-fieldgroup-menu .block-inner {
-      padding-top: 0;
+  }
+
+  .region-content-bottom,
+  .field-collection-container {
+    .m-top(20px);
+  }
+
+  .node-park:first {
+    .field-collection-container {
+      margin-top: 20px;
+    }
+  }
+
+  .field-collection-container h2 {
+    margin: 0 0 10px 0;
+  }
+  .field-collection-container h3 {
+    margin: 0;
+  }
+
+  .field-collection-view {
+    border-bottom: medium none;
+    margin: 0;
+    padding: 0;
+  }
+    .field-name-post-date {
+      .element-invisible;
     }
 
     #block-views-park-field-collections-block-1 block-inner {
