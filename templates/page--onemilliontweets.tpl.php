@@ -77,7 +77,7 @@
     <?php endif; ?>
     <div id="content" class="column"><div class="section">
       <?php print render($page['highlighted']); ?>
-      <?php print $breadcrumb; ?>
+      <?php //print $breadcrumb; ?>
       <?php print render($page['content']['bean_52']); ?>
 
       <a id="main-content"></a>

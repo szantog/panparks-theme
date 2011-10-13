@@ -176,6 +176,7 @@ bigtext {
     //.bold;
     background: url(../images/onemilliontweets.jpg) no-repeat;
     height: 105px;
+    .clear;
     text-indent: -1000px;
   }
 
@@ -191,6 +192,7 @@ bigtext {
       color: #71c6eb;
     }
   }
+
   .field-name-body {
     .viltstift;
     .fs(34px; 14px);
@@ -206,12 +208,42 @@ bigtext {
     .right(0);
   }
 
-  .block {
+  .region-content .block {
     .left(0);
     width: 450px;
 
+    .m-bottom(20px);
+
+    &.odd {
+      margin-right: 30px;
+    }
+  }
+
+  .breadcrumb {
+    .left(0);
+  }
+
+  //Donate of.. text under the title
+  #block-bean-52 {
+    .potland;
+    .right(0);
+    width: auto;
+    .fs(18px;);
+    letter-spacing: normal;
+    .m-right(84px);
+
+    p {
+      .no-margin;
+    }
+
+    img {
+      position: absolute;
+      top: -8px;
+      width: 55px;
+    }
+
     .block-inner {
-      padding: 10px;
+      padding: 0;
     }
   }
 
@@ -219,11 +251,12 @@ bigtext {
     width: 100%;
   }
 
+  //The first block left to the counter
   #block-bean-21 {
     bigtext;
 
     .block-inner {
-      padding: 20px 0;
+      padding: 10px 0;
     }
   }
 
@@ -243,7 +276,7 @@ bigtext {
 
   #block-birdbox-tweet {
     background: url(../images/donate-your-tweets.jpg) no-repeat;
-    height: 680px;
+    height: 640px;
 
     .block-inner {
       padding: 70px 20px 0;
@@ -284,21 +317,68 @@ bigtext {
       .m-top;
       .fs(18px);
     }
+
+  #donate-now a {
+    height: 100px;
+    left: 100px;
+    position: absolute;
+    top: 475px;
+    width: 280px;
+  }
   }
 
   #block-hashtag-counter-hashtag-recent-tweets {
     background: url(../images/tweets.jpg) no-repeat;
     height: 390px;
+    .fs(12px);
+
+    .block-inner {
+      padding: 60px 30px 20px;
+
+      .block-inner-bg {
+        max-height: 300px;
+        overflow: hidden;
+      }
+    }
   }
 
   #block-bean-22 {
     bigtext;
+    .right(0);
 
     h2 {
       background: url(../images/want-to-get-involved.jpg) no-repeat;
       position: relative !important;
       height: 48px;
       text-indent: -10000px;
+    }
+  }
+
+  .region-content-bottom {
+    .block {
+
+      .block-inner {
+        .no-padding;
+      }
+    }
+  }
+
+  #block-bean-31 {
+    .right;
+    margin: 0 0 20px;
+  }
+
+  #block-bean-53 {
+    .clear;
+    .no-margin;
+
+    p {
+      .no-margin;
+    }
+
+    img {
+      max-width: 930px;
+      .block;
     }
   }
 }
