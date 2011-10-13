@@ -78,6 +78,8 @@
     <div id="content" class="column"><div class="section">
       <?php print render($page['highlighted']); ?>
       <?php print $breadcrumb; ?>
+      <?php print render($page['content']['bean_52']); ?>
+
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
@@ -93,6 +95,8 @@
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <?php print render($page['content']); ?>
+
+      <?php print render($page['content_bottom']); ?>
 
     </div></div><!-- /.section, /#content -->
 

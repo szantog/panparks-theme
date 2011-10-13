@@ -171,6 +171,9 @@ function panparks_preprocess_page(&$vars, $hook) {
   if (arg(0) == 'node' && arg(1) == 2597) {
     drupal_add_css(drupal_get_path('theme', 'panparks') . '/css/onemilliontweets.less');
     $vars['theme_hook_suggestions'][] = 'page__onemilliontweets';
+    //Hide the follow us on twitter block, will be printed manualy on page top
+    hide($vars['page']['content']['bean_52']);
+
     //Change the one of the closure links href and title to panparks.org, and move it to first;
     //@todo this is a little bit hacky, need to find better solution for this transformation.
     if (isset($vars['page']['site_closure']['menu_menu-site-closure']['content'][1280])) {
