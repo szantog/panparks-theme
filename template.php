@@ -193,6 +193,7 @@ function panparks_preprocess_page(&$vars, $hook) {
       array_unshift($vars['page']['site_closure']['menu_menu-site-closure'], $tmp);
     }
   }
+
   //kpr(get_defined_vars());
 
 /*
