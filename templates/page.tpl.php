@@ -184,7 +184,7 @@
       <?php print render($page['content']); ?>
 
       <?php print render($page['content_bottom']); ?>
-        
+
       <?php print $feed_icons; ?>
     </div></div><!-- /.section, /#content -->
 
@@ -225,6 +225,6 @@
 
 <?php print render($page['bottom']); ?>
 
-<?php if ($is_admin && $page['development']): ?>
+<?php if ($page['development']): ?>
   <?php print render($page['development']); ?>
 <?php endif; ?>
