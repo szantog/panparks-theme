@@ -496,7 +496,7 @@ function panparks_media_gallery_media_item_lightbox($variables) {
     $element['file']['#attributes'] += array('width' => $info['width'], 'height' => $info['height']);
   }
 
-
+  $panparks_file['file'] = $element['file'];
   $image = drupal_render($panparks_file);
 
   $gallery_id = $element['#media_gallery_entity']->nid;
