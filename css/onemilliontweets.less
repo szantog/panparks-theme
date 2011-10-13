@@ -318,26 +318,39 @@ bigtext {
       .fs(18px);
     }
 
-  #donate-now a {
-    height: 100px;
-    left: 100px;
-    position: absolute;
-    top: 475px;
-    width: 280px;
-  }
+    #donate-now a {
+      height: 100px;
+      left: 100px;
+      position: absolute;
+      top: 475px;
+      width: 280px;
+    }
   }
 
   #block-hashtag-counter-hashtag-recent-tweets {
     background: url(../images/tweets.jpg) no-repeat;
     height: 390px;
-    .fs(12px);
+    .fs(12px; 2px);
 
     .block-inner {
       padding: 60px 30px 20px;
 
       .block-inner-bg {
-        max-height: 300px;
+        max-height: 305px;
         overflow: hidden;
+
+        .tweet-user-image {
+          .left;
+        }
+
+        .tweet-data-wrapper {
+          .m-left(60px);
+          .m-bottom(4px);
+          .tweet-created-at {
+            .fs(11px; 2px);
+            .grey;
+          }
+        }
       }
     }
   }
