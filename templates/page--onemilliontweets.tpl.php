@@ -94,21 +94,7 @@
       <?php endif; ?>
       <?php print render($page['content']); ?>
 
-      <?php print render($page['content_bottom']); ?>
-      <?php print $feed_icons; ?>
     </div></div><!-- /.section, /#content -->
-
-    <?php if ($page['navigation']): ?>
-      <div id="navigation"><div class="section clearfix">
-
-        <?php print render($page['navigation']); ?>
-
-      </div></div><!-- /.section, /#navigation -->
-    <?php endif; ?>
-
-    <?php print render($page['sidebar_first']); ?>
-
-    <?php print render($page['sidebar_second']); ?>
 
   </div></div><!-- /#main, /#main-wrapper -->
 
