@@ -83,6 +83,7 @@
   hide($page['content']['bean_41']);
   hide($page['content']['bean_42']);
   hide($page['content']['bean_43']);
+  hide($page['content']['bean_55']);
   hide($page['content']['system_main']);
 ?>
 <div id="page-wrapper"><div id="page">
@@ -176,6 +177,7 @@
         </div>
 
         <?php print $social; ?>
+        <?php print render($page['content']['bean_55']); ?>
       </div>
 
     </div></div><!-- /.section, /#content -->
