@@ -123,6 +123,8 @@
 
       <div class="content-top clearfix">
         <?php print $breadcrumb; ?>
+        <?php if ($search_form) : print drupal_render($search_form); endif; ?>
+      </div>
         <a id="main-content"></a>
         <?php print render($title_prefix); ?>
         <?php if ($title): ?>

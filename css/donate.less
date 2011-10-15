@@ -9,6 +9,7 @@
   color: #434343;
 
   .breadcrumb {
+     .left;
      margin-left: 140px;
      margin-bottom: 20px;
   }
@@ -23,9 +24,14 @@
   .tabs {
   }
 
+  .region-content {
+    .clearfix;
+  }
+
   .block {
     .left;
     margin-right: 20px;
+    .border-radius;
 
     .block-inner {
       padding: @grid-margin;
@@ -41,8 +47,7 @@
       h2 {
         .align-center;
         .sassoon-bold;
-        .fs(24px);
-        line-height: 28px;
+        .fs(22px);
       }
     }
   }
@@ -69,7 +74,7 @@
     .suffix {
       display: inline-block;
       padding: 0;
-      width: 220px;
+      width: 200px;
     }
 
     .form-radio {
@@ -81,35 +86,39 @@
 
   .form-submit {
     .wide-red-button;
+    .fs(24px);
   }
 
   //Became a wilderness supporter
   #block-bean-11 {
-    height: 470px;
-    width: 630px;
-
+    width: 590px;
+    .m-bottom(0);
     background: @green;
     color: #434343;
 
     .block-inner {
-      padding: 60px 20px 20px;
+      padding: 40px 20px 20px;
     }
 
     h2 {
       .white;
-      .fs(35px);
-      margin-bottom: 20px;
-      height: 46px;
+      .fs(32px);
+      .align-right;
+      .no-margin;
+      //padding-left: 80px;
     }
 
     .field-name-field-image {
       .right;
     }
 
+    .field-name-field-body {
+      .m-bottom(20px);
+    }
+
     #panparks-donate-form-wilderness-supporter {
       position: relative;
       .clearfix;
-      height: 245px;
 
       label[for=edit-amountselector] {
         .fs(18px);
@@ -118,7 +127,7 @@
 
       .form-item-uniqueAmount {
         .clearfix;
-        .no-margin;
+        margin-top: 50px;
 
         label {
           .left;
@@ -133,27 +142,29 @@
 
       .form-submit {
         position: absolute;
-        bottom: -4px;
+        bottom: -0px;
         right: 0;
         z-index: 1;
         width: 206px;
+
       }
     }
   }
 
   #block-bean-12 {
     margin-right: 0;
-    width: 280px;
+    width: 320px;
     background-color: #E49E15;
-    height: 470px;
+    .m-bottom(0);
 
     .block-inner {
-      padding-bottom: 20px;
+      padding: 20px;
     }
 
     h2 {
       .d-green;
-      height: 92px;
+      //height: 92px;
+      .fs(22px; 3px);
     }
 
     .form-item {
@@ -171,6 +182,10 @@
       }
     }
 
+    .form-submit {
+      .m-top(10px);
+    }
+
     .field-name-field-image {
       float: none;
       text-align: center;
@@ -183,7 +198,7 @@
   }
 
   .content-middle {
-    margin-top: 10px;
+    padding: 10px;
   };
 
   .content-mid-left {
@@ -200,12 +215,25 @@
     #block-bean-13,
     #block-bean-14 {
       float: none;
-      width: 250px;
+      width: 270px;
+
+      p {
+        .no-margin;
+      }
     }
 
     #block-bean-13 {
+      .m-bottom(0);
       .block-inner {
         padding: 0;
+
+        h2 {
+          .m-bottom(0);
+        }
+
+        .content {
+          padding: 10px;
+        }
       }
     }
 
@@ -224,9 +252,6 @@
     .section-title {
       .fs(42px);
       .sassoon-bold;
-      line-height: 35px;
-      .p-bottom(40px);
-      .p-top(35px);
       .align-center;
       .d-green;
 
@@ -234,7 +259,7 @@
         .red-separator;
         content: "";
         width: 100%;
-        .m-top(15px);
+        .m-top(8px);
       }
     }
 
@@ -246,16 +271,22 @@
         .no-padding;
       }
     }
+
+    #block-bean-18 {
+      .m-right(0);
+    }
   }
 
   .content-bottom {
-    .m-top;
+    padding: 0 10px 10px;
     .content-bottom-top {
-      padding: 10px;
+
       background-color: #a38c5d;
       .clearfix;
+      .border-radius;
+      padding: 10px;
       .block {
-        width: 445px;
+        width: 450px;
 
         .block-inner {
           .no-padding
