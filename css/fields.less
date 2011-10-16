@@ -89,8 +89,11 @@ form .field-type-image {
 
 //This is declared for accomodation description
 //Only need in full node content
-.block-system .field-name-field-short-description {
-  .green-teaser;
+.block-system .view-mode-full {
+   .field-name-field-teaser,
+   &.node-accommodation .field-name-field-short-description {
+    .green-teaser;
+  }
 }
 
 .field-name-field-local-partner-service {

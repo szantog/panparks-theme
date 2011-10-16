@@ -323,8 +323,8 @@ function panparks_password($variables) {
   $element['#attributes']['type'] = 'password';
   element_set_attributes($element, array('id', 'name', 'size', 'maxlength'));
   _form_set_class($element, array('form-text'));
-  $pre = '<span class="input-pre"></span><div class="input ' . $element['#type'] . '">';
-  $post = '</div>';
+  $pre = '<div class="input ' . $element['#type'] . '"><span class="input-pre"></span><span class="input-wrap">';
+  $post = '</span></div>';
 
   return $pre . '<input' . drupal_attributes($element['#attributes']) . ' />' . $post;
 }
