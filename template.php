@@ -550,3 +550,26 @@ function panparks_media_gallery_media_item_lightbox($variables) {
   //dsm(get_defined_vars());
   return $output;
 }
+
+/**
+ * Returns themed html for individual tweets
+ */
+function panparks_twitter_block_tweets($tweet_object, $variables = array() ) {
+  $tweet = get_object_vars($tweet_object['tweet']);
+  $tweet['text'] = twitter_block_linkify($tweet['text']);
+  $time = format_interval(time() - strtotime($tweet['created_at']) , 2) . t(' ago');
+  $html = <<<EOHTML
+  <div class="tweet-user-image">
+    <a href="http://twitter.com/{$tweet['from_user']}">
+      <img alt="{$tweet['from_user']}" src="{$tweet['profile_image_url']}" typeof="foaf:Image">
+    </a>
+  </div>
+  <div class="tweet-data-wrapper">
+    <div class="tweet-user-name"><strong>{$tweet['from_user']}</strong></div>
+    <div class="tweet-text">{$tweet['text']}</div>
+    <div class="tweet-created-at">{$time}</div>
+  </div>
+EOHTML;
+
+  return $html;
+}

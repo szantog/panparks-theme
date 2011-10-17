@@ -612,8 +612,8 @@ div.krumo-root {
   }
 
   #block-quicktabs-social {
-    height: 415px;
-    .border-radius(6px 6px 12px 12px);
+    height: auto;
+    .border-radius(6px 6px 0 0);
     .m-bottom(0);
     .block-inner {
       padding: 0;
@@ -671,9 +671,40 @@ div.krumo-root {
         }
       }
 
-      #quicktabs-tabpage-social-2 {
+      //tweet block
+      #quicktabs-tabpage-social-1 {
+        border: 1px solid @grey;
+        panparks-tweets;
+
         .block-inner {
-          .p-top(10px);
+          height: 390px;
+
+          .block-inner-bg {
+            padding: 5px;
+          }
+        }
+
+        .fs(12px; 2px);
+
+        ul {
+          margin: 0;
+        }
+
+        a {
+          color: #26BCD7;
+          .fs(12px; 2px);
+        }
+      }
+
+      #quicktabs-tabpage-social-2 {
+        border: 1px solid @grey;
+
+        .block-inner {
+          height: 390px;
+
+          .block-inner-bg {
+            padding: 5px;
+          }
         }
 
         p {
@@ -684,7 +715,7 @@ div.krumo-root {
           margin-bottom: 0;
 
           a {
-            .fs(13px);
+            .fs(12px);
           }
         }
       }
