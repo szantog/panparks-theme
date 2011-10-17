@@ -63,7 +63,11 @@ h4, h5, h6 {
     margin-top: 12px;
 }
 
- .l-brown {
+.clear {
+  clear: both;
+}
+
+.l-brown {
   color: #d1c6ae;
 }
 
