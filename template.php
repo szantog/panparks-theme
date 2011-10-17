@@ -553,6 +553,7 @@ function panparks_media_gallery_media_item_lightbox($variables) {
 
 /**
  * Returns themed html for individual tweets
+ * We override it to use our template
  */
 function panparks_twitter_block_tweets($tweet_object, $variables = array() ) {
   $tweet = get_object_vars($tweet_object['tweet']);
@@ -572,4 +573,44 @@ function panparks_twitter_block_tweets($tweet_object, $variables = array() ) {
 EOHTML;
 
   return $html;
+}
+
+/**
+ * Theme the field with pdf reader
+ */
+function panparks_pdf_reader($variables) {
+  switch ($variables['settings']['renderer']) {
+    case 0:
+    default:
+      $output = '<iframe src="http://docs.google.com/viewer?embedded=true&url='
+              . urlencode(file_create_url($variables['file']['uri']))
+              . '" width="' . $variables['settings']['pdf_width']
+              . '" height="' . $variables['settings']['pdf_height']
+              . '" style="border: none;"></iframe>';
+      break;
+
+    case 1:
+      $output = '<iframe src="https://viewer.zoho.com/docs/urlview.do?embed=true&url='
+              . urlencode(file_create_url($variables['file']['uri']))
+              . '" width="' . $variables['settings']['pdf_width']
+              . '" height="' . $variables['settings']['pdf_height']
+              . '" style="border: none;"></iframe>';
+
+    case 2:
+      $output = '<object data="' . file_create_url($variables['file']['uri']) . '#view=Fit' . '" '
+              . 'type="application/pdf' . '" '
+              . 'width="' . $variables['settings']['pdf_width'] . '" '
+              . 'height="' . $variables['settings']['pdf_height'] . '">'
+              . '<embed src="' . file_create_url($variables['file']['uri']) . '#view=Fit' . '"'
+              . 'width="' . $variables['settings']['pdf_width'] . '" '
+              . 'height="' . $variables['settings']['pdf_height'] . '" '
+              . 'type="application/pdf">'
+              . '<p>' . t('It appears your Web browser is not configured to display PDF files. ')
+              . l(t('Download adobe Acrobat '), 'http://www.adobe.com/products/reader.html')
+              . ' ' . t('or') . ' ' . l(t('click here to download the PDF file.'), file_create_url($variables['file']['uri'])) . '</p>'
+              . '</embed></object>';
+      break;
+  }
+  $output .= theme('file_link', array('file' => (object) $variables['file']));
+  return $output;
 }
