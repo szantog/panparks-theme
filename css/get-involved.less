@@ -2,11 +2,60 @@
  * @file
  * Form Styling
  */
+
+@font-face {
+    font-family: 'Blokletters-Viltstift';
+    src: url('../fonts/blokletters-viltstift.eot');
+    src: url('../fonts/blokletters-viltstift.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/blokletters-viltstift.woff') format('woff'),
+         url('../fonts/blokletters-viltstift.ttf') format('truetype'),
+         url('../fonts/blokletters-viltstift.svg#blokletters-viltstift') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'DS-Digital-Bold';
+    src: url('../fonts/ds-digib.eot');
+    src: url('../fonts/ds-digib.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ds-digib.woff') format('woff'),
+         url('../fonts/ds-digib.ttf') format('truetype'),
+         url('../fonts/ds-digib.svg#ds-digib') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
  @import "base.less";
+
+.viltstift {
+  font-family: 'Blokletters-Viltstift';
+  font-weight: normal !important;
+}
+
+.ds-digital-bold {
+  font-family: 'DS-Digital-Bold';
+  font-weight: normal !important;
+}
 
 .page-node-56 #content {
   h1 {
     .element-invisible;
+  }
+
+  .region-content {
+    .p-top(20px);
+  }
+
+
+  .field-name-field-image {
+    float: none;
+    .m-right(0);
+
+    img {
+      .border-box;
+      border: 3px solid @green;
+    }
   }
 
   .block {
@@ -14,22 +63,125 @@
     .left;
     overflow: hidden;
     width: 300px;
-    height: 300px;
+    //height: 300px;
     .block-inner {
       padding: 0;
+
+      h2 {
+        .m-bottom(0);
+      }
     }
   }
 
  //No need right margin in the last blocks
   #block-bean-46,
   #block-bean-48,
-  #block-bean-57 {
+  #block-bean-57,
+  #block-bean-49 {
     .m-right(0);
     .m-left(10px);
+  }
+
+  //Some block need inner padding
+  #block-bean-48,
+  #block-bean-49 {
+    .block-inner {
+      padding: 10px;
+    }
   }
 
   //#onemilliontweets
   #block-bean-46 {
     width: 610px;
+    height: 220px;
+    .field-name-field-body {
+      .left;
+      .fs(26px);
+      .align-right;
+      width: 290px;
+    }
+
+    .field-name-field-website,
+    .hashtag-count {
+      width: 290px;
+      .right(0);
+    }
+
+    .hashtag-count {
+      border-color: @grey;
+      .border-box;
+      margin: 20px 0 10px;
+      .hashtag-count-number {
+        .ds-digital-bold;
+      }
+
+      .hashtag-count-text {
+        .viltstift;
+        color: @grey;
+        background-color: #fff;
+      }
+    }
+
+    .field-name-field-website {
+      .m-top;
+
+      a {
+        .wide-red-button;
+      }
+    }
+  }
+
+  //We love wildlife
+  #block-bean-38 {
+    .field-name-field-website {
+      a {
+        .wide-green-button;
+      }
+    }
+  }
+
+  //All about wilderness
+  #block-bean-39 {
+    .color-block(#fff; @yellow;);
+
+    .field-name-field-website {
+      a {
+        .wide-yellow-button;
+      }
+    }
+  }
+
+  //facebook;
+  #block-bean-6 {
+    clear: left;
+  }
+
+  #block-panparks-blocks-panparks-twitter {
+    background-color: #4fc5f1;
+
+    h2 {
+      .align-center;
+      .p-top;
+    }
+
+    .content {
+      background-color: #15aae1;
+      padding: 10px;
+      .border-radius;
+    }
+  }
+
+  #block-bean-57 {
+    background-color: #d62c2c;
+    h2 {
+      .align-center;
+      .p-top;
+    }
+
+    .content {
+      background-color: #000;
+      padding: 10px;
+      .border-radius;
+    }
   }
 }

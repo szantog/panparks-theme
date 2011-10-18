@@ -112,7 +112,9 @@
 @l-sand: #e9e2d2;
 @sand:#c2bba9;
 @d-sand: #b8aa90;
-
+@l-yellow: #ebac2b;
+@yellow: #e49e15;
+@d-yellow: #e49e15;
 
 @body: #e7e7e7; /* The body background, can be changed to background picture */
 @page: #fff; /* The page wrapper background, can be changed to background picture */
@@ -1075,6 +1077,22 @@ wide-button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) 
   wide-button(@d-sand; #fff; @sand; #fff);
 }
 
+.green-button {
+  button(@green; #fff; @l-green; #fff);
+}
+
+.wide-green-button {
+  wide-button(@green; #fff; @l-green; #fff);
+}
+
+.yellow-button {
+  button(@yellow; #fff; @l-yellow; #fff);
+}
+
+.wide-yellow-button {
+  wide-button(@yellow; #fff; @l-yellow; #fff);
+}
+
 a,
 p,
 li {
@@ -1130,6 +1148,24 @@ panparks-tweets {
     .tweet-created-at {
       .fs(11px; 2px);
       .grey;
+    }
+  }
+}
+
+.color-block(@bg: #fff; @h2: @green;) {
+  background-color: @bg;
+
+  h2 {
+    color: @h2;
+  }
+
+  .field-name-field-image {
+    float: none;
+    .m-right(0);
+
+    img {
+      .border-box;
+      border: 3px solid @h2;
     }
   }
 }
