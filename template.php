@@ -168,6 +168,12 @@ function panparks_preprocess_page(&$vars, $hook) {
     $vars['theme_hook_suggestions'][] = 'page__what_you_can_do';
   }
 
+  if (arg(0) == 'node' && arg(1) == 56) {
+    drupal_add_css(drupal_get_path('theme', 'panparks') . '/css/get-involved.less');
+    //$vars['theme_hook_suggestions'][] = 'page__what_you_can_do';
+    hide($vars['page']['content']['system_main']);
+  }
+
   if (arg(0) == 'node' && arg(1) == 2597) {
     drupal_add_css(drupal_get_path('theme', 'panparks') . '/css/onemilliontweets.less');
     $vars['theme_hook_suggestions'][] = 'page__onemilliontweets';

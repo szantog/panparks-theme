@@ -1,0 +1,35 @@
+/**
+ * @file
+ * Form Styling
+ */
+ @import "base.less";
+
+.page-node-56 #content {
+  h1 {
+    .element-invisible;
+  }
+
+  .block {
+    border-radius: 10px 10px 10px 10px;
+    .left;
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    .block-inner {
+      padding: 0;
+    }
+  }
+
+ //No need right margin in the last blocks
+  #block-bean-46,
+  #block-bean-48,
+  #block-bean-57 {
+    .m-right(0);
+    .m-left(10px);
+  }
+
+  //#onemilliontweets
+  #block-bean-46 {
+    width: 610px;
+  }
+}
