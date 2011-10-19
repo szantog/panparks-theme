@@ -997,10 +997,9 @@ block-title-small {
 button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) {
   .no-border;
   .border-radius;
-  .small;
-  line-height: 14px;
+  .fs(12px; 6px);
   //height: 25px;
-  padding: 6px 15px;
+  padding: 3px 15px;
   .bold;
   cursor: pointer;
   .transition(all; 0.2s);
@@ -1014,6 +1013,10 @@ button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) {
   &:hover {
     background-color: @bg-hover;
     color: @cl-hover;
+  }
+
+  &.form-submit {
+    //padding: 2px;
   }
 }
 
