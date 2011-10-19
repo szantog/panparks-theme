@@ -45,7 +45,7 @@ input {
 
 .form-submit /* The submit button */ {
   .d-green-button;
-  padding-bottom: 5px;
+  //padding-bottom: 5px;
 }
 
 .container-inline div,
@@ -55,6 +55,7 @@ input {
 
 .tips /* Tips for Drupal's input formats */ {
 }
+
 fieldset {
   background-color: #dff2ee;
   border: 1px solid #aac3be;
@@ -167,7 +168,16 @@ form tbody th {
   input {
     .no-border;
     background: none;
+    //Set for front-page form items
+    .fs(12px);
+    padding: 3px 0;
   }
+}
+
+.compact-form-label {
+  .fs(12px);
+  left: 8px;
+  top: 3px;
 }
 
 .page-node-2637 #content #search-form,
