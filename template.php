@@ -118,12 +118,21 @@ function panparks_preprocess_page(&$vars, $hook) {
     if (isset($page['content']['bean_48'])) {
       hide($page['content']['bean_48']);
     }
+    if (isset($page['content_top']['bean_50'])) {
+      hide($page['content_top']['bean_50']);
+    }
+    if (isset($page['content_top']['bean_48'])) {
+      hide($page['content_top']['bean_48']);
+    }
   }
   //Not logged in users settings.
   else {
     //Hide pictures of month block from logged in users
     if (isset($page['content']['bean_49'])) {
       hide($page['content']['bean_49']);
+    }
+    if (isset($page['content_top']['bean_49'])) {
+      unset($page['content_top']['bean_49']);
     }
   }
 
