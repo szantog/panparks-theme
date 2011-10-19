@@ -132,7 +132,7 @@ function panparks_preprocess_page(&$vars, $hook) {
       hide($page['content']['bean_49']);
     }
     if (isset($page['content_top']['bean_49'])) {
-      unset($page['content_top']['bean_49']);
+      hide($page['content_top']['bean_49']);
     }
   }
 
@@ -310,7 +310,6 @@ function panparks_preprocess_block(&$vars, $hook) {
   }
   // Add a count to all the blocks in the region.
   $vars['classes_array'][] = 'count-' . $vars['block_id'];
-  //dsm($block);
 }
 
 /**

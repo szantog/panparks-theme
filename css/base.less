@@ -1003,6 +1003,8 @@ button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) {
   .fs(12px; 6px);
   //height: 25px;
   padding: 3px 15px;
+  // Chrome form fix
+  margin: 0;
   .bold;
   cursor: pointer;
   .transition(all; 0.2s);
@@ -1144,6 +1146,12 @@ li {
 }
 
 panparks-tweets {
+  .fs(12px; 2px);
+
+  ul {
+    margin: 5px 0;
+  }
+
   .tweet-user-image {
     .left;
     .p-top(2px);

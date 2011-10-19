@@ -38,7 +38,7 @@
   font-weight: normal !important;
 }
 
-.page-node-56 #content {
+.page-node-56 .column {
   h1 {
     .element-invisible;
   }
@@ -58,6 +58,12 @@
     }
   }
 
+  .field-name-field-website {
+    a {
+      .wide-green-button;
+    }
+  }
+
   .block {
     border-radius: 10px 10px 10px 10px;
     .left;
@@ -65,7 +71,7 @@
     width: 300px;
     //height: 300px;
     .block-inner {
-      padding: 0;
+      padding: 10px 0;
 
       h2 {
         .m-bottom(0);
@@ -74,10 +80,12 @@
   }
 
  //No need right margin in the last blocks
+  #block-bean-3,
   #block-bean-46,
   #block-bean-48,
-  #block-bean-57,
-  #block-bean-49 {
+  #block-bean-49,
+  #block-bean-50,
+  #block-bean-57 {
     .m-right(0);
     .m-left(10px);
   }
@@ -90,10 +98,42 @@
     }
   }
 
+  //Some block need zero padding
+  #block-bean-46,
+  #block-bean-6,
+  #block-panparks-blocks-panparks-twitter,
+  #block-bean-57, {
+    .block-inner {
+      padding: 0;
+    }
+  }
+
+  //video
+  #block-bean-56 {
+    h2 {
+      .p-top(5px);
+    }
+  }
+
   //#onemilliontweets
   #block-bean-46 {
     width: 610px;
-    height: 220px;
+    height: 235px;
+
+    h2 {
+      height: 40px;
+      background: none;
+      text-indent: 0;
+      img {
+        height: 44px;
+      }
+    }
+
+    strong {
+      font-weight: normal;
+      color: @l-red;
+    }
+
     .field-name-field-body {
       .left;
       .fs(26px);
@@ -103,7 +143,7 @@
 
     .field-name-field-website,
     .hashtag-count {
-      width: 290px;
+      width: 300px;
       .right(0);
     }
 
@@ -131,13 +171,16 @@
     }
   }
 
-  //We love wildlife
-  #block-bean-38 {
-    .field-name-field-website {
-      a {
-        .wide-green-button;
-      }
+  //We love wildlife and all about wilderness maximize body height
+  #block-bean-38,
+  #block-bean-39 {
+    .field-name-field-body {
+      height: 100px;
     }
+  }
+
+  #block-bean-38 {
+    clear: left;
   }
 
   //All about wilderness
@@ -151,13 +194,66 @@
     }
   }
 
+  #block-views-recent-blog-post-block-1 {
+    .color-block(#fff; @d-brown;);
+
+    h2 {
+      .m-bottom(22px);
+      overflow: hidden;
+
+      .subtitle {
+        .fs(18px; 0);
+        float: none;
+      }
+    }
+
+    .field-name-field-website {
+      a {
+        .wide-d-brown-button;
+      }
+    }
+
+    .views-row {
+      .row-separator(20px);
+
+      .views-field-field-transferred-bp-url-1 {
+        display: none;
+      }
+
+      .views-field-title {
+        .bold;
+        .fs(14px);
+
+        a {
+          .rectangle(@d-green; 2px; 8px;);
+        }
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .view-footer {
+      .m-top(12px);
+    }
+  }
+
+  //quiz
+  #block-bean-58 {
+    .field-name-field-body {
+      height: 258px;
+    }
+  }
   //facebook;
   #block-bean-6 {
     clear: left;
+    .border-radius(0 0 0 0);
   }
 
   #block-panparks-blocks-panparks-twitter {
     background-color: #4fc5f1;
+    panparks-tweets;
 
     h2 {
       .align-center;
@@ -166,16 +262,50 @@
 
     .content {
       background-color: #15aae1;
-      padding: 10px;
+      padding: 0 10px;
       .border-radius;
+      overflow: hidden;
+
+      a {
+        color: #054f6b;
+
+        &:hover {
+          color: #94e2fe;
+        }
+      }
+
+      li {
+        .row-separator(10px);
+        border-color: #4fc5f1;
+
+        .tweet-user-name {
+          color: #054f6b;
+        }
+
+        .tweet-text {
+          .white;
+          max-height: 58px;
+        }
+
+        .tweet-created-at {
+          color: #94e2fe;
+        }
+      }
     }
   }
 
+  //youtube
   #block-bean-57 {
     background-color: #d62c2c;
     h2 {
       .align-center;
       .p-top;
+    }
+
+    .field-name-field-website {
+      a {
+        .wide-red-button;
+      }
     }
 
     .content {

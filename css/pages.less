@@ -504,29 +504,23 @@ div.krumo-root {
 }
 
 .front {
-  .region-content {
+  .column {
     .block {
       width: 310px;
-      float: left;
+      .left;
       height: 350px;
       overflow: hidden;
       .border-radius;
 
-      .content a {
-        .big;
-        .bold;
-
-        &.button {
-          .uppercase;
-        }
+      &.last {
+        .m-right(0);
       }
     }
-    .count-1,
-    .count-2,
-    .count-4,
-    .count-5,
-    .count-7 {
-      .m-right;
+  }
+
+  .region-content {
+    .block {
+      height: 290px;
     }
   }
 
@@ -562,54 +556,18 @@ div.krumo-root {
     }
     a {
       .l-red;
+      .big;
+      .bold;
 
       &.button {
-        .green-button;
-        .p-left(0);
-        .p-right(0);
-        width: 100%;
+        .wide-green-button;
       }
     }
   }
 
-  //photos of month
-  #block-bean-49 {
-
-    h2 {
-      .white;
-
-      a {
-        .white;
-      }
-    }
-
-    .field-name-field-website a {
-      .wide-brown-button;
-    }
-  }
   //making difference
   #block-bean-1 {
 
-  }
-  //featured video
-  #block-bean-4 {
-    h2 a {
-      .d-brown;
-    }
-  }
-  //became a supporter
-  #block-bean-3 {
-     background-color: @l-red;
-    .white;
-
-    h2 a {
-      .white;
-    }
-
-    .form-submit {
-      .l-red-button;
-      padding: 2px 15px;
-    }
   }
 
   #block-quicktabs-social {
@@ -684,8 +642,6 @@ div.krumo-root {
             padding: 5px;
           }
         }
-
-        .fs(12px; 2px);
 
         ul {
           margin: 0;
