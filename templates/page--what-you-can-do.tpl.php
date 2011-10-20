@@ -94,7 +94,7 @@
     <?php endif; ?>
 
     <?php if ($site_name || $site_slogan): ?>
-      <div id="name-and-slogan" class="element-invisible"'">
+      <div id="name-and-slogan" class="element-invisible">
         <?php if ($site_name): ?>
           <?php if ($title): ?>
             <div id="site-name"><strong>

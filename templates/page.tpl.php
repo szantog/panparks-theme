@@ -94,7 +94,7 @@
     <?php endif; ?>
 
     <?php if ($site_name || $site_slogan): ?>
-      <div id="name-and-slogan" class="element-invisible"'">
+      <div id="name-and-slogan" class="element-invisible">
         <?php if ($site_name): ?>
           <?php if ($title): ?>
             <div id="site-name"><strong>
@@ -214,7 +214,7 @@
     <div id="site-closure-wrapper"><div id="site-closure"><div class="section clearfix">
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="small-logo"><img src="<?php print $small_logo_path; ?>" alt="<?php print t('Home'); ?>" /></a>
         <p>
-          <span class="uppercase title">The best of Europe's wilderness</span></br>
+          <span class="uppercase title">The best of Europe's wilderness</br></span>
           <span>network of national parks offering Europe's most undisturbed areas of nature, wild nature's holidays.</span>
         </p>
         <?php print render($page['site_closure']); ?>
