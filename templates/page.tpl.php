@@ -213,10 +213,7 @@
     <?php if ($page['site_closure']): ?>
     <div id="site-closure-wrapper"><div id="site-closure"><div class="section clearfix">
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="small-logo"><img src="<?php print $small_logo_path; ?>" alt="<?php print t('Home'); ?>" /></a>
-        <p>
-          <span class="uppercase title">The best of Europe's wilderness</br></span>
-          <span>network of national parks offering Europe's most undisturbed areas of nature, wild nature's holidays.</span>
-        </p>
+
         <?php print render($page['site_closure']); ?>
         <div id ="macroweb"><small>designed by <a href="http://macroweb.hu">Macroweb</a>, powered by <a href="http://drupal.org">Drupal</a>.</small></div>
       </div></div></div><!-- /#site-closure -->
