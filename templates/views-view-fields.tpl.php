@@ -23,8 +23,8 @@
  * @ingroup views_templates
  */
 ?>
-<?php if (!empty($cont)): ?>
-  <?php print $cont; ?>
+<?php if (!empty($contextual_links)): ?>
+  <?php print $contextual_links; ?>
 <?php endif; ?>
 <?php foreach ($fields as $id => $field): ?>
   <?php if (!empty($field->separator)): ?>
