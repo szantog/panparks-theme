@@ -63,19 +63,38 @@
     .fs(14px);
   }
 }
-
-.view-publications-resources-pages {
-
+// http://panparks.node4.macroweb.hu/learn/wilderness-resource-bank
+.view-resources-pages {
   .field-name-field-image {
-    width: 60px;
+    width: 100px;
+  }
+}
+
+.view-publication-pages {
+  td {
+    vertical-align: top;
   }
 
-  &.view-dom-id-1 {
-    .field-name-field-image {
-      width: 100px;
+  .field-name-field-image {
+    float: none;
+
+    img {
+      width: auto;
+      margin: 0 auto;
+    }
+  }
+
+  &.view-dom-id-3 {
+    td {
+      vertical-align: top;
+    }
+
+    .field-name-title {
+      .align-center;
     }
   }
 }
+
 
 .openlayers-views-map {
   .openlayers-tooltip-name {
