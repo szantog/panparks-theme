@@ -121,10 +121,18 @@
 
 //This made for http://panparks.node4.macroweb.hu/get-involved/we-love-wilderness
 .view-photo-map {
+  .clearfix;
+  //HA  CK, to fix sidebars in chrome
+  .olFramedCloudPopupContent {
+    //overflow: visible;
+  }
 
+  .openlayers-tooltip-description {
+    .clearfix;
+  }
   //individual image settings
   .views-field-field-ps-photo {
-    float: left;
+    .left;
   }
 
   table {
