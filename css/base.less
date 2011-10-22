@@ -1008,6 +1008,8 @@ button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) {
   //height: 25px;
   padding: 3px 15px;
   // Chrome form fix
+  .p-left(15px);
+  .p-right(15px);
   margin: 5px;
   .bold;
   cursor: pointer;
@@ -1018,7 +1020,7 @@ button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) {
   outline: none;
   color: @cl;
   background-color: @bg;
-
+  width: auto;
   &:hover {
     background-color: @bg-hover;
     color: @cl-hover;
@@ -1026,19 +1028,6 @@ button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) {
 
   &.form-submit {
     //padding: 2px;
-  }
-}
-
-.d-green-button {
-  button;
-}
-
-.green-button {
-  .button;
-  background-color: @green;
-
-  &:hover {
-    background-color: @l-green;
   }
 }
 
@@ -1051,7 +1040,7 @@ wide-button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) 
   color: @cl;
   background-color: @bg;
   margin: 0;
-  width: auto;
+  width: 100%;
 
   &:hover {
     background-color: @bg-hover;
@@ -1084,11 +1073,11 @@ wide-button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) 
 }
 
 .d-brown-button {
-  button(@d-brown; #fff; @brown; #fff);
+  button(@d-brown; #fff; @l-brown; #fff);
 }
 
 .wide-d-brown-button {
-  wide-button(@d-brown; #fff; @brown; #fff);
+  wide-button(@d-brown; #fff; @l-brown; #fff);
 }
 
 .sand-button {
@@ -1100,19 +1089,27 @@ wide-button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) 
 }
 
 .green-button {
-  button(@green; #fff; @l-green; #fff);
+  button(@green; #fff; @d-green; #fff);
 }
 
 .wide-green-button {
-  wide-button(@green; #fff; @l-green; #fff);
+  wide-button(@green; #fff; @d-green; #fff);
+}
+
+.d-green-button {
+  button(@d-green; #fff; @green; #fff);
+}
+
+.wide-d-green-button {
+  wide-button(@d-green; #fff; @green; #fff);
 }
 
 .yellow-button {
-  button(@yellow; #fff; @l-yellow; #fff);
+  button(@yellow; #fff; @l-brown; #fff);
 }
 
 .wide-yellow-button {
-  wide-button(@yellow; #fff; @l-yellow; #fff);
+  wide-button(@yellow; #fff; @l-brown; #fff);
 }
 
 a,
