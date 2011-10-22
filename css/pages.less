@@ -520,7 +520,13 @@ div.krumo-root {
 
   .region-content {
     .block {
-      height: 290px;
+      height: 235px;
+    }
+  }
+
+  .views {
+    h3 {
+      .fs(14px);
     }
   }
 
@@ -536,13 +542,18 @@ div.krumo-root {
       }
 
       .feed-icon {
-        margin-left: 10px;
-        margin-top: 2px;
+        margin-left: 20px;
+        margin-top: 0px;
 
         &:hover {
           opacity: 0.6;
         }
       }
+    }
+
+    .row-separator {
+      margin-top: 8px;
+      padding-bottom: 10px;
     }
   }
   //getting indolved
@@ -550,17 +561,31 @@ div.krumo-root {
      background-color: @d-green;
     .white;
 
-    h2 a {
-
+    h2 {
       .white;
+      a {
+        .white;
+      }
     }
     .content {
       a {
         .l-red;
-        .big;
-        .bold;
+      }
 
-        &.button {
+      .field-name-field-body {
+        height: 265px;
+
+        h3 {
+          .fs(14px)
+        }
+
+        p {
+          .m-top(0);
+        }
+      }
+
+      .field-name-field-website {
+        a {
           .wide-green-button;
         }
       }
@@ -569,7 +594,13 @@ div.krumo-root {
 
   //making difference
   #block-bean-1 {
+    .field-name-field-body {
+      .small-triangle-ul;
 
+      ul li:before {
+        border-color: transparent transparent transparent @green;
+      }
+    }
   }
 
   #block-quicktabs-social {

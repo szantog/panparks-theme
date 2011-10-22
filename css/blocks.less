@@ -296,8 +296,28 @@ h2.block-title /* Block title */ {
     .white;
   }
 
+  .field-name-field-body {
+    p {
+      margin: 5px 0;
+    }
+  }
+
+  .form-item-amountSelector {
+    .left(0);
+    .m-bottom(8px);
+
+    .form-radios {
+      margin: 0;
+    }
+
+    .form-type-radio {
+      margin: 5px 20px 0 0;
+    }
+  }
+
   .form-item-uniqueAmount {
     .clearfix;
+    margin: 5px 0;
 
     label {
       .left;
@@ -364,12 +384,20 @@ h2.block-title /* Block title */ {
   h3 {
     .white;
     .sassoon-bold;
+    .fs(20px);
+    margin: 10px 0;
   }
-  ul {
 
+  ul {
+    .m-bottom(20px);
   }
+
   li {
-    .rectangle(@brown; 2px; 10px;);
+    .rectangle(@brown; 2px; 8px;);
+    .bold;
+    .italic;
+    .m-top;
+    .m-bottom;
   }
 
   label {
@@ -380,12 +408,18 @@ h2.block-title /* Block title */ {
   a {
     &.button {
       .wide-brown-button;
+      margin: 0;
     }
   }
 
   .field-name-field-website {
+    border-bottom: 1px solid #b89f6d;
+    .m-bottom;
+    .p-bottom(15px);
+
     a {
       .wide-brown-button;
+      margin: 0;
     }
   }
 
@@ -396,6 +430,7 @@ h2.block-title /* Block title */ {
   .form-submit {
     .brown-button;
     width: 100px;
+    margin: 0;
   }
 
   #panparks-blocks-register-form {

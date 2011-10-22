@@ -920,6 +920,8 @@
   .h2;
   color: @h3;
   .fs(@h3-font; 4px;);
+  .bold;
+  margin: 0;
 }
 
 .h4 {
@@ -1048,7 +1050,7 @@ wide-button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) 
   .clear;
   color: @cl;
   background-color: @bg;
-
+  margin: 0;
   &:hover {
     background-color: @bg-hover;
     color: @cl-hover;
@@ -1137,6 +1139,16 @@ li {
 
     li {
       .triangle-right(@red; 5px; 7px; -15px);
+    }
+  }
+}
+
+.small-triangle-ul {
+  ul {
+    padding-left: 15px;
+
+    li {
+      .triangle-right(@red; 5px; 4px; -12px);
     }
   }
 }
