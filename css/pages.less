@@ -639,12 +639,12 @@ div.krumo-root {
       ul.quicktabs-tabs {
         margin: 0;
         overflow: hidden;
-        height: 22px;
+        height: 24px;
         padding: 0;
       }
 
       .quicktabs-tabs li {
-        .tab-style(20px; 3px;);
+        .tab-style(22px; 3px;);
 
         a {
           .align-center;
@@ -652,19 +652,17 @@ div.krumo-root {
           .border-radius(6px 6px 0 0);
           font-style: normal;
           .smaller;
-          line-height: 18px;
+          line-height: 22px;
           .no-padding;
-          background-position: right -22px;
 
           &:hover {
-            background-position: right -19px;
           }
         }
 
         &.active {
 
           a {
-            background-color: @grey;
+            background-color: @d-grey;
             .white;
             background-position: right -19px;
           }
@@ -709,16 +707,13 @@ div.krumo-root {
           }
         }
 
-        p {
-          margin: 5px 0;
+        .views-row {
+          margin-top: 4px;
+          padding-bottom: 7px;
         }
 
-        .views-field-field-transferred-bp-url-1 {
-          margin-bottom: 0;
-
-          a {
-            .fs(12px);
-          }
+        .views-row-1 {
+          .m-top(0);
         }
       }
     }
