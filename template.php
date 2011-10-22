@@ -167,23 +167,23 @@ function panparks_preprocess_page(&$vars, $hook) {
     drupal_set_title(t('Share a photo'));
   }
 
-  if (arg(0) == 'node' && arg(1) == 2637) {
+  if (arg(0) == 'node' && arg(1) == 2637 && !arg(2)) {
     drupal_add_css(drupal_get_path('theme', 'panparks') . '/css/donate.less');
     $vars['theme_hook_suggestions'][] = 'page__donate_now';
   }
 
-  if (arg(0) == 'node' && arg(1) == 55) {
+  if (arg(0) == 'node' && arg(1) == 55 && !arg(2)) {
     drupal_add_css(drupal_get_path('theme', 'panparks') . '/css/what-you-can-do.less');
     $vars['theme_hook_suggestions'][] = 'page__what_you_can_do';
   }
 
-  if (arg(0) == 'node' && arg(1) == 56) {
+  if (arg(0) == 'node' && arg(1) == 56 && !arg(2)) {
     drupal_add_css(drupal_get_path('theme', 'panparks') . '/css/get-involved.less');
     //$vars['theme_hook_suggestions'][] = 'page__what_you_can_do';
     hide($vars['page']['content']['system_main']);
   }
 
-  if (arg(0) == 'node' && arg(1) == 2597) {
+  if (arg(0) == 'node' && arg(1) == 2597 && !arg(2)) {
     drupal_add_css(drupal_get_path('theme', 'panparks') . '/css/onemilliontweets.less');
     $vars['theme_hook_suggestions'][] = 'page__onemilliontweets';
     //Hide the follow us on twitter block, will be printed manualy on page top
