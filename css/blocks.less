@@ -21,6 +21,10 @@
   }
 }
 
+.not-front .block .content {
+  line-height: 17px;
+}
+
 .block.first /* The first block in the region */ {
 }
 
@@ -344,13 +348,12 @@ h2.block-title /* Block title */ {
 
 // Footer ovverides in donatation forms
 #block-bean-8 {
-  width: 320px;
+  width: 320px !important;
   background-color: transparent;
 
   .form-submit {
     .d-green-button;
     .clear;
-    width: auto;
 
     &:hover {
       //background-color: #F15C22;
@@ -380,8 +383,7 @@ h2.block-title /* Block title */ {
 //Join now blocks wuth login form
 #block-panparks-blocks-join-now,
 #block-bean-48,
-#block-bean-50,
-#block-bean-49 {
+#block-bean-50 {
   background-color: @d-brown;
   .white;
   .m-right(0);
@@ -578,14 +580,19 @@ h2.block-title /* Block title */ {
 
 //photos of month
 #block-bean-49 {
-  background-color: @d-brown;
+  .color-block(@d-brown; #fff);
+  .white;
 
-  h2 {
-    .white;
+  .field-name-field-image {
+    .m-top;
 
-    a {
-      .white;
+    img {
+      border-color: @brown;
     }
+  }
+
+  .field-name-field-body {
+    height: 98px;
   }
 
   .field-name-field-website a {
