@@ -1051,6 +1051,8 @@ wide-button(@bg: @d-green; @cl: #fff; @bg-hover: @l-green; @cl-hover: @d-green) 
   color: @cl;
   background-color: @bg;
   margin: 0;
+  width: auto;
+
   &:hover {
     background-color: @bg-hover;
     color: @cl-hover;
@@ -1145,11 +1147,18 @@ li {
 
 .small-triangle-ul {
   ul {
-    padding-left: 15px;
+    padding-left: 5px;
 
     li {
-      .triangle-right(@red; 5px; 4px; -12px);
+      .triangle-right(@red; 5px; 3px; -12px);
     }
+  }
+}
+
+.bullet {
+  ul {
+    list-style: disc outside none;
+    margin-left: 15px;
   }
 }
 
