@@ -102,13 +102,19 @@ form .field-type-image {
   }
 }
 
+//This is the template description container embed in wysiwyg
+// This will be inherited to the media description in imagefields
+.description-container {
+  .fs(11px);
+  padding: 5px 10px;
+  background-color: @l-grey;
+  clear: both;
+}
+
 .file-image {
 
   .field-name-media-description {
-    padding: 5px 10px;
-    background-color: @l-grey;
-    .small;
-    clear: both;
+    .description-container;
 
     p {
       margin:0;
@@ -120,14 +126,6 @@ form .field-type-image {
     background-color: @l-grey;
   }
 
-}
-
-//This is the template description container embed in wysiwyg
-.description-container {
-  padding: 5px 10px;
-  background-color: @l-grey;
-  .small;
-  clear: both;
 }
 
 #edit-field-ps-date {
