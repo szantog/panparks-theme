@@ -38,7 +38,8 @@
 
 .view-accomodations-to-park,
 .view-tours-and-holidays-to-park,
-.view-tours-and-holidays {
+.view-tours-and-holidays,
+.view-news {
   .views-row {
     .row-separator(0);
   }
@@ -183,5 +184,28 @@
   .views-field-title {
     .bold;
     .m-bottom;
+  }
+}
+
+.view-news {
+  &.view-display-id-page {
+    h2 {
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    strong {
+      margin: 5px 0;
+    }
+
+    .field-name-body {
+      strong {
+        margin: 0;
+        font-weight: normal;
+      }
+    }
   }
 }
