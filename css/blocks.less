@@ -326,6 +326,7 @@ h2.block-title /* Block title */ {
 
     label {
       .left;
+      .p-top(3px);
     }
 
     .textfield {
@@ -350,6 +351,25 @@ h2.block-title /* Block title */ {
 #block-bean-8 {
   width: 320px !important;
   background-color: transparent;
+
+  .form-item-amountSelector {
+    label {
+      .left(0);
+      .p-top(4px);
+
+      &.option {
+        float: none;
+      }
+    }
+
+    .form-radios {
+      .left(0);
+
+      .form-type-radio {
+        margin: 0 6px 0 0;
+      }
+    }
+  }
 
   .form-submit {
     .d-green-button;
