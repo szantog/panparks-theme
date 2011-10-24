@@ -971,29 +971,27 @@ block-title-small {
     .italic;
     .align-center;
     .border-radius(10px 10px 0 0);
-    background-color: @d-green;
+    background-color: #cfe3df;
     padding: 0 20px;
     height: @height + @move;
     line-height: @height;
-
+    .d-green;
 
     &:hover {
-      background-color: @d-green;
+      background-color: #cfe3df;
       .no-border;
       margin-top: 0;
       padding: 0 20px;
-      background-position: right -10px;
     }
   }
 
   &.active a {
     .no-border;
-    background-color: #cfe3df;
+    background-color: @d-green;
     margin-top: 0;
     cursor: default;
     //height: @height + @move;
-    background-position: right -10px;
-    .d-green;
+    .white;
   }
 
   &.last a{
