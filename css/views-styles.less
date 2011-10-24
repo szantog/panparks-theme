@@ -38,8 +38,7 @@
 
 .view-accomodations-to-park,
 .view-tours-and-holidays-to-park,
-.view-tours-and-holidays,
-.view-news {
+.view-tours-and-holidays {
   .views-row {
     .row-separator(0);
   }
@@ -189,23 +188,28 @@
 
 .view-news {
   &.view-display-id-page {
-    h2 {
-      margin: 0;
-    }
-
-    p {
-      margin: 0;
-    }
-
-    strong {
-      margin: 5px 0;
-    }
-
-    .field-name-body {
-      strong {
-        margin: 0;
-        font-weight: normal;
+    #edit-date-filter-wrapper {
+      label {
+        .left;
       }
+
+      .views-widget {
+        .left;
+      }
+    }
+
+    #edit-date-filter-value {
+      padding: 0;
+    }
+
+    .form-type-date-select {
+      label {
+        display: none;
+      }
+    }
+
+    #edit-submit-news {
+      margin:0;
     }
   }
 }

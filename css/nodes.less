@@ -151,3 +151,34 @@
     .bold;
   }
 }
+
+.node-news {
+  .field-name-post-date {
+    margin: 5px 0;
+    .bold;
+    .fs(12px);
+  }
+
+  &.view-mode-teaser {
+    .row-separator(20px);
+
+    h2 {
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .field-name-field-image {
+      .m-bottom(0);
+    }
+
+    .field-name-body {
+      strong {
+        margin: 0;
+        font-weight: normal;
+      }
+    }
+  }
+}
