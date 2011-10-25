@@ -655,12 +655,9 @@ function panparks_colorbox_image_formatter($variables) {
     'style_name' => $settings['colorbox_node_style'],
   );
 
-  $style_path = image_style_path($image['style_name'], $image['path']);
-  $info = image_get_info($style_path);
-
-  if ($info = image_get_info($style_path)) {
-    $image['width'] = $info['width'];
-    $image['height'] = $info['height'];
+  if (isset($item['width']) && isset($item['height'])) {
+    $image['width'] = $item['width'];
+    $image['height'] = $item['height'];
   }
 
   switch ($settings['colorbox_caption']) {
