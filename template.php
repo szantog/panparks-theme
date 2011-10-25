@@ -140,7 +140,12 @@ function panparks_preprocess_page(&$vars, $hook) {
 
   if (arg(1) && end($args) == 'colorbox') {
     $vars['theme_hook_suggestions'][] = 'page__null' ;
+  }
 
+  //Add only content tpl.php if we are on colorbox page
+
+  if (arg(1) && end($args) == 'colorbox-photo') {
+    $vars['theme_hook_suggestions'][] = 'page__null_photo' ;
   }
 
   // Set variable to search form, no need to use block
@@ -725,7 +730,7 @@ function panparks_colorbox_image_formatter($variables) {
   //via views, need to set $gallery_id to use same rel attribute in colorbox link.
   //This is a little bit hacky, but the the complete photo sharing system is a big-big hack now..
   if ($node->type == 'photo_shared') {
-    $path = 'node/' . $node->nid . '/colorbox';
+    $path = 'node/' . $node->nid . '/colorbox-photo';
     $gallery_id = 'gallery-all';
   }
   else if ($style_name = $settings['colorbox_image_style']) {
