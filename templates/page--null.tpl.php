@@ -68,7 +68,7 @@
  * @see template_process()
  */
 ?>
-<div id="page-wrapper"><div id="page">
+<div id="page-wrapper" class="<?php print str_replace('_', '-', $node->type);?>"><div id="page">
   <div id="main-wrapper"><div id="main" class="clearfix<?php if ($main_menu || $page['navigation']) { print ' with-navigation'; } ?>">
     <div id="content" class="column"><div class="section">
       <?php print render($title_prefix); ?>
