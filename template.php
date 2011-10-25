@@ -258,23 +258,6 @@ function panparks_preprocess_node(&$vars, $hook) {
 }
 // */
 
-//Tmp depricated
-
-//function panparks_preprocess_node_park(&$vars, $hook) {
-//  if (isset($vars['content']['group_tours_and_holidays'])) {
-//    panparks_trespass_hook($vars['content']['group_tours_and_holidays']);
-//  }
-//  kpr($vars);
-//}
-//
-//function panparks_trespass_hook($var = NULL) {
-//  $cache = &drupal_static('tresspass');
-//  if (is_null($cache)) {
-//    $cache = $var;
-//  }
-//  dsm(get_defined_vars());
-//  return $cache;
-//}
 /**
  * Override or insert variables into the comment templates.
  *
@@ -317,6 +300,18 @@ function panparks_preprocess_block(&$vars, $hook) {
   $vars['classes_array'][] = 'count-' . $vars['block_id'];
 }
 
+function panparks_preprocess_image_style(&$vars, $hook) {
+  if (arg(2) == 'colorbox-photo') {
+    //Image size should add to images rendered in colorbox.
+    $style_path = image_style_path($vars['style_name'], $vars['path']);
+    $info = image_get_info($style_path);
+
+    if ($info = image_get_info($style_path)) {
+      $vars['width'] = $info['width'];
+      $vars['height'] = $info['height'];
+    }
+  }
+}
 /**
  * Override or insert variables into theme_menu_local_task().
  */
@@ -660,9 +655,12 @@ function panparks_colorbox_image_formatter($variables) {
     'style_name' => $settings['colorbox_node_style'],
   );
 
-  if (isset($item['width']) && isset($item['height'])) {
-    $image['width'] = $item['width'];
-    $image['height'] = $item['height'];
+  $style_path = image_style_path($image['style_name'], $image['path']);
+  $info = image_get_info($style_path);
+
+  if ($info = image_get_info($style_path)) {
+    $image['width'] = $info['width'];
+    $image['height'] = $info['height'];
   }
 
   switch ($settings['colorbox_caption']) {
