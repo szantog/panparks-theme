@@ -959,9 +959,28 @@ div.krumo-root {
 }
 
 #photo-box {
+  font-size: @font-size-em;
+  line-height: @line-height-em;
+
+  //This should be because of chrome colorbox wrong width and height counter
+  .clearfix {
+    &:after {
+      display: none;
+      content: "";
+    }
+  }
+
+  img {
+    max-width: none;
+  }
+
+  .node-title {
+    margin: 5px 0;
+  }
+
   #block-system-main {
     .block-inner {
-      padding: 10px;
+      padding: 0 10px 10px 10px;
     }
   }
 }
