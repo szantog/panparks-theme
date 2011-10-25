@@ -95,6 +95,9 @@
   }
 }
 
+.openlayers-tooltip-description {
+  .clearfix;
+}
 
 .openlayers-views-map {
   img {
@@ -131,9 +134,6 @@
     overflow: visible !important;
   }
 
-  .openlayers-tooltip-description {
-    .clearfix;
-  }
   //individual image settings
   .views-field-field-ps-photo {
     .left;
@@ -232,5 +232,10 @@
   .views-field-field-image {
     .left;
     .m-left(0);
+  }
+
+  //This should be to prevent sidebars
+  .olFramedCloudPopupContent {
+    overflow: hidden !important;
   }
 }
