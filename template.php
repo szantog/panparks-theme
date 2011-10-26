@@ -214,6 +214,12 @@ function panparks_preprocess_page(&$vars, $hook) {
     }
   }
 
+  $vars['macroweb'] =
+    '<small>' . t('supported by') . '</br></small>' .
+    theme('image', array('path' => drupal_get_path('theme', 'panparks') . '/images/eu.gif')) .
+    '</br><small class="macroweb">' . t('designed by !link', array('!link' => l(t('Macroweb'), 'http://macroweb.hu'))) . ', ' .
+    t('powered by !link', array('!link' => l(t('Drupal'), 'http://drupal.org'))) .'</small>';
+
   //kpr(get_defined_vars());
 
 /*
