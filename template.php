@@ -220,7 +220,7 @@ function panparks_preprocess_page(&$vars, $hook) {
     '</br><small class="macroweb">' . t('designed by !link', array('!link' => l(t('Macroweb'), 'http://macroweb.hu'))) . ', ' .
     t('powered by !link', array('!link' => l(t('Drupal'), 'http://drupal.org'))) .'</small>';
 
-  kpr(get_defined_vars());
+  //kpr(get_defined_vars());
 
 /*
  * Tmp unused section
