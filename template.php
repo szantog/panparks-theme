@@ -76,7 +76,7 @@ function panparks_preprocess_html(&$vars, $hook) {
 
   //Remove extraa classes, when we are on colorbox page.
   $args = arg();
-  if (arg(1) && end($args) == 'colorbox') {
+  if ((arg(1) && end($args) == 'colorbox') || (arg(0) == 'node' && arg(1) == 56 && !arg(2))) {
     $vars['classes_array'] = array_diff($vars['classes_array'], array('one-sidebar sidebar-first'));
   }
 }
@@ -98,7 +98,7 @@ function panparks_preprocess_page(&$vars, $hook) {
   // $args is never used, just set it to checking
   //@todo remove
   $args = arg();
-
+  $node = isset($vars['node']) ? $vars['node'] : NULL;
   //Set variable to print upper user menu for logged in users.
   //Logged in users settings
   if ($user->uid > 0) {
@@ -138,7 +138,7 @@ function panparks_preprocess_page(&$vars, $hook) {
 
   //Add only content tpl.php if we are on colorbox page
 
-  if (arg(1) && end($args) == 'colorbox') {
+  if ((arg(1) && end($args) == 'colorbox') || (isset($node) && $node->nid == '58')) {
     $vars['theme_hook_suggestions'][] = 'page__null' ;
   }
 
@@ -184,7 +184,6 @@ function panparks_preprocess_page(&$vars, $hook) {
 
   if (arg(0) == 'node' && arg(1) == 56 && !arg(2)) {
     drupal_add_css(drupal_get_path('theme', 'panparks') . '/css/get-involved.less');
-    //$vars['theme_hook_suggestions'][] = 'page__what_you_can_do';
     hide($vars['page']['content']['system_main']);
   }
 
