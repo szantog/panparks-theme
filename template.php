@@ -188,7 +188,8 @@ function panparks_preprocess_page(&$vars, $hook) {
     hide($vars['page']['content']['system_main']);
   }
 
-  if (arg(0) == 'node' && arg(1) == 2597 && !arg(2)) {
+  if (panparks_api_is_omt()) {
+    //$vars['is_front'] == FALSE;
     drupal_add_css(drupal_get_path('theme', 'panparks') . '/css/onemilliontweets.less');
     $vars['theme_hook_suggestions'][] = 'page__onemilliontweets';
     //Hide the follow us on twitter block, will be printed manualy on page top
