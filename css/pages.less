@@ -989,14 +989,6 @@ div.krumo-root {
   font-size: @font-size-em;
   line-height: @line-height-em;
 
-  //This should be because of chrome colorbox wrong width and height counter
-  .clearfix {
-    &:after {
-      display: none;
-      content: "";
-    }
-  }
-
   img {
     max-width: none;
   }
@@ -1008,6 +1000,19 @@ div.krumo-root {
   #block-system-main {
     .block-inner {
       padding: 0 10px 10px 10px;
+    }
+  }
+}
+
+#cboxLoadedContent {
+  .node {
+    .p-bottom(10px);
+    //This should be because of chrome colorbox wrong width and height counter
+    &.clearfix {
+      &:after {
+        display: none;
+        content: "";
+      }
     }
   }
 }

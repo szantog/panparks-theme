@@ -307,9 +307,13 @@ function panparks_preprocess_block(&$vars, $hook) {
 }
 
 function panparks_preprocess_image_style(&$vars, $hook) {
+  $style_name = $vars['style_name'];
+  $path = $vars['path'];
+  $style_path = image_style_path($style_name, $path);
+
   if (arg(2) == 'colorbox-photo') {
     //Image size should add to images rendered in colorbox.
-    $style_path = image_style_path($vars['style_name'], $vars['path']);
+
     $info = image_get_info($style_path);
 
     if ($info = image_get_info($style_path)) {
@@ -317,6 +321,15 @@ function panparks_preprocess_image_style(&$vars, $hook) {
       $vars['height'] = $info['height'];
     }
   }
+
+  //We render large styles in colorbox, when clicked a square thumbnail image
+  //While colorbox can't count the images witdh, we need to pregenerate the large style, when view a square_thumbnail image
+  if ($style_name == 'square_thumbnail') {
+    if (!file_exists(image_style_path('large', $path))) {
+      image_style_create_derivative(image_style_load('large'), $path, image_style_path('large', $path));
+    }
+  }
+  //dsm(get_defined_vars());
 }
 /**
  * Override or insert variables into theme_menu_local_task().
