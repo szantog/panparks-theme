@@ -80,6 +80,13 @@
       <?php if ($action_links): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
+
+      <?php if ($messages): ?>
+        <div id="site-messages" class="m-top">
+          <?php print $messages ; ?>
+        </div>
+      <?php endif; ?>
+
       <?php print render($page['content']); ?>
     </div></div><!-- /.section, /#content -->
   </div></div><!-- /#main, /#main-wrapper -->

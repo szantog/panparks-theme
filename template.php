@@ -140,6 +140,9 @@ function panparks_preprocess_page(&$vars, $hook) {
 
   if ((arg(1) && end($args) == 'colorbox') || (isset($node) && $node->nid == '58')) {
     $vars['theme_hook_suggestions'][] = 'page__null' ;
+    if ($node && node_access('update', $node)) {
+      $vars['page']['content'] = '<small>' . l(t('Edit'), "node/$node->nid/edit") . '</small>' . render($vars['page']['content']);
+    }
   }
 
   //Add only content tpl.php if we are on colorbox page
