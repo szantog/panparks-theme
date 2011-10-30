@@ -329,7 +329,7 @@ function panparks_preprocess_image_style(&$vars, $hook) {
   //While colorbox can't count the images witdh, we need to pregenerate the large style, when view a square_thumbnail image
   if ($style_name == 'square_thumbnail') {
     if (!file_exists(image_style_path('large', $path))) {
-      image_style_create_derivative(image_style_load('large'), $path, image_style_path('large', $path));
+      image_style_create_derivative(image_style_load('media_large'), $path, image_style_path('large', $path));
     }
   }
   //dsm(get_defined_vars());
