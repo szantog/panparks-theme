@@ -191,7 +191,8 @@ form tbody th {
 }
 
 .page-node-2637 #content #search-form,
-#search-form {
+#search-form,
+#search-form--2 {
   .right(0);
   .form-item {
     .margin(0 10px 0 0);
@@ -234,6 +235,20 @@ form tbody th {
   }
 }
 
+//overrides for search page
+.page-search-node {
+  #content {
+    #search-form,
+    #search-form--2 {
+      .clearfix;
+      float: none;
+
+      label {
+        display: none !important;
+      }
+    }
+  }
+}
 /* Animated throbber */
 html.js input.form-autocomplete {
   background-image: url(/misc/throbber.gif);
