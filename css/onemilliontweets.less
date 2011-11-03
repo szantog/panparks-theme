@@ -59,8 +59,8 @@ bigtext {
   }
 
   h2 {
-    .element-invisible;
-    .m-bottom;
+    text-indent: -10000px;
+    height: 48px;
   }
 
   a {
@@ -154,32 +154,46 @@ bigtext {
   }
 
   #block-birdbox-tweet {
-    background: url(../images/donate-your-tweets.png) no-repeat;
-    height: 640px;
+    .m-top(20px);
+    .m-bottom(240px);
 
     .block-inner {
-      padding: 70px 20px 0;
+      padding: 0 20px 20px;
+      border: 4px solid @l-red;
+      .box-border;
+    }
+
+    h2 {
+      background: url(../images/donate-your-tweets.png) no-repeat #fff 8px 0;
+      .m-top(-20px);
+      .m-bottom(0);
     }
 
     form {
       .clearfix;
 
       .form-item {
-        padding: 0 20px;
+        padding: 0 10px;
         .clearfix;
         .m-top(0);
+
+        .form-textarea-wrapper {
+          padding: 10px;
+          border: 1px solid @grey;
+          .border-radius;
+        }
 
         textarea,
         #birdbox-success-message {
           height: 140px;
           .no-border;
-          .m-bottom;
           .fs(21px; 6px);
         }
 
         .counter {
           .right(0);
           .fs(16px);
+          .m-top(15px);
         }
       }
 
@@ -216,26 +230,38 @@ bigtext {
       .fs(18px);
     }
 
-    #donate-now a {
-      height: 100px;
-      left: 100px;
+    #donate-now {
       position: absolute;
-      top: 475px;
-      width: 280px;
+      left: 40px;
+      background: url(../images/why-not-donate.png) no-repeat;
+      .m-top(28px);
+
+      a {
+        display: block;
+        height: 100px;
+        margin: 80px 40px;
+        width: 280px;
+
+      }
     }
   }
 
   #block-hashtag-counter-hashtag-recent-tweets {
-    background: url(../images/tweets.png) no-repeat;
     height: 390px;
+    .m-top(20px);
     .fs(12px; 2px);
 
+    h2 {
+      background: url(../images/tweets.png) no-repeat 6px 0 #fff;
+      .m-top(-20px);
+    }
+
     .block-inner {
-      padding: 60px 30px 20px;
+      padding: 0 20px 20px;
+      border: 4px solid #000;
+      .box-border;
 
       .block-inner-bg {
-        max-height: 305px;
-        overflow: hidden;
         panparks-tweets;
 
       }
@@ -249,8 +275,6 @@ bigtext {
     h2 {
       background: url(../images/want-to-get-involved.png) no-repeat;
       position: relative !important;
-      height: 48px;
-      text-indent: -10000px;
     }
   }
 
