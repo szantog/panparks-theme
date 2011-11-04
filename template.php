@@ -676,7 +676,7 @@ function panparks_quiz_take_summary($variables) {
       $msg = t('Parts of this @quiz have not been evaluated yet. The score below is not final.', array('@quiz' => QUIZ_NAME));
       drupal_set_message($msg, 'warning');
     }
-    $output .= '<div id="quiz_score_possible">' . t('You got %num_correct of %question_count out of possible points.', array('%num_correct' => $score['numeric_score'], '%question_count' => $score['possible_score'])) . '</div>' . "\n";
+    $output .= '<div id="quiz_score_possible">' . t('You got %num_correct out of %question_count points.', array('%num_correct' => $score['numeric_score'], '%question_count' => $score['possible_score'])) . '</div>' . "\n";
     $output .= '<div id="quiz_score_percent">' . t('Your score is: %score %', array('%score' => $score['percentage_score'])) . '</div>' . "\n";
   }
   if (isset($summary['passfail'])) {
