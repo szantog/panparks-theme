@@ -651,3 +651,43 @@ function panparks_pdf_reader($variables) {
   $output .= theme('file_link', array('file' => (object) $variables['file']));
   return $output;
 }
+
+/**
+ * Theme the summary page for user results.
+ *
+ *  Filtered text of the summary.
+ * @return
+ *  Themed html.
+ *
+ * @ingroup themeable
+ */
+function panparks_quiz_take_summary($variables) {
+  $quiz = $variables['quiz'];
+  $questions = $variables['questions'];
+  $score = $variables['score'];
+  $summary = $variables['summary'];
+  // Set the title here so themers can adjust.
+  drupal_set_title($quiz->title);
+
+  // Display overall result.
+  $output = '';
+  if (!empty($score['possible_score'])) {
+    if (!$score['is_evaluated']) {
+      $msg = t('Parts of this @quiz have not been evaluated yet. The score below is not final.', array('@quiz' => QUIZ_NAME));
+      drupal_set_message($msg, 'warning');
+    }
+    $output .= '<div id="quiz_score_possible">' . t('You got %num_correct of %question_count out of possible points.', array('%num_correct' => $score['numeric_score'], '%question_count' => $score['possible_score'])) . '</div>' . "\n";
+    $output .= '<div id="quiz_score_percent">' . t('Your score is: %score %', array('%score' => $score['percentage_score'])) . '</div>' . "\n";
+  }
+  if (isset($summary['passfail'])) {
+    $output .= '<div id="quiz_summary">' . $summary['passfail'] . '</div>' . "\n";
+  }
+  if (isset($summary['result'])) {
+    $output .= '<div id="quiz_summary">' . $summary['result'] . '</div>' . "\n";
+  }
+  // Get the feedback for all questions. These are included here to provide maximum flexibility for themers
+  if ($quiz->display_feedback) {
+    $output .= drupal_render(drupal_get_form('quiz_report_form', $questions));
+  }
+  return $output;
+}
