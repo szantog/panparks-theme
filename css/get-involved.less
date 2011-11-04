@@ -277,7 +277,15 @@
   //quiz
   #block-bean-58 {
     .field-name-field-body {
-      //height: 258px;
+      //This is the overridden .triangle ul in this case. Because of something less bug, can't use color variable within it
+      //need this complex override..
+      ul {
+        li {
+          &:before {
+            border-color: transparent transparent transparent @green;
+          }
+        }
+      }
     }
   }
   //facebook;
