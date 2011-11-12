@@ -328,11 +328,11 @@ function panparks_preprocess_image_style(&$vars, $hook) {
   //We render large styles in colorbox, when clicked a square thumbnail image
   //While colorbox can't count the images witdh, we need to pregenerate the large style, when view a square_thumbnail image
   if ($style_name == 'square_thumbnail') {
-    if (!file_exists(image_style_path('large', $path))) {
-      image_style_create_derivative(image_style_load('media_large'), $path, image_style_path('large', $path));
+    if (!file_exists(image_style_path('media_gallery_large', $path))) {
+      image_style_create_derivative(image_style_load('media_gallery_large'), $path, image_style_path('media_gallery_large', $path));
     }
   }
-  //dsm(get_defined_vars());
+  dsm(get_defined_vars());
 }
 /**
  * Override or insert variables into theme_menu_local_task().
@@ -690,4 +690,25 @@ function panparks_quiz_take_summary($variables) {
     $output .= drupal_render(drupal_get_form('quiz_report_form', $questions));
   }
   return $output;
+}
+
+/*
+ * Override theme_image_style.
+ * Because of core update 7.9 our predefined image width and height was blocked because of image_style_transform_dimensions
+ */
+function panparks_image_style($variables) {
+  // Determine the dimensions of the styled image.
+  $dimensions = array(
+    'width' => $variables['width'],
+    'height' => $variables['height'],
+  );
+
+//  image_style_transform_dimensions($variables['style_name'], $dimensions);
+//
+//  $variables['width'] = $dimensions['width'];
+//  $variables['height'] = $dimensions['height'];
+
+  // Determine the url for the styled image.
+  $variables['path'] = image_style_url($variables['style_name'], $variables['path']);
+  return theme('image', $variables);
 }
