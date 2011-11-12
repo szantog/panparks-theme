@@ -332,7 +332,7 @@ function panparks_preprocess_image_style(&$vars, $hook) {
       image_style_create_derivative(image_style_load('media_gallery_large'), $path, image_style_path('media_gallery_large', $path));
     }
   }
-  dsm(get_defined_vars());
+  //dsm(get_defined_vars());
 }
 /**
  * Override or insert variables into theme_menu_local_task().
@@ -703,12 +703,15 @@ function panparks_image_style($variables) {
     'height' => $variables['height'],
   );
 
-//  image_style_transform_dimensions($variables['style_name'], $dimensions);
-//
-//  $variables['width'] = $dimensions['width'];
-//  $variables['height'] = $dimensions['height'];
+  if (arg(2) != 'colorbox-photo') {
+    image_style_transform_dimensions($variables['style_name'], $dimensions);
+
+    $variables['width'] = $dimensions['width'];
+    $variables['height'] = $dimensions['height'];
+  }
 
   // Determine the url for the styled image.
   $variables['path'] = image_style_url($variables['style_name'], $variables['path']);
   return theme('image', $variables);
 }
+
