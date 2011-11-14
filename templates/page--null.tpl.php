@@ -77,6 +77,10 @@
       <?php endif; ?>
       <?php print render($title_suffix); ?>
 
+      <?php if ($back): ?>
+        <?php print $back; ?>
+      <?php endif; ?>
+
       <?php if ($action_links): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>

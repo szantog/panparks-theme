@@ -78,6 +78,11 @@ function panparks_preprocess_html(&$vars, $hook) {
   $args = arg();
   if ((arg(1) && end($args) == 'colorbox') || (arg(0) == 'node' && arg(1) == 56 && !arg(2))) {
     $vars['classes_array'] = array_diff($vars['classes_array'], array('one-sidebar sidebar-first'));
+    $vars['classes_array'][] = 'page-null';
+  }
+  //Add page-null class to get-involved/all-about-wilderness page
+  if (arg(1) == 58) {
+    $vars['classes_array'][] = 'page-null';
   }
 }
 // */
@@ -136,10 +141,14 @@ function panparks_preprocess_page(&$vars, $hook) {
     }
   }
 
-  //Add only content tpl.php if we are on colorbox page
+  //Add only content tpl.php if we are on colorbox page and
 
   if ((arg(1) && end($args) == 'colorbox') || (isset($node) && $node->nid == '58')) {
     $vars['theme_hook_suggestions'][] = 'page__null' ;
+    if ($node->nid == '58') {
+      $vars['back'] = '<a class="d-green-button right" href="javascript: history.go(-1)">'. t('Back') . '</a>';
+    }
+
     if ($node && node_access('update', $node)) {
       $vars['page']['content'] = '<small>' . l(t('Edit'), "node/$node->nid/edit") . '</small>' . render($vars['page']['content']);
     }
