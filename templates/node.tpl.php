@@ -75,6 +75,8 @@
  * language, e.g. $node->body['en'], thus overriding any language negotiation
  * rule that was previously applied.
  *
+ * - $referencing_field: If a node is attached as reference field, contains the field name
+ *
  * @see template_preprocess()
  * @see template_preprocess_node()
  * @see zen_preprocess_node()
@@ -86,7 +88,7 @@
   <?php print $user_picture; ?>
 
   <?php print render($title_prefix); ?>
-  <?php if (!$page && $title): ?>
+  <?php if (!$page && !referencing_field  && $title): ?>
     <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
