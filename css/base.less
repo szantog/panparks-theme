@@ -1238,3 +1238,95 @@ panparks-tweets {
     }
   }
 }
+
+pager-first {
+  .sprite(0 -40px);
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+}
+
+pager-previous {
+  .sprite(-20px -40px);
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+}
+
+pager-next {
+  .sprite(-40px -40px);
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+}
+
+pager-last {
+  .sprite(-60px -40px);
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+}
+
+pager {
+  li {
+    .no-marding;
+
+    a {
+      color: @d-green;
+      display: inline-block;
+      height: 20px;
+      width: 12px;
+      padding: 0;
+
+      &:hover {
+        .underline;
+      }
+    }
+
+    &.pager-first {
+      a {
+        pager-first;
+        text-indent: -10000px;
+      }
+    }
+
+    &.pager-previous {
+      a {
+        pager-previous;
+        text-indent: -10000px;
+        .m-right(5px);
+      }
+    }
+
+    &.pager-current {
+      color: @l-red;
+      display: inline-block;
+      height: 20px;
+      width: 12px;
+      font-weight: normal;
+    }
+
+    &.pager-next {
+      a {
+        pager-next;
+        text-indent: -10000px;
+        .m-left(5px);
+      }
+    }
+
+    &.pager-last {
+      a {
+        pager-last;
+        text-indent: -10000px;
+      }
+    }
+  }
+}
+
+.item-list .pager {
+  pager
+}
