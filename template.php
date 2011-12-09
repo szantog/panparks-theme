@@ -628,22 +628,22 @@ function panparks_pdf_reader($variables) {
   switch ($variables['settings']['renderer']) {
     case 0:
     default:
-      $output = '<iframe src="http://docs.google.com/viewer?embedded=true&url='
+      $output = '<div class="field-item"><iframe src="http://docs.google.com/viewer?embedded=true&url='
               . urlencode(file_create_url($variables['file']['uri']))
               . '" width="' . $variables['settings']['pdf_width']
               . '" height="' . $variables['settings']['pdf_height']
-              . '" style="border: none;"></iframe>';
+              . '" style="border: none;"></iframe></div>';
       break;
 
     case 1:
-      $output = '<iframe src="https://viewer.zoho.com/docs/urlview.do?embed=true&url='
+      $output = '<div class="field-item"><iframe src="https://viewer.zoho.com/docs/urlview.do?embed=true&url='
               . urlencode(file_create_url($variables['file']['uri']))
               . '" width="' . $variables['settings']['pdf_width']
               . '" height="' . $variables['settings']['pdf_height']
-              . '" style="border: none;"></iframe>';
+              . '" style="border: none;"></iframe></div>';
 
     case 2:
-      $output = '<object data="' . file_create_url($variables['file']['uri']) . '#view=Fit' . '" '
+      $output = '<div class="field-item"><object data="' . file_create_url($variables['file']['uri']) . '#view=Fit' . '" '
               . 'type="application/pdf' . '" '
               . 'width="' . $variables['settings']['pdf_width'] . '" '
               . 'height="' . $variables['settings']['pdf_height'] . '">'
@@ -654,7 +654,7 @@ function panparks_pdf_reader($variables) {
               . '<p>' . t('It appears your Web browser is not configured to display PDF files. ')
               . l(t('Download adobe Acrobat '), 'http://www.adobe.com/products/reader.html')
               . ' ' . t('or') . ' ' . l(t('click here to download the PDF file.'), file_create_url($variables['file']['uri'])) . '</p>'
-              . '</embed></object>';
+              . '</embed></object></div>';
       break;
   }
   $output .= '<div class="field-label">' . t('Download:') . '</div><div class="field-item">' . theme('file_link', array('file' => (object) $variables['file'])) . '</div>' ;
