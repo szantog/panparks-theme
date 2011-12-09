@@ -657,7 +657,7 @@ function panparks_pdf_reader($variables) {
               . '</embed></object>';
       break;
   }
-  $output .= theme('file_link', array('file' => (object) $variables['file']));
+  $output .= '<div class="field-label">' . t('Download:') . '</div><div class="field-item">' . theme('file_link', array('file' => (object) $variables['file'])) . '</div>' ;
   return $output;
 }
 
