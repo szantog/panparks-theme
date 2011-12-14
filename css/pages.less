@@ -1083,3 +1083,244 @@ div.devel-querylog,
     background: none !important;
   }
 }
+
+//buckaroo
+
+.buckaroo-pay {
+  #header-menu-search {
+    height: 60px;
+  }
+
+  &.sidebar-second #content {
+    width: @width - 280px;
+    margin-left: 0; /* LTR */
+    margin-right: -1 * @width; /* LTR */ /* Negative value of #content's width + left margin. */
+  }
+
+  .region-sidebar-second {
+    width: 270px;
+    margin-left: 670px; /* LTR */ /* Width of content + sidebar-first. @todo: is this ok?*/
+    margin-right: -950px; /* LTR */ /* Negative value of .region-sidebar-second's width + left margin. */
+    .m-top(20px);
+  }
+
+  .breadcrumb {
+    display: none;
+  }
+
+  #block-bean-65,
+  #block-bean-66,
+  #block-bean-67 {
+    background-color: #749181;
+    color: #2c4336;
+    .m-bottom(0);
+
+    .block-inner {
+      .p-top(5px);
+    }
+    .block-inner-bg {
+      border-bottom: 1px solid #8aa797;
+    }
+
+    .field-type-image {
+      float: none;
+      margin: 0;
+
+      img {
+        max-width: 240px;
+        max-height: 140px;
+        border: 3px solid #7f9f8d;
+      }
+    }
+
+    .field-name-field-body {
+      .bold;
+      .sassoon-bold;
+      .fs(14px);
+
+      p {
+        .m-bottom(5px);
+        .m-top(8px);
+      }
+    }
+  }
+
+  #block-bean-65 {
+    .border-radius(10px 10px 0 0);
+
+    .block-inner {
+      .p-top(10px);
+    }
+  }
+
+  #block-bean-67 {
+    .border-radius(0 0 10px 10px);
+    .m-bottom;
+
+    .block-inner-bg {
+      border-bottom: none;
+    }
+    .field-name-field-body {
+      p {
+        .m-bottom(0);
+      }
+    }
+  }
+
+  #block-bean-13 {
+    background-color: #e7e3c4;
+    .border-radius(10px);
+
+    h2 {
+      color: #5b4524;
+      .fs(22px);
+    }
+
+    .content {
+      background-color: #fff;
+      padding: 5px;
+      .border-radius(5px);
+    }
+  }
+
+  #block-bean-68 {
+    color: #749181;
+    fs(12px);
+  }
+
+  #buckaroo-payment-form {
+
+    h3 {
+      .h2;
+      .sassoon-bold;
+      position: relative;
+      .fs(28px);
+      padding: 4px 0 0 55px;
+      .m-top(20px);
+
+      span {
+        text-indent: -10000px;
+        position: absolute;
+        width: 45px;
+        height: 35px;
+        left: 0;
+        top: 0;
+
+        &.buck-title-1 {
+          .counter-1;
+        }
+
+        &.buck-title-2 {
+          .counter-2;
+        }
+
+        &.buck-title-3 {
+          .counter-3;
+        }
+      }
+    }
+
+    #edit-value {
+      padding-left: 215px;
+      .clearfix;
+      .form-radios {
+        //.clearfix;
+      }
+
+      .form-type-radio {
+        .left;
+        width: 107px;
+      }
+    }
+
+    .form-item-uniqueamount {
+      .clear;
+
+      label {
+        .left(0);
+        width: 380px;
+        .align-right;
+        font-weight: normal;
+      }
+
+      .textfield {
+        display: inline-block;
+        float: left;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        input {
+          width: 96px;
+        }
+      }
+    }
+
+    .crm-section .content {
+      margin-left: 220px;
+
+      input,
+      select {
+        width: 310px;
+      }
+    }
+
+    .crm-section .label {
+      float: left;
+      text-align: right;
+      width: 210px;
+    }
+
+    #edit-payment-methods {
+
+      .form-item {
+        overflow: hidden;
+        padding-right: 110px;
+      }
+
+      label {
+        .left(0);
+        width: 210px;
+        .align-right;
+        .m-right;
+        color: @green;
+      }
+
+      input {
+        display: block;
+        text-indent: -1000px;
+        .border-radius(0);
+      }
+
+      #edit-ideal {
+        position: relative;
+
+        label  {
+          height: 120px;
+          span {
+            clear: both;
+            display: block;
+            font-weight: normal;
+          }
+        }
+
+        input {
+          .ideal;
+          left: 215px;
+          top: 40px;
+          position: absolute;
+        }
+      }
+
+      #edit-pp {
+        label  {
+          height: 100px;
+          padding-top: 5px;
+        }
+
+        input {
+          .ppal;
+        }
+      }
+    }
+  }
+}
