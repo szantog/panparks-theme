@@ -199,6 +199,13 @@ function panparks_preprocess_page(&$vars, $hook) {
     hide($vars['page']['content']['system_main']);
   }
 
+  //Need to remove some items from buckaroo page.
+  if (arg(0) == 'node' && arg(1) == 3440) {
+    $vars['main_menu'] = array();
+    $vars['secondary_menu'] = array();
+    $vars['breadcrumb'] = NULL;
+  }
+
   if (panparks_api_is_omt()) {
     //$vars['is_front'] == FALSE;
     drupal_add_css(drupal_get_path('theme', 'panparks') . '/css/onemilliontweets.less');
