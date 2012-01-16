@@ -1104,6 +1104,12 @@ div.devel-querylog,
 
 .buckaroo-pay {
 // Used to linebreak before Please donate now
+
+  .buck-separator {
+    border-bottom: 1px solid #EEEEEE;
+    padding-bottom: 15px;
+  }
+
   h1 {
     max-width: 620px;
   }
@@ -1113,7 +1119,7 @@ div.devel-querylog,
   }
 
   &.sidebar-second #content {
-    width: @width - 280px;
+    width: 660px;
     margin-left: 0; /* LTR */
     margin-right: -1 * @width; /* LTR */ /* Negative value of #content's width + left margin. */
   }
@@ -1210,6 +1216,12 @@ div.devel-querylog,
   }
 
 
+  .field-name-body {
+    p {
+      .buck-separator;
+    }
+  }
+
   #buckaroo-payment-form {
 
     h3 {
@@ -1260,6 +1272,10 @@ div.devel-querylog,
       }
     }
 
+    #edit-amount {
+      .buck-separator;
+    }
+
     .form-item-uniqueamount {
       .clear;
 
@@ -1280,6 +1296,10 @@ div.devel-querylog,
           width: 96px;
         }
       }
+    }
+
+    #crm-profile-block {
+      .buck-separator;
     }
 
     .crm-section .content {
