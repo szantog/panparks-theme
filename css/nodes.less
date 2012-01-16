@@ -119,6 +119,12 @@
       .left(0);
     }
   }
+  &.view-mode-teaser {
+    .field-name-field-image {
+      //ie fix
+      width: 160px;
+    }
+  }
 }
 
 .node {
@@ -216,12 +222,18 @@
   }
 }
 
-.node-accommodation,
-.node-tours-and-holdiays {
+.node-accommodation {
   &.view-mode-teaser {
     .field-name-field-image {
       //ie fix
       width: 160px;
     }
+  }
+}
+
+.node-tour-operator {
+  .field-name-field-image {
+    //ie fix
+    width: 160px;
   }
 }
