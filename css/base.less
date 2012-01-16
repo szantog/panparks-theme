@@ -418,7 +418,10 @@
   content: "";
   z-index: 1000;
   //IE need this:
-  background-color: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
 }
 
 .triangle-right (@color: #fff; @size: @font-size / 2; @top: @font-size / 6; @left: -1 * @grid-margin) {
@@ -442,6 +445,9 @@
   &:before {
     .triangle;
     border-right-color: @color;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
     border-width: @size;
     position: absolute;
     top: @top;
