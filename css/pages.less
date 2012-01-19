@@ -1308,6 +1308,10 @@ div.devel-querylog,
       input,
       select {
         width: 310px;
+
+        &#is_opt_out {
+          width: auto;
+        }
       }
     }
 
@@ -1315,6 +1319,23 @@ div.devel-querylog,
       float: left;
       text-align: right;
       width: 210px;
+    }
+
+    #editrow-is_opt_out {
+      float: left;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+
+    #helprow-is_opt_out {
+      float: left;
+      width: 280px;
+
+      .content {
+        margin: 0;
+        color: #000;
+        .fs(13px);
+      }
     }
 
     #birth_date {

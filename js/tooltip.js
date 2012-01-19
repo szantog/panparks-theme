@@ -43,6 +43,8 @@
         $(".menu-766 a").btOff();
         //alert($(this).val());
      });
+
+     $("#is_opt_out").attr('checked', true);
     }
   };
 
