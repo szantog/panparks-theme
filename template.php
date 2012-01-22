@@ -362,7 +362,6 @@ function panparks_preprocess_image(&$vars, $hook) {
     $title = !empty($file->media_title[LANGUAGE_NONE][0]['safe_value']) ? $file->media_title[LANGUAGE_NONE][0]['safe_value'] : '';
     $vars['alt'] = isset($vars['alt']) && $vars['alt'] != "" ? $vars['alt'] : $title;
     $vars['title'] = isset($vars['title']) && $vars['title'] != "" ? $vars['alt'] : $title;
-    dsm(get_defined_vars());
   }
 }
 /**
