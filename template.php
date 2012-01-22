@@ -329,6 +329,12 @@ function panparks_preprocess_image_style(&$vars, $hook) {
   $style_name = $vars['style_name'];
   $path = $vars['path'];
   $style_path = image_style_path($style_name, $path);
+  $file = file_uri_to_object($path);
+
+  $title = isset($file) && !empty($file->media_title[LANGUAGE_NONE][0]['safe_value']) ? $file->media_title[LANGUAGE_NONE][0]['safe_value'] : '';
+  $vars['alt'] = isset($vars['alt']) && $vars['alt'] != "" ? $vars['alt'] : $title;
+  $vars['title'] = isset($vars['title']) && $vars['title'] != "" ? $vars['alt'] : $title;
+
 
   if (arg(2) == 'colorbox-photo') {
     //Image size should add to images rendered in colorbox.
@@ -349,6 +355,15 @@ function panparks_preprocess_image_style(&$vars, $hook) {
     }
   }
   //dsm(get_defined_vars());
+}
+
+function panparks_preprocess_image(&$vars, $hook) {
+  if ($file = file_uri_to_object($vars['path'])) {
+    $title = !empty($file->media_title[LANGUAGE_NONE][0]['safe_value']) ? $file->media_title[LANGUAGE_NONE][0]['safe_value'] : '';
+    $vars['alt'] = isset($vars['alt']) && $vars['alt'] != "" ? $vars['alt'] : $title;
+    $vars['title'] = isset($vars['title']) && $vars['title'] != "" ? $vars['alt'] : $title;
+    dsm(get_defined_vars());
+  }
 }
 /**
  * Override or insert variables into theme_menu_local_task().
