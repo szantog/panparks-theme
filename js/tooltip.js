@@ -45,6 +45,10 @@
      });
 
      $("#is_opt_out").attr('checked', true);
+
+    // Add required class to buckaroo birth date. It's rendered as required,
+    //but CiviCRM doesn't add class to them.
+    $("#birth_date_display", context).addClass('required');
     }
   };
 
