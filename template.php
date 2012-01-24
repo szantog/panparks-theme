@@ -272,8 +272,6 @@ function panparks_preprocess_page(&$vars, $hook) {
  *   The name of the template being rendered ("node" in this case.)
  */
 function panparks_preprocess_node(&$vars, $hook) {
-
-
   // Optionally, run node-type-specific preprocess functions, like
   // panparks_preprocess_node_page() or panparks_preprocess_node_story().
   $function = __FUNCTION__ . '_' . $vars['node']->type;
