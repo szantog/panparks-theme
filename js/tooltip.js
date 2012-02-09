@@ -42,6 +42,8 @@
           Buckaroo.error('You can donate if you are over 18 years old.', $("#birth_date_display"))
           c.preventDefault();
         }
+        $("#birth_date").val(date.toString("dd-MM-yyyy"));
+        $("#birth_date_display").val(date.toString("dd-MM-yyyy"));
       });
 
       $(".menu-766 a", context).mouseenter(function () {
@@ -53,7 +55,6 @@
         $(".menu-766 a").btOff();
         //alert($(this).val());
      });
-
      $("#is_opt_out").attr('checked', true);
 
       // Add required class to buckaroo birth date. It's rendered as required,
