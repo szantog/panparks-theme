@@ -158,7 +158,7 @@ function panparks_preprocess_page(&$vars, $hook) {
 
     //Override previous on valentine day page
     if ($node->nid == 3469) {
-      $vars['back'] = l(t('Home'), '/', array('attributes', array('class') => array('d-green-button right')));
+      $vars['back'] = l(t('Home'), '/', array('attributes' => array('class' => array('d-green-button', 'right')), 'absolute' => TRUE));
     }
 
     if ($node && node_access('update', $node)) {
