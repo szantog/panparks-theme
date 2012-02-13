@@ -156,6 +156,11 @@ function panparks_preprocess_page(&$vars, $hook) {
       $vars['back'] = '<a class="d-green-button right" href="javascript: history.go(-1)">'. t('Back') . '</a>';
     }
 
+    //Override previous on valentine day page
+    if ($node->nid == 3469) {
+      $vars['back'] = l(t('Home'), '/', array('attributes', array('class') => array('d-green-button right')));
+    }
+
     if ($node && node_access('update', $node)) {
       $vars['page']['content'] = '<small>' . l(t('Edit'), "node/$node->nid/edit") . '</small>' . render($vars['page']['content']);
     }
