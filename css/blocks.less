@@ -169,11 +169,16 @@ h2.block-title /* Block title */ {
   .arrow {
     background-color: #b7cda1;
     .triangle-left(#fff; 52px 10px; -2px; -20px;);
+    &:before {
+      position: absolute;
+    }
     .m-left(0);
     .views-field-slideshow-picture {
       .triangle-left(#b7cda1; 51px 10px; -11px; -29px;);
       margin-left: 9px;
-      position: absolute;
+      &:before {
+        position: absolute;
+      }
     }
   }
   .block-inner {
@@ -232,7 +237,7 @@ h2.block-title /* Block title */ {
       &.active,
       &:hover {
         .arrow;
-      }
+       }
     }
 
     .views-field-slideshow-picture {
@@ -294,8 +299,10 @@ h2.block-title /* Block title */ {
       .no-margin;
     }
     li {
-      .triangle-right(#fff; 6px; 3px);
-      .m-bottom;
+      .triangle-right(#fff; 6px; 3px; -10px);
+      &:before {
+        position: absolute;
+      }
       a {
         font-weight: normal;
         max-width: 235px;
@@ -448,12 +455,17 @@ h2.block-title /* Block title */ {
 
   ul {
     .m-bottom(15px);
+    .p-left(5px);
   }
 
   li {
-    .rectangle(@brown; 2px; 8px;);
+    .rectangle(@brown; 2px; 7px; -10px;);
     .m-top(5px);
     .m-bottom(5px);
+
+    &:before {
+      position: absolute;
+    }
   }
 
   label {
