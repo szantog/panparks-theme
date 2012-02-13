@@ -147,6 +147,7 @@ function panparks_preprocess_page(&$vars, $hook) {
   //Add only content tpl.php if we are on colorbox page and
 
   //The node ids of page null
+  // @see _preprocess_html to add this nids too
   $page_null = array(58, 3469);
 
   if ((arg(1) && end($args) == 'colorbox') || (isset($node) && in_array($node->nid, $page_null))) {
