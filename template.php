@@ -81,7 +81,10 @@ function panparks_preprocess_html(&$vars, $hook) {
     $vars['classes_array'][] = 'page-null';
   }
   //Add page-null class to get-involved/all-about-wilderness page
-  if (arg(1) == 58) {
+  //The node ids of page null
+  $page_null = array(58, 3469);
+
+  if (arg(0) == 'node' && in_array(arg(1) , $page_null)) {
     $vars['classes_array'][] = 'page-null';
   }
 }
@@ -142,11 +145,13 @@ function panparks_preprocess_page(&$vars, $hook) {
   }
 
   //Add only content tpl.php if we are on colorbox page and
-  $only_content = array(58, 3469);
 
-  if ((arg(1) && end($args) == 'colorbox') || (isset($node) && in_array($node->nid, $only_content))) {
+  //The node ids of page null
+  $page_null = array(58, 3469);
+
+  if ((arg(1) && end($args) == 'colorbox') || (isset($node) && in_array($node->nid, $page_null))) {
     $vars['theme_hook_suggestions'][] = 'page__null' ;
-    if (in_array($node->nid, $only_content)) {
+    if (in_array($node->nid, $page_null)) {
       $vars['back'] = '<a class="d-green-button right" href="javascript: history.go(-1)">'. t('Back') . '</a>';
     }
 
