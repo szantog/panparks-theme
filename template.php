@@ -146,7 +146,7 @@ function panparks_preprocess_page(&$vars, $hook) {
 
   if ((arg(1) && end($args) == 'colorbox') || (isset($node) && in_array($node->nid, $only_content))) {
     $vars['theme_hook_suggestions'][] = 'page__null' ;
-    if (in_array($node->nid == $only_content)) {
+    if (in_array($node->nid, $only_content)) {
       $vars['back'] = '<a class="d-green-button right" href="javascript: history.go(-1)">'. t('Back') . '</a>';
     }
 
