@@ -142,10 +142,11 @@ function panparks_preprocess_page(&$vars, $hook) {
   }
 
   //Add only content tpl.php if we are on colorbox page and
+  $only_content = array(58, 3469);
 
-  if ((arg(1) && end($args) == 'colorbox') || (isset($node) && $node->nid == '58')) {
+  if ((arg(1) && end($args) == 'colorbox') || (isset($node) && in_array($node->nid == $only_content))) {
     $vars['theme_hook_suggestions'][] = 'page__null' ;
-    if ($node->nid == '58') {
+    if (in_array($node->nid == $only_content)) {
       $vars['back'] = '<a class="d-green-button right" href="javascript: history.go(-1)">'. t('Back') . '</a>';
     }
 
