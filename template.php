@@ -657,6 +657,9 @@ EOHTML;
  */
 function panparks_pdf_reader($variables) {
   $output = '<div class="field-label">' . t('Download: ') . '</div><div class="field-item"> ' . theme('file_link', array('file' => (object) $variables['file'])) . '</div></br>' ;
+
+  $output .= '<div class="messages warning only-ie">' . t('If you open this page in Firefox or Chrome, you can also view the publication directly in your browser with no download required.') . '</br></div>';
+
   switch ($variables['settings']['renderer']) {
     case 0:
     default:
