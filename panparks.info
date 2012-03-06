@@ -57,9 +57,9 @@ stylesheets[print][] = css/print.css
 ; Add conditional stylesheets that are processed by IE. See the css/README.txt.
 
 ; To target all versions of IE with an ie.css, uncomment the following line:
-stylesheets-conditional[IE][all][]       = css/ie.css
-stylesheets-conditional[lte IE 7][all][]  = css/ie7.css
-stylesheets-conditional[lte IE 6][all][]  = css/ie6.css
+stylesheets-conditional[IE][all][]       = css/ie.less
+stylesheets-conditional[lte IE 7][all][]  = css/ie7.less
+stylesheets-conditional[lte IE 6][all][]  = css/ie6.less
 
 
 
