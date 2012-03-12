@@ -61,7 +61,7 @@
       //but CiviCRM doesn't add class to them.
      $("#birth_date_display", context).addClass('required');
 
-     $("div.olControlModifyFeatureItemInactive:eq(0)", context).trigge("click");
+     $("div.olControlModifyFeatureItemInactive:eq(0)", context).trigger("click");
      $("div.olControlModifyFeatureItemInactive:eq(0)", context).click();
     }
   };
