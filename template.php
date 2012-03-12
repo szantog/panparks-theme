@@ -87,6 +87,9 @@ function panparks_preprocess_html(&$vars, $hook) {
   if (arg(0) == 'node' && in_array(arg(1) , $page_null)) {
     $vars['classes_array'][] = 'page-null';
   }
+  if (arg(1) == 'add' && arg(2) == 'photo-shared') {
+    drupal_add_js('jQuery(document).ready(function () { jQuery(div.olControlModifyFeatureItemInactive).trigger("+click!"); });', 'inline');
+  }
 }
 // */
 
