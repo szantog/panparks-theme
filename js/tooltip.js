@@ -61,7 +61,7 @@
       //but CiviCRM doesn't add class to them.
      $("#birth_date_display", context).addClass('required');
 
-     $("#OpenLayers.Control.EditingToolbar_26", context).addClass('test');
+     $("div.olControlEditingToolbar", context).addClass('test');
     }
   };
 
