@@ -60,6 +60,8 @@
       // Add required class to buckaroo birth date. It's rendered as required,
       //but CiviCRM doesn't add class to them.
      $("#birth_date_display", context).addClass('required');
+
+     $("#openlayers-map-b5e63666", context).addClass('test');
     }
   };
 
