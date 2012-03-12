@@ -91,7 +91,7 @@ function panparks_preprocess_html(&$vars, $hook) {
   // the pencil. We need to change this to the arrow
   if (arg(1) == 'add' && arg(2) == 'photo-shared') {
     //drupal_add_js('jQuery(document).ready(function () { jQuery("div.olControlModifyFeatureItemInactive").trigger("click"); });', 'inline');
-    drupal_add_js('jQuery(document).ready(function () { jQuery("#OpenLayers.Control.EditingToolbar_26 div.olControlModifyFeatureItemInactive").text("click"); });', 'inline');
+    drupal_add_js('jQuery(document).ready(function () { jQuery("#OpenLayers.Control.EditingToolbar_26 div.olControlModifyFeatureItemInactive").html("click"); });', 'inline');
   }
 }
 // */
