@@ -85,6 +85,7 @@
   hide($page['content']['bean_43']);
   hide($page['content']['bean_55']);
   hide($page['content']['system_main']);
+  hide($page['content']['views_cite_full-block']);
 ?>
 <div id="page-wrapper"><div id="page">
     <?php if ($logged_in): ?>
@@ -165,8 +166,9 @@
 
         <div class="content-bottom-top">
           <?php
-            print render($page['content']['bean_19']);
-            print render($page['content']['bean_40']);
+            //print render($page['content']['bean_19']);
+            //print render($page['content']['bean_40']);
+            print render($page['content']['views_cite_full-block']);
           ?>
           <div class="clear"><?php print render($page['content']['bean_43']); ?></div>
         </div>

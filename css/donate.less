@@ -289,10 +289,21 @@
       .border-radius;
       padding: 10px;
       .block {
-        width: 450px;
+        width: auto;
+        margin: 0;
+        float: none;
 
         .block-inner {
           .no-padding
+        }
+
+        td {
+          vertical-align: top;
+        }
+
+        .group-right {
+          float: left;
+          width: 325px;
         }
 
         .field-name-field-image {
@@ -309,7 +320,12 @@
         blockquote {
           .left(0);
           .blockquote;
-          width: 280px;
+          padding: 0px 0px 5px;
+          width: auto;
+        }
+
+        strong {
+          .right(0);
         }
       }
 
@@ -336,6 +352,9 @@
             .white;
             .fs(12px);
           }
+        }
+        strong {
+          float: none;
         }
       }
     }
